@@ -34,3 +34,10 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# FMOD Logs
+*.fmod_editor.log
+*.fmod.log
+fmod\.log
+fmod_editor\.log
+
