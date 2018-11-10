@@ -6,7 +6,8 @@ public class PlayerStatus : MonoBehaviour {
 
 	//config params
 
-	[SerializeField] float jumpForce = 200f;
+	[SerializeField] float axeJumpForce = 1300f;
+	[SerializeField] float swordJumpforce = 2000f;
 	[SerializeField] float jumpCastOffset = 0.1f;
 	[SerializeField] float dropThruTimer = 0.5f;
 
@@ -85,10 +86,15 @@ public class PlayerStatus : MonoBehaviour {
 		} else if (Input.GetButtonDown ("Throw")) {
 			ThrowWeapon ();
 		} else if (Input.GetButtonDown ("Jump")) {
-			Jump ();
-		} else if (Input.GetAxis ("Vertical") <= -0.2f) {
+			Collider2D fallColl = CanDropThrough ();
+			if (fallColl && Input.GetAxisRaw ("Vertical") <= -0.1f) {
+				DropDown ();
+			} else {
+				Jump ();
+			}
+		} /* else if (Input.GetAxis ("Vertical") <= -0.2f) {
 			DropDown ();
-		}
+		}*/
 	}
 
 	void TrackWeapon() {
@@ -114,10 +120,12 @@ public class PlayerStatus : MonoBehaviour {
 	private void DropDown() {
 		Collider2D colliderCheck = Physics2D.OverlapCapsule (coll.bounds.center + Vector3.down * jumpCastOffset, new Vector2 (coll.size.x * 0.9f, coll.size.y * 0.9f), CapsuleDirection2D.Vertical, 0f, jumpMask);
 		if (!falling && !frozen && colliderCheck && colliderCheck.CompareTag("DropThrough")) {
-			TriggerFall ();
-			Physics2D.IgnoreCollision (coll, colliderCheck);
-			//Debug.Log ("Collision disabled");
-			StartCoroutine (RestoreCollision (colliderCheck));
+			if (currentState == State.Idle || currentState == State.Walk) {
+				TriggerFall ();
+				Physics2D.IgnoreCollision (coll, colliderCheck);
+				//Debug.Log ("Collision disabled");
+				StartCoroutine (RestoreCollision (colliderCheck));
+			}             
 		}
 	}
 
@@ -197,6 +205,16 @@ public class PlayerStatus : MonoBehaviour {
 		return false; 
 	}
 
+	public Collider2D CanDropThrough() {
+		Collider2D colliderCheck = Physics2D.OverlapCapsule (coll.bounds.center + Vector3.down * jumpCastOffset, new Vector2 (coll.size.x * 0.9f, coll.size.y * 0.9f), CapsuleDirection2D.Vertical, 0f, jumpMask);
+		if (!falling && !frozen && colliderCheck && colliderCheck.CompareTag ("DropThrough")) {
+			if (currentState == State.Idle || currentState == State.Walk) {
+				return colliderCheck;
+			}
+		}
+		return null;
+	}
+
 	private bool CheckGrounded() {
 		Collider2D colliderCheck = Physics2D.OverlapCapsule (coll.bounds.center + Vector3.down * jumpCastOffset, new Vector2 (coll.size.x * 0.9f, coll.size.y * 0.9f), CapsuleDirection2D.Vertical, 0f, jumpMask);
 		if (colliderCheck) {
@@ -226,7 +244,7 @@ public class PlayerStatus : MonoBehaviour {
 		//Debug.Log ("Launch");
 		rb.velocity = storedVelocity;
 		storedVelocity = Vector2.zero;
-		rb.AddForce (new Vector2 (0f, jumpForce));
+		rb.AddForce (new Vector2 (0f, isSword ? swordJumpforce : axeJumpForce));
 		jumpMode = 0;
 	}
 
