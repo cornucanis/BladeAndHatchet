@@ -1653,6 +1653,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114730423218457648, guid: 914502e5c64be6a4ea3206b2d8a41dce,
+        type: 2}
+      propertyPath: swordJumpforce
+      value: 1700
+      objectReference: {fileID: 0}
+    - target: {fileID: 50031949044892718, guid: 914502e5c64be6a4ea3206b2d8a41dce,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 70336570511039196, guid: 914502e5c64be6a4ea3206b2d8a41dce,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 70336570511039196, guid: 914502e5c64be6a4ea3206b2d8a41dce,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.095
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 914502e5c64be6a4ea3206b2d8a41dce, type: 2}
   m_IsPrefabAsset: 0
