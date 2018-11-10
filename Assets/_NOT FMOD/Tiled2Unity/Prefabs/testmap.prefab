@@ -228,11 +228,25 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 44, y: 0}
+    - - {x: 90, y: 0}
       - {x: 0, y: 0}
-      - {x: 0, y: -22}
-      - {x: 44, y: -22}
-    - - {x: 4, y: -16}
+      - {x: 0, y: -50}
+      - {x: 90, y: -50}
+    - - {x: 26, y: -18}
+      - {x: 21, y: -18}
+      - {x: 21, y: -19}
+      - {x: 20, y: -19}
+      - {x: 20, y: -21}
+      - {x: 16, y: -21}
+      - {x: 16, y: -14}
+      - {x: 12, y: -14}
+      - {x: 12, y: -17}
+      - {x: 14, y: -17}
+      - {x: 14, y: -21}
+      - {x: 1, y: -21}
+      - {x: 1, y: -17}
+      - {x: 4, y: -17}
+      - {x: 4, y: -16}
       - {x: 1, y: -16}
       - {x: 1, y: -12}
       - {x: 36, y: -12}
@@ -248,28 +262,26 @@ PolygonCollider2D:
       - {x: 39, y: -10}
       - {x: 39, y: -12}
       - {x: 43, y: -12}
-      - {x: 43, y: -21}
+      - {x: 43, y: -18}
+      - {x: 45, y: -18}
+      - {x: 45, y: -1}
+      - {x: 89, y: -1}
+      - {x: 89, y: -21}
       - {x: 32, y: -21}
       - {x: 32, y: -19}
       - {x: 31, y: -19}
       - {x: 31, y: -18}
       - {x: 29, y: -18}
-      - {x: 29, y: -21}
-      - {x: 26, y: -21}
-      - {x: 26, y: -18}
-      - {x: 21, y: -18}
-      - {x: 21, y: -19}
-      - {x: 20, y: -19}
-      - {x: 20, y: -21}
-      - {x: 16, y: -21}
-      - {x: 16, y: -14}
-      - {x: 12, y: -14}
-      - {x: 12, y: -17}
-      - {x: 14, y: -17}
-      - {x: 14, y: -21}
-      - {x: 1, y: -21}
-      - {x: 1, y: -17}
-      - {x: 4, y: -17}
+      - {x: 29, y: -23}
+      - {x: 43, y: -23}
+      - {x: 43, y: -46}
+      - {x: 45, y: -46}
+      - {x: 45, y: -23}
+      - {x: 89, y: -23}
+      - {x: 89, y: -49}
+      - {x: 1, y: -49}
+      - {x: 1, y: -23}
+      - {x: 26, y: -23}
 --- !u!114 &114225451477404590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,13 +310,13 @@ MonoBehaviour:
   StaggerIndex: 0
   HexSideLength: 0
   NumLayers: 2
-  NumTilesWide: 44
-  NumTilesHigh: 22
+  NumTilesWide: 90
+  NumTilesHigh: 50
   TileWidth: 16
   TileHeight: 16
   ExportScale: 0.0625
-  MapWidthInPixels: 704
-  MapHeightInPixels: 352
+  MapWidthInPixels: 1440
+  MapHeightInPixels: 800
   BackgroundColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!114 &114452884260540766
 MonoBehaviour:

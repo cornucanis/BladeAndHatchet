@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	[SerializeField] float runSpeed = 2f;
+	[SerializeField] float airMoveDamp = 0.2f;
+	[SerializeField] float airDampWindow = 0.1f;
 
 	//cached references
 	PlayerStatus playerStatus;
@@ -31,23 +33,33 @@ public class PlayerMovement : MonoBehaviour {
 	void CheckInput() {
 		horizontalInput = Input.GetAxis ("Horizontal");
 		verticalInput = Input.GetAxis ("Vertical");
-		if (Input.GetButtonDown ("Jump")) {
-			Debug.Log(playerStatus.Jump ());
-		}
 	}
 
 	void HandleInput() {
-		if (Mathf.Abs (horizontalInput) > Mathf.Epsilon && playerStatus.CanMove()) {
-			Move ();
+		if (playerStatus.CanMove ()) {
+			if (Mathf.Abs (horizontalInput) > Mathf.Epsilon) {
+				Move ();
+			} else {
+				rb.velocity = new Vector2 (0f, rb.velocity.y);
+			}
+		} else {
+
 		}
 	}
 
 	void Move() {
-		if (currentState != PlayerStatus.State.Walk) {
-			playerStatus.CurrentState = PlayerStatus.State.Walk;
-		}
 		FlipSprite ();
-		rb.velocity = new Vector2( horizontalInput * runSpeed, 0f);
+		if (Mathf.Abs (rb.velocity.y) < Mathf.Epsilon) {
+			if (currentState != PlayerStatus.State.Walk && currentState != PlayerStatus.State.Jump) {
+				playerStatus.CurrentState = PlayerStatus.State.Walk;
+			}
+			rb.velocity = new Vector2 (horizontalInput * runSpeed, rb.velocity.y);
+		} else {
+			float newX = Mathf.Lerp (rb.velocity.x, horizontalInput * runSpeed, airMoveDamp);
+			//Debug.Log ("OldV: " + rb.velocity + ", Newv: " + new Vector2 (Mathf.Clamp (newX, rb.velocity.x - airDampWindow, rb.velocity.x + airDampWindow), rb.velocity.y) + ", newx: " + newX + ", min: " + (rb.velocity.x - airDampWindow) + ", max: " + (rb.velocity.x + airDampWindow));
+			rb.velocity = new Vector2 (Mathf.Clamp(newX, rb.velocity.x - airDampWindow, rb.velocity.x + airDampWindow), rb.velocity.y);
+
+		}
 	}
 
 	void FlipSprite() {
