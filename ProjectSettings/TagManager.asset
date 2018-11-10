@@ -11,6 +11,7 @@ TagManager:
   - Gear
   - Chain
   - Powerup
+  - DropThrough
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - EnemyProjectile
   - Powerup
   - RoomBoundary
-  - 
+  - TransitionTrigger
   - 
   - 
   - 

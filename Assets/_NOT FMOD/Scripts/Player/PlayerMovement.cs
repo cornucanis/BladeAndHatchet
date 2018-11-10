@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 				Move ();
 			} else {
 				rb.velocity = new Vector2 (0f, rb.velocity.y);
+				//Debug.Log ("Velocity reset for lack of input");
 			}
 		} else {
 
@@ -82,7 +83,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void OnWalkStay() {
 
-		if (Mathf.Abs (horizontalInput) < Mathf.Epsilon) {
+		if (Mathf.Abs (horizontalInput) < Mathf.Epsilon && !playerStatus.Frozen) {
 			rb.velocity = Vector2.zero;
 			playerStatus.CurrentState = PlayerStatus.State.Idle;
 		}
