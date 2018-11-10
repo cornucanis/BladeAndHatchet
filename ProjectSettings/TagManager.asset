@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Foreground
+  - Weapon
+  - AcidWeapon
+  - IceWeapon
+  - Gear
+  - Chain
+  - Powerup
   layers:
   - Default
   - TransparentFX
@@ -13,15 +20,15 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Weapon
+  - Foreground
+  - GearTrigger
+  - Enemy
+  - Hazard
+  - EnemyProjectile
+  - Powerup
+  - RoomBoundary
   - 
   - 
   - 
@@ -38,6 +45,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1476019963
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Powerup
+    uniqueID: 430068755
+    locked: 0
+  - name: Enemy
+    uniqueID: 2064482655
+    locked: 0
+  - name: Player
+    uniqueID: 3384675885
+    locked: 0
+  - name: Weapon
+    uniqueID: 2277963131
+    locked: 0
+  - name: EnemyProjectile
+    uniqueID: 970712735
+    locked: 0
+  - name: Foreground
+    uniqueID: 966508053
     locked: 0
