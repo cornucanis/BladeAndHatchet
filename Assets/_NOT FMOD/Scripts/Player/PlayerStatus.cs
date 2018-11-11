@@ -160,6 +160,7 @@ public class PlayerStatus : MonoBehaviour {
 		anim.SetBool (currentStateName, false);
 		anim.SetBool (newStateName, true);
 		playerMovement.currentState = currentState;
+		playerCombat.currentState = currentState;
 	}
 
 	private void CharacterSwap() {
@@ -203,6 +204,13 @@ public class PlayerStatus : MonoBehaviour {
 				return true;
 		}
 		return false; 
+	}
+
+	public bool CanAttack() {
+		if (currentState != State.Death && currentState != State.Stunned && currentState != State.Attack && !frozen) {
+			return true;
+		}
+		return false;
 	}
 
 	public Collider2D CanDropThrough() {
