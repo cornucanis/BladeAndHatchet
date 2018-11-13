@@ -2,13 +2,18 @@ fileFormatVersion: 2
 guid: 7f572116a7981414592d0ed9b5f40b58
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Attack_1_0
-    21300002: Attack_1_1
-    21300004: Attack_1_2
-    21300006: Attack_1_3
-    21300008: Attack_1_4
-    21300010: Attack_1_5
-    21300012: Attack_1_6
+    21300000: Axe 1st Attack 0
+    21300002: Axe 1st Attack 1
+    21300004: Axe 1st Attack 2
+    21300006: Axe 1st Attack 3
+    21300008: Axe 1st Attack 4
+    21300010: Axe 1st Attack 5
+    21300012: Sword 1st Attack 0
+    21300014: Sword 1st Attack 1
+    21300016: Sword 1st Attack 2
+    21300018: Sword 1st Attack 3
+    21300020: Sword 1st Attack 4
+    21300022: Sword 1st Attack 5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -102,67 +107,187 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_1_0
+      name: Axe 1st Attack 0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 73
+        width: 22
+        height: 32
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb683a17639663e4e8ce78b79b30cd02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe 1st Attack 1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 73
+        width: 18
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dad980c3537b8a4eaf3c1ee317e8a1f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe 1st Attack 2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 73
+        width: 22
+        height: 32
+      alignment: 9
+      pivot: {x: 0.72727275, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b067cbf3777eac498adde88959ccb64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe 1st Attack 3
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 73
+        width: 34
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5588235, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e241e13df7621459f038baaa17972e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe 1st Attack 4
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 73
+        width: 31
+        height: 28
+      alignment: 9
+      pivot: {x: 0.516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8c6e65a80b1a54f9149394c2626940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe 1st Attack 5
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 73
+        width: 32
+        height: 28
+      alignment: 9
+      pivot: {x: 0.40625, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d771d981cc9b849b308cc15324a875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword 1st Attack 0
       rect:
         serializedVersion: 2
         x: 9
         y: 13
-        width: 22
+        width: 19
         height: 32
       alignment: 9
-      pivot: {x: 0.40909094, y: 0.5}
+      pivot: {x: 0.5263158, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 920b2ee8f031a484d99831a7e1c8fd9f
+      spriteID: 22d2bcb55e1bf6c4ab4d45210d49a789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_1
+      name: Sword 1st Attack 1
       rect:
         serializedVersion: 2
-        x: 69
+        x: 68
         y: 13
-        width: 18
+        width: 19
         height: 32
       alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      pivot: {x: 0.57894737, y: -0.03125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc6e09e66d223434fa87c94798b5baa8
+      spriteID: 1e3bba01037469f488629422b897ca2b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_2
+      name: Sword 1st Attack 2
       rect:
         serializedVersion: 2
-        x: 121
+        x: 122
         y: 13
-        width: 22
+        width: 21
         height: 32
       alignment: 9
-      pivot: {x: 0.6818182, y: 0.5}
+      pivot: {x: 0.71428573, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3438a1658953b0146913f113f651f956
+      spriteID: 5557d4113dd176f4cbcdfe1db5197d8f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_3
+      name: Sword 1st Attack 3
       rect:
         serializedVersion: 2
         x: 183
@@ -170,19 +295,19 @@ TextureImporter:
         width: 34
         height: 30
       alignment: 9
-      pivot: {x: 0.5294118, y: 0.40000004}
+      pivot: {x: 0.5588235, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2379ec49f2f59048b52040cf740fdf7
+      spriteID: 610291d84bcb31042b509b9587399acf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_4
+      name: Sword 1st Attack 4
       rect:
         serializedVersion: 2
         x: 247
@@ -190,53 +315,33 @@ TextureImporter:
         width: 31
         height: 28
       alignment: 9
-      pivot: {x: 0.4516129, y: 0.42857146}
+      pivot: {x: 0.516129, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7157d0361b1e07f41a9c5563efa2b9ef
+      spriteID: d562d8d2b4414494e8fd6a4fbd7b0243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_5
+      name: Sword 1st Attack 5
       rect:
         serializedVersion: 2
         x: 309
         y: 13
-        width: 26
+        width: 32
         height: 28
       alignment: 9
-      pivot: {x: 0.4615385, y: 0.42857146}
+      pivot: {x: 0.40625, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daded9616f7b6b7468a20a15a211998c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_1_6
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 22
-        width: 10
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 874219f0d0d14e24e9b5e9f06205cecd
+      spriteID: da91b868b1dc5394ea48589afb5df751
       vertices: []
       indices: 
       edges: []
