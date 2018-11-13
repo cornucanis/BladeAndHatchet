@@ -6418,6 +6418,12 @@ Prefab:
       propertyPath: m_Offset.y
       value: 0.9736
       objectReference: {fileID: 0}
+    - target: {fileID: 212064776271322150, guid: 914502e5c64be6a4ea3206b2d8a41dce,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300024, guid: 70525e59f20d93647adf17cb9b443241,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 914502e5c64be6a4ea3206b2d8a41dce, type: 2}
   m_IsPrefabAsset: 0
@@ -16467,7 +16473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24fd1c94f12f514299ab07e9a8e8c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comboWindowLength: 3
+  comboWindowLength: 1.5
   maxHealth: 10
   currentState: 0
 --- !u!1 &1798739163

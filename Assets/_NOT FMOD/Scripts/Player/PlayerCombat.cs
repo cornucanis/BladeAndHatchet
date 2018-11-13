@@ -14,7 +14,8 @@ public class PlayerCombat : MonoBehaviour {
 	//state variables
 	int axeHealth;
 	int swordHealth;
-	int comboCount;
+	int comboCount = 0;
+	int highestQueuedCombo = 0;
 	float comboWindowEnd;
 	[HideInInspector] public PlayerStatus.State currentState;
 
@@ -26,12 +27,52 @@ public class PlayerCombat : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Attack") && playerStatus.CanAttack()) {
+		if (Input.GetButtonDown ("Attack") && playerStatus.CanAttack ()) {
 			if (currentState == PlayerStatus.State.Jump) {
 				//jump attack goes here
 			} else {
-
+				if (currentState == PlayerStatus.State.Attack && playerStatus.attackAnimEnded == false) {
+					
+					Debug.Log ("Queue set to " + Mathf.Min (3, Mathf.Max(highestQueuedCombo + 1, comboCount + 1)) + " and the last hit was " + comboCount);
+					highestQueuedCombo = Mathf.Min (3, Mathf.Max(highestQueuedCombo + 1, comboCount + 1));
+					if (highestQueuedCombo == 1) {
+						highestQueuedCombo = 0;
+					}
+				} else {
+					if (comboCount > 0 && Time.time > comboWindowEnd) {
+						Debug.Log ("Combo window expired");
+						comboCount = 0;
+						highestQueuedCombo = 0;
+					}
+					comboCount++;
+					//Debug.Log ("Executing standard free attack at combo count " + comboCount);
+					playerStatus.Attack (comboCount);
+					if (comboCount == 3) {
+						comboCount = 0;
+						highestQueuedCombo = 0;
+					}
+				}
 			}
 		}
+	}
+
+	public void ResetComboWindow() {
+		comboWindowEnd = Time.time + comboWindowLength;
+	}
+
+	public int CheckAttackQueue() {
+		if (comboCount >= 3 || (highestQueuedCombo >= 3 && comboCount == 0)) {
+			comboCount = 0;
+			highestQueuedCombo = 0; 
+			Debug.Log ("Empty queue 1");
+			return -1;
+		} 
+		if (highestQueuedCombo > comboCount) {
+			comboCount++;
+			Debug.Log ("queue of " + comboCount + " and highest queue of " + highestQueuedCombo);
+			return comboCount;
+		}
+		Debug.Log ("Empty queue 2");
+		return -1;
 	}
 }

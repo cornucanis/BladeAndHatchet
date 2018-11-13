@@ -27,12 +27,13 @@ public class PlayerStatus : MonoBehaviour {
 
 	//state variables
 	State currentState;
-	int jumpMode;
+	int jumpMode = 0;
 	float initialGravity;
 	bool isSword = true;
 	bool armed = true;
 	bool frozen = false;
 	bool falling = false;
+	[HideInInspector] public bool attackAnimEnded = false;
 	Vector2 storedVelocity = Vector2.zero;
 
 
@@ -45,6 +46,23 @@ public class PlayerStatus : MonoBehaviour {
 		set {
 			Debug.Log ("frozen set to " + value);
 			frozen = value;
+		}
+	}
+
+	public bool AttackAnimEnded {
+		get {
+			return attackAnimEnded;
+		}
+		set {
+			attackAnimEnded = value;
+			if (value) {
+				int nextAttack = playerCombat.CheckAttackQueue ();
+				if (nextAttack != -1) {
+					Attack (nextAttack);
+				}
+			} else {
+				Debug.LogWarning ("Why are you setting attack animation ending to false from another script?");
+			}
 		}
 	}
 
@@ -148,7 +166,6 @@ public class PlayerStatus : MonoBehaviour {
 	private void JumpState() {
 		CurrentState = State.Jump;
 		anim.SetTrigger ("fall");
-		Debug.Log ("test" + Time.time);
 	}
 
 	public void ChangeStates(State newState) {
@@ -192,6 +209,9 @@ public class PlayerStatus : MonoBehaviour {
 	#region bool checks
 
 	public bool CanMove() {
+		if (currentState == State.Attack && attackAnimEnded == false) {
+			return false;
+		}
 		if (currentState != State.Death && currentState != State.Stunned && !frozen && !(currentState == State.Jump && jumpMode == -1)) { // Note: The last one is to check that we're not in the middle of launching
 			return true;
 		}
@@ -199,7 +219,10 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	public bool CanJump() {
-		if (currentState != State.Death && currentState != State.Stunned && currentState != State.Attack && !frozen) {
+//		if (currentState == State.Attack && attackAnimEnded == false) {
+//			return false;
+//		}
+		if (currentState != State.Death && currentState != State.Stunned && !frozen) {
 			if (currentState != State.Jump || jumpMode == 2)
 				return true;
 		}
@@ -207,7 +230,7 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	public bool CanAttack() {
-		if (currentState != State.Death && currentState != State.Stunned && currentState != State.Attack && !frozen) {
+		if (armed && currentState != State.Death && currentState != State.Stunned && !frozen) {
 			return true;
 		}
 		return false;
@@ -254,6 +277,13 @@ public class PlayerStatus : MonoBehaviour {
 		storedVelocity = Vector2.zero;
 		rb.AddForce (new Vector2 (0f, isSword ? swordJumpforce : axeJumpForce));
 		jumpMode = 0;
+	}
+		
+	public void Attack(int attackMode) {
+		anim.SetInteger ("attackMode", attackMode);
+		playerCombat.ResetComboWindow ();
+		ChangeStates (State.Attack);
+		attackAnimEnded = false;
 	}
 
 	public void SetVelocity(Vector2 newVelocity) {
@@ -325,12 +355,12 @@ public class PlayerStatus : MonoBehaviour {
 			jumpMode = 1;
 			anim.SetInteger ("jumpMode", 1);
 		} else if (jumpMode == 1 && Mathf.Abs (rb.velocity.y) < Mathf.Epsilon) {
-			Debug.Log ("Reset jump. velocity: " + rb.velocity.y + ", epsilon: " + Mathf.Epsilon);
+			//Debug.Log ("Reset jump. velocity: " + rb.velocity.y + ", epsilon: " + Mathf.Epsilon);
 			jumpMode = 2;
 			anim.SetInteger ("jumpMode", 2);
 			rb.velocity = Vector2.zero;
 		}
-		Debug.Log (jumpMode + ", " + rb.velocity.y + ", " + anim.GetInteger("jumpMode") + ", " + anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+		//Debug.Log (jumpMode + ", " + rb.velocity.y + ", " + anim.GetInteger("jumpMode") + ", " + anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
 	}
 
 	void DeathEnter() {

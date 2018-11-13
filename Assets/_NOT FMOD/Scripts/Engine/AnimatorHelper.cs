@@ -6,11 +6,13 @@ public class AnimatorHelper : MonoBehaviour {
 
 	PlayerStatus playerStatus;
 	PlayerMovement playerMovement;
+	PlayerCombat playerCombat;
 
 
 	void Awake() {
 		playerStatus = GetComponentInChildren<PlayerStatus> ();
 		playerMovement = GetComponentInChildren<PlayerMovement> ();
+		playerCombat = GetComponentInChildren<PlayerCombat> ();
 	}
 
 	public void ChangeState(PlayerStatus.State newState) {
@@ -19,5 +21,9 @@ public class AnimatorHelper : MonoBehaviour {
 
 	public void Jump(){
 		playerStatus.Launch ();
+	}
+
+	public void EndAttackAnimation() {
+		playerStatus.AttackAnimEnded = true;
 	}
 }
