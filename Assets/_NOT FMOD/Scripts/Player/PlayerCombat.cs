@@ -17,6 +17,7 @@ public class PlayerCombat : MonoBehaviour {
 	int comboCount = 0;
 	int highestQueuedCombo = 0;
 	float comboWindowEnd;
+	[HideInInspector] public bool isSword;
 	[HideInInspector] public PlayerStatus.State currentState;
 
 
@@ -64,15 +65,43 @@ public class PlayerCombat : MonoBehaviour {
 		if (comboCount >= 3 || (highestQueuedCombo >= 3 && comboCount == 0)) {
 			comboCount = 0;
 			highestQueuedCombo = 0; 
-			Debug.Log ("Empty queue 1");
+			//Debug.Log ("Empty queue 1");
 			return -1;
 		} 
 		if (highestQueuedCombo > comboCount) {
 			comboCount++;
-			Debug.Log ("queue of " + comboCount + " and highest queue of " + highestQueuedCombo);
+			//Debug.Log ("queue of " + comboCount + " and highest queue of " + highestQueuedCombo);
 			return comboCount;
 		}
-		Debug.Log ("Empty queue 2");
+		//Debug.Log ("Empty queue 2");
 		return -1;
+	}
+
+	public void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("Hazard")) {
+
+		} else if (other.CompareTag ("Enemy")) {
+			EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
+			if (enemy) {
+				TakeDamage (enemy.contactDamage);
+			} else {
+				Debug.LogWarning ("There is an object named " + other.name + " with an enemy tag but no enemy health component. This should not happen.");
+			}
+		}
+	}
+
+	public void TakeDamage(int damage) {
+		if (isSword) {
+			swordHealth -= damage;
+		} else {
+			axeHealth -= damage;
+		}
+		if (swordHealth <= 0 || axeHealth <= 0) {
+			Die ();
+		}
+	}
+
+	void Die() {
+		Destroy (gameObject);
 	}
 }

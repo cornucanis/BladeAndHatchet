@@ -21,6 +21,7 @@ public class PlayerStatus : MonoBehaviour {
 	Animator anim;
 	PlayerMovement playerMovement;
 	PlayerCombat playerCombat;
+	PlayerWeapon weapon;
 	Rigidbody2D rb;
 	CapsuleCollider2D coll;
 	[SerializeField] LayerMask jumpMask;
@@ -80,6 +81,7 @@ public class PlayerStatus : MonoBehaviour {
 		anim = GetComponentInParent<Animator> ();
 		playerMovement = GetComponent<PlayerMovement> ();
 		playerCombat = GetComponent<PlayerCombat> ();
+		weapon = FindObjectOfType<PlayerWeapon> ();
 		rb = GetComponent<Rigidbody2D> ();
 		coll = GetComponent<CapsuleCollider2D> ();
 		CurrentState = State.Idle;
@@ -158,6 +160,7 @@ public class PlayerStatus : MonoBehaviour {
 		falling = true;
 		Invoke("JumpState", 0.05f);
 		jumpMode = 1;
+		Debug.Log ("Fall triggered");
 		rb.velocity = new Vector2(rb.velocity.x, Mathf.Min(rb.velocity.y, 0.00001f));
 		anim.SetInteger ("jumpMode", 1);
 		anim.SetTrigger ("fall");
@@ -182,6 +185,7 @@ public class PlayerStatus : MonoBehaviour {
 
 	private void CharacterSwap() {
 		isSword = !isSword;
+		playerCombat.isSword = isSword;
 		anim.SetBool ("isSword", isSword);
 		anim.SetFloat ("isSwordFloat", isSword ? 1f : 0f);
 		Vector3 charPos = characterSprite.transform.position;
@@ -272,7 +276,7 @@ public class PlayerStatus : MonoBehaviour {
 
 
 	public void Launch() {
-		//Debug.Log ("Launch");
+		Debug.Log ("Launch");
 		rb.velocity = storedVelocity;
 		storedVelocity = Vector2.zero;
 		rb.AddForce (new Vector2 (0f, isSword ? swordJumpforce : axeJumpForce));
@@ -288,7 +292,7 @@ public class PlayerStatus : MonoBehaviour {
 
 	public void SetVelocity(Vector2 newVelocity) {
 		rb.velocity = newVelocity;
-		//Debug.Log (newVelocity);
+		Debug.Log (newVelocity);
 	}
 
 	public void SetGravityEnabled(bool newGrav) {
@@ -334,7 +338,7 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	void AttackExit() {
-
+		weapon.currentDamage = 0;
 	}
 
 	void AttackStay() {

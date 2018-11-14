@@ -7,12 +7,14 @@ public class AnimatorHelper : MonoBehaviour {
 	PlayerStatus playerStatus;
 	PlayerMovement playerMovement;
 	PlayerCombat playerCombat;
+	PlayerWeapon weapon;
 
 
 	void Awake() {
 		playerStatus = GetComponentInChildren<PlayerStatus> ();
 		playerMovement = GetComponentInChildren<PlayerMovement> ();
 		playerCombat = GetComponentInChildren<PlayerCombat> ();
+		weapon = GetComponentInChildren<PlayerWeapon> ();
 	}
 
 	public void ChangeState(PlayerStatus.State newState) {
@@ -25,5 +27,9 @@ public class AnimatorHelper : MonoBehaviour {
 
 	public void EndAttackAnimation() {
 		playerStatus.AttackAnimEnded = true;
+	}
+
+	public void SetWeaponDamage(int newDamage) {
+		weapon.currentDamage = newDamage;
 	}
 }

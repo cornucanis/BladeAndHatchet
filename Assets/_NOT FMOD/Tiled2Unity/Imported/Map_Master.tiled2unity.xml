@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 11/12/2018 8:40:42 AM-->
+<!--Last exported: 11/14/2018 6:06:58 AM-->
 <Tiled2Unity version="1.0.13.2">
   <AssignMaterial mesh="Map_Master_mesh_0001" material="Outdoor_Tileset" />
   <AssignMaterial mesh="Map_Master_mesh_0002" material="Outdoor_Tileset" />
@@ -521,27 +521,27 @@
         </PolygonCollider2D>
       </GameObject>
     </GameObject>
-    <GameObject name="Foreground Top Rocks" x="0" y="0" z="0" layer="Foreground" tag="Foreground">
+    <GameObject name="Foreground Top Rocks" x="0" y="0" z="0">
       <TileLayer offsetX="0" offsetY="0" />
-      <GameObject name="Outdoor_Tileset" x="-64" y="48" mesh="Map_Master_mesh_0083" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="-64" y="32" mesh="Map_Master_mesh_0084" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="-48" y="32" mesh="Map_Master_mesh_0085" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="16" y="32" mesh="Map_Master_mesh_0086" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="32" y="32" mesh="Map_Master_mesh_0087" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="48" y="32" mesh="Map_Master_mesh_0088" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="-64" y="16" mesh="Map_Master_mesh_0089" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="-48" y="16" mesh="Map_Master_mesh_0090" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="-32" y="16" mesh="Map_Master_mesh_0091" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="-16" y="16" mesh="Map_Master_mesh_0092" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="0" y="16" mesh="Map_Master_mesh_0093" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="16" y="16" mesh="Map_Master_mesh_0094" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="48" y="16" mesh="Map_Master_mesh_0095" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="64" y="16" mesh="Map_Master_mesh_0096" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="80" y="16" mesh="Map_Master_mesh_0097" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="48" y="0" mesh="Map_Master_mesh_0098" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="64" y="0" mesh="Map_Master_mesh_0099" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="80" y="0" mesh="Map_Master_mesh_0100" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="96" y="0" mesh="Map_Master_mesh_0101" sortingLayerName="Foreground" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-64" y="48" mesh="Map_Master_mesh_0083" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-64" y="32" mesh="Map_Master_mesh_0084" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-48" y="32" mesh="Map_Master_mesh_0085" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="16" y="32" mesh="Map_Master_mesh_0086" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="32" y="32" mesh="Map_Master_mesh_0087" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="48" y="32" mesh="Map_Master_mesh_0088" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-64" y="16" mesh="Map_Master_mesh_0089" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-48" y="16" mesh="Map_Master_mesh_0090" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-32" y="16" mesh="Map_Master_mesh_0091" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-16" y="16" mesh="Map_Master_mesh_0092" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="0" y="16" mesh="Map_Master_mesh_0093" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="16" y="16" mesh="Map_Master_mesh_0094" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="48" y="16" mesh="Map_Master_mesh_0095" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="64" y="16" mesh="Map_Master_mesh_0096" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="80" y="16" mesh="Map_Master_mesh_0097" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="48" y="0" mesh="Map_Master_mesh_0098" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="64" y="0" mesh="Map_Master_mesh_0099" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="80" y="0" mesh="Map_Master_mesh_0100" sortingLayerName="Background" sortingOrder="4" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="96" y="0" mesh="Map_Master_mesh_0101" sortingLayerName="Background" sortingOrder="4" opacity="1" />
     </GameObject>
     <GameObject name="Foreground Ground Tiles" x="0" y="0" z="0" layer="Foreground" tag="Foreground">
       <TileLayer offsetX="0" offsetY="0" />
@@ -709,30 +709,30 @@
     </GameObject>
     <GameObject name="Objects" x="0" y="0" z="0">
       <TileLayer offsetX="0" offsetY="0" />
-      <GameObject name="Outdoor_Tileset" x="-64" y="48" mesh="Map_Master_mesh_0137" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="-64" y="32" mesh="Map_Master_mesh_0138" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="-48" y="32" mesh="Map_Master_mesh_0139" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="16" y="32" mesh="Map_Master_mesh_0140" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="32" y="32" mesh="Map_Master_mesh_0141" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="48" y="32" mesh="Map_Master_mesh_0142" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="-48" y="16" mesh="Map_Master_mesh_0143" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="-32" y="16" mesh="Map_Master_mesh_0144" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="-32" y="16" mesh="Map_Master_mesh_0145" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="-16" y="16" mesh="Map_Master_mesh_0146" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="-16" y="16" mesh="Map_Master_mesh_0147" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="0" y="16" mesh="Map_Master_mesh_0148" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="0" y="16" mesh="Map_Master_mesh_0149" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="16" y="16" mesh="Map_Master_mesh_0150" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="32" y="16" mesh="Map_Master_mesh_0151" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="48" y="16" mesh="Map_Master_mesh_0152" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="48" y="16" mesh="Map_Master_mesh_0153" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="64" y="16" mesh="Map_Master_mesh_0154" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="80" y="16" mesh="Map_Master_mesh_0155" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="48" y="0" mesh="Map_Master_mesh_0156" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="64" y="0" mesh="Map_Master_mesh_0157" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="80" y="0" mesh="Map_Master_mesh_0158" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Outdoor_Tileset" x="96" y="0" mesh="Map_Master_mesh_0159" sortingLayerName="" sortingOrder="6" opacity="1" />
-      <GameObject name="Snow_Caps" x="96" y="0" mesh="Map_Master_mesh_0160" sortingLayerName="" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-64" y="48" mesh="Map_Master_mesh_0137" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="-64" y="32" mesh="Map_Master_mesh_0138" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="-48" y="32" mesh="Map_Master_mesh_0139" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="16" y="32" mesh="Map_Master_mesh_0140" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="32" y="32" mesh="Map_Master_mesh_0141" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="48" y="32" mesh="Map_Master_mesh_0142" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="-48" y="16" mesh="Map_Master_mesh_0143" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-32" y="16" mesh="Map_Master_mesh_0144" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="-32" y="16" mesh="Map_Master_mesh_0145" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="-16" y="16" mesh="Map_Master_mesh_0146" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="-16" y="16" mesh="Map_Master_mesh_0147" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="0" y="16" mesh="Map_Master_mesh_0148" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="0" y="16" mesh="Map_Master_mesh_0149" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="16" y="16" mesh="Map_Master_mesh_0150" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="32" y="16" mesh="Map_Master_mesh_0151" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="48" y="16" mesh="Map_Master_mesh_0152" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="48" y="16" mesh="Map_Master_mesh_0153" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="64" y="16" mesh="Map_Master_mesh_0154" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="80" y="16" mesh="Map_Master_mesh_0155" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="48" y="0" mesh="Map_Master_mesh_0156" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="64" y="0" mesh="Map_Master_mesh_0157" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="80" y="0" mesh="Map_Master_mesh_0158" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Outdoor_Tileset" x="96" y="0" mesh="Map_Master_mesh_0159" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
+      <GameObject name="Snow_Caps" x="96" y="0" mesh="Map_Master_mesh_0160" sortingLayerName="Foreground" sortingOrder="6" opacity="1" />
     </GameObject>
   </Prefab>
   <ImportMesh filename="Map_Master_mesh_0001.obj">IyBUaWxlZDJVbml0eSBnZW5lcmF0ZWQgZmlsZS4gRG8gbm90IG1vZGlmeSBieSBoYW5kLg0KIyBXYXZlZnJvbnQgZmlsZSBmb3IgJ01hcF9NYXN0ZXJfbWVzaF8wMDAxLm9iaicNCg0KIyBWZXJ0aWNlcyAoQ291bnQgPSA4MCkNCnYgLTEzIC04IDANCnYgLTE0IC04IDANCnYgLTE0IC03IDANCnYgLTEzIC03IDANCnYgLTE0IC04IDANCnYgLTE1IC04IDANCnYgLTE1IC03IDANCnYgLTE0IC03IDANCnYgLTE1IC04IDANCnYgLTE2IC04IDANCnYgLTE2IC03IDANCnYgLTE1IC03IDANCnYgLTEzIC05IDANCnYgLTE0IC05IDANCnYgLTE0IC04IDANCnYgLTEzIC04IDANCnYgLTE0IC05IDANCnYgLTE1IC05IDANCnYgLTE1IC04IDANCnYgLTE0IC04IDANCnYgLTE1IC05IDANCnYgLTE2IC05IDANCnYgLTE2IC04IDANCnYgLTE1IC04IDANCnYgLTEzIC0xMCAwDQp2IC0xNCAtMTAgMA0KdiAtMTQgLTkgMA0KdiAtMTMgLTkgMA0KdiAtMTQgLTEwIDANCnYgLTE1IC0xMCAwDQp2IC0xNSAtOSAwDQp2IC0xNCAtOSAwDQp2IC0xMyAtMTEgMA0KdiAtMTQgLTExIDANCnYgLTE0IC0xMCAwDQp2IC0xMyAtMTAgMA0KdiAtMTQgLTExIDANCnYgLTE1IC0xMSAwDQp2IC0xNSAtMTAgMA0KdiAtMTQgLTEwIDANCnYgLTEzIC0xMiAwDQp2IC0xNCAtMTIgMA0KdiAtMTQgLTExIDANCnYgLTEzIC0xMSAwDQp2IC0xNCAtMTIgMA0KdiAtMTUgLTEyIDANCnYgLTE1IC0xMSAwDQp2IC0xNCAtMTEgMA0KdiAtMTMgLTEzIDANCnYgLTE0IC0xMyAwDQp2IC0xNCAtMTIgMA0KdiAtMTMgLTEyIDANCnYgLTE0IC0xMyAwDQp2IC0xNSAtMTMgMA0KdiAtMTUgLTEyIDANCnYgLTE0IC0xMiAwDQp2IC0xMyAtMTQgMA0KdiAtMTQgLTE0IDANCnYgLTE0IC0xMyAwDQp2IC0xMyAtMTMgMA0KdiAtMTQgLTE0IDANCnYgLTE1IC0xNCAwDQp2IC0xNSAtMTMgMA0KdiAtMTQgLTEzIDANCnYgLTEzIC0xNSAwDQp2IC0xNCAtMTUgMA0KdiAtMTQgLTE0IDANCnYgLTEzIC0xNCAwDQp2IC0xNCAtMTUgMA0KdiAtMTUgLTE1IDANCnYgLTE1IC0xNCAwDQp2IC0xNCAtMTQgMA0KdiAtMTMgLTE2IDANCnYgLTE0IC0xNiAwDQp2IC0xNCAtMTUgMA0KdiAtMTMgLTE1IDANCnYgLTE0IC0xNiAwDQp2IC0xNSAtMTYgMA0KdiAtMTUgLTE1IDANCnYgLTE0IC0xNSAwDQoNCiMgVGV4dHVyZSBjb29yaWRpbmF0ZXMgKENvdW50ID0gNCkNCnZ0IDAuMSAwLjExMTExMTENCnZ0IDAuMiAwLjExMTExMTENCnZ0IDAuMiAwLjIyMjIyMjINCnZ0IDAuMSAwLjIyMjIyMjINCg0KIyBOb3JtYWwNCnZuIDAgMCAtMQ0KDQojIE1lc2ggZGVzY3JpcHRpb24NCmcgTWFwX01hc3Rlcl9tZXNoXzAwMDENCg0KIyBGYWNlcw0KZiAxLzEvMSAyLzIvMSAzLzMvMSA0LzQvMQpmIDUvMS8xIDYvMi8xIDcvMy8xIDgvNC8xCmYgOS8xLzEgMTAvMi8xIDExLzMvMSAxMi80LzEKZiAxMy8xLzEgMTQvMi8xIDE1LzMvMSAxNi80LzEKZiAxNy8xLzEgMTgvMi8xIDE5LzMvMSAyMC80LzEKZiAyMS8zLzEgMjIvNC8xIDIzLzEvMSAyNC8yLzEKZiAyNS8xLzEgMjYvMi8xIDI3LzMvMSAyOC80LzEKZiAyOS8xLzEgMzAvMi8xIDMxLzMvMSAzMi80LzEKZiAzMy8xLzEgMzQvMi8xIDM1LzMvMSAzNi80LzEKZiAzNy8xLzEgMzgvMi8xIDM5LzMvMSA0MC80LzEKZiA0MS8xLzEgNDIvMi8xIDQzLzMvMSA0NC80LzEKZiA0NS8xLzEgNDYvMi8xIDQ3LzMvMSA0OC80LzEKZiA0OS8xLzEgNTAvMi8xIDUxLzMvMSA1Mi80LzEKZiA1My8xLzEgNTQvMi8xIDU1LzMvMSA1Ni80LzEKZiA1Ny8xLzEgNTgvMi8xIDU5LzMvMSA2MC80LzEKZiA2MS8xLzEgNjIvMi8xIDYzLzMvMSA2NC80LzEKZiA2NS8xLzEgNjYvMi8xIDY3LzMvMSA2OC80LzEKZiA2OS8xLzEgNzAvMi8xIDcxLzMvMSA3Mi80LzEKZiA3My8xLzEgNzQvMi8xIDc1LzMvMSA3Ni80LzEKZiA3Ny8xLzEgNzgvMi8xIDc5LzMvMSA4MC80LzEKDQo=</ImportMesh>

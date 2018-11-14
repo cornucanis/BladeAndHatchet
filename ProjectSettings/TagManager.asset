@@ -12,6 +12,8 @@ TagManager:
   - Chain
   - Powerup
   - DropThrough
+  - Enemy
+  - Hazard
   layers:
   - Default
   - TransparentFX
