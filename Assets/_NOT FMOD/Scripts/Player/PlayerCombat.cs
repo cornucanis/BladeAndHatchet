@@ -24,6 +24,8 @@ public class PlayerCombat : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerStatus = GetComponent<PlayerStatus> ();
+		axeHealth = maxHealth;
+		swordHealth = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -34,14 +36,14 @@ public class PlayerCombat : MonoBehaviour {
 			} else {
 				if (currentState == PlayerStatus.State.Attack && playerStatus.attackAnimEnded == false) {
 					
-					Debug.Log ("Queue set to " + Mathf.Min (3, Mathf.Max(highestQueuedCombo + 1, comboCount + 1)) + " and the last hit was " + comboCount);
+					//Debug.Log ("Queue set to " + Mathf.Min (3, Mathf.Max(highestQueuedCombo + 1, comboCount + 1)) + " and the last hit was " + comboCount);
 					highestQueuedCombo = Mathf.Min (3, Mathf.Max(highestQueuedCombo + 1, comboCount + 1));
 					if (highestQueuedCombo == 1) {
 						highestQueuedCombo = 0;
 					}
 				} else {
 					if (comboCount > 0 && Time.time > comboWindowEnd) {
-						Debug.Log ("Combo window expired");
+						//Debug.Log ("Combo window expired");
 						comboCount = 0;
 						highestQueuedCombo = 0;
 					}
@@ -96,7 +98,9 @@ public class PlayerCombat : MonoBehaviour {
 		} else {
 			axeHealth -= damage;
 		}
+		//Debug.Log ("Took " + damage + " damage. Remaining: " + axeHealth + swordHealth);
 		if (swordHealth <= 0 || axeHealth <= 0) {
+			//Debug.Log ("Dead. " + axeHealth + swordHealth);
 			Die ();
 		}
 	}

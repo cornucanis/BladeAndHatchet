@@ -100,20 +100,15 @@ public class RoomTransitionHandler : MonoBehaviour {
 		switch (dir) {
 			case RoomTransitionTrigger.Direction.Left:
 				return Vector2.left;
-				break;
 			case RoomTransitionTrigger.Direction.Right:
 				return Vector2.right;
-				break;
 			case RoomTransitionTrigger.Direction.Up:
 				return Vector2.up;
-				break;
 			case RoomTransitionTrigger.Direction.Down:
 				return Vector2.down;
-				break;
 			default:
 				Debug.LogWarning ("Direction to vector method called with no valid direction??");
 				return Vector2.zero;
-				break;
 		}
 	}
 }
