@@ -9,6 +9,7 @@ public class DeadSaintFireball : MonoBehaviour {
 	[SerializeField] float fireballSpeed = 3f;
 	[SerializeField] float rotationalSpeed = 180f;
 	[SerializeField] float idleDelay = 2.5f;
+	[SerializeField] float verticalAimingOffset = 1f;
 
 	public Transform playerTransform;
 	public Transform fireballHome;
@@ -89,7 +90,7 @@ public class DeadSaintFireball : MonoBehaviour {
 	}
 
 	void HomingEnter() {
-		Vector2 newVelocity = playerTransform.position - transform.position;
+		Vector2 newVelocity = (playerTransform.position + Vector3.up * verticalAimingOffset) - transform.position;
 		rb.velocity = newVelocity.normalized * fireballSpeed;
 		rb.freezeRotation = false;
 		float zRotation = Mathf.Atan2( newVelocity.y, newVelocity.x )*Mathf.Rad2Deg;

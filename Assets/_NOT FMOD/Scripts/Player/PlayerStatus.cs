@@ -45,7 +45,7 @@ public class PlayerStatus : MonoBehaviour {
 			return frozen;
 		}
 		set {
-			Debug.Log ("frozen set to " + value);
+			//Debug.Log ("frozen set to " + value);
 			frozen = value;
 		}
 	}
@@ -95,6 +95,9 @@ public class PlayerStatus : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (frozen) {
+			Debug.Log ("Current velocity: " + rb.velocity);
+		}
 		CheckInput ();
 		Invoke (currentState.ToString () + "Stay", 0f);
 		TrackWeapon ();
@@ -160,7 +163,7 @@ public class PlayerStatus : MonoBehaviour {
 		falling = true;
 		Invoke("JumpState", 0.05f);
 		jumpMode = 1;
-		Debug.Log ("Fall triggered");
+		//Debug.Log ("Fall triggered");
 		rb.velocity = new Vector2(rb.velocity.x, Mathf.Min(rb.velocity.y, 0.00001f));
 		anim.SetInteger ("jumpMode", 1);
 		anim.SetTrigger ("fall");
@@ -276,7 +279,7 @@ public class PlayerStatus : MonoBehaviour {
 
 
 	public void Launch() {
-		Debug.Log ("Launch");
+		//Debug.Log ("Launch");
 		rb.velocity = storedVelocity;
 		storedVelocity = Vector2.zero;
 		rb.AddForce (new Vector2 (0f, isSword ? swordJumpforce : axeJumpForce));

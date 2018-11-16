@@ -18,10 +18,8 @@ public class PlayerWeapon : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log (other.name);
 		EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
 		if (enemy) {
-			Debug.Log ("Enemy confirmed");
 			enemy.TakeDamage (currentDamage);
 		}
 	}

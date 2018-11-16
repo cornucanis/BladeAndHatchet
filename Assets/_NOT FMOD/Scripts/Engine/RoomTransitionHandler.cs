@@ -85,10 +85,13 @@ public class RoomTransitionHandler : MonoBehaviour {
 		playerStatus.SetGravityEnabled (false);
 		//playerStatus.CurrentState = PlayerStatus.State.Walk;
 		playerStatus.SetVelocity ((directionalVector * transitionalDistance) / roomTransitionTime);
+		Debug.Log ("Intended v: " + (directionalVector * transitionalDistance) / roomTransitionTime + ", actual v: " + playerStatus.GetComponent<Rigidbody2D> ().velocity);
 		while (Time.time < finishTime) {
 			cam.transform.position = Vector3.Lerp (camInitialPos, camFinalPos, (Time.time - startTime) / transitionTime);
 			yield return null;
 		}
+		Debug.Log ("FINAL Intended v: " + (directionalVector * transitionalDistance) / roomTransitionTime + ", FINAL actual v: " + playerStatus.GetComponent<Rigidbody2D> ().velocity);
+
 		currentRoom = newRoom;
 		UpdateCameraBounds (currentRoom.bounds);
 		cam.m_Follow = playerStatus.transform;
