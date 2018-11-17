@@ -346,6 +346,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
+  - time: 0.2857143
+    functionName: AddForce
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 200
+    intParameter: 0
+    messageOptions: 0
   - time: 0.42857143
     functionName: EndAttackAnimation
     data: 

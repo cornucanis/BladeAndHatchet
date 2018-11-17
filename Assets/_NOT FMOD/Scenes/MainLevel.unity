@@ -7628,7 +7628,7 @@ Prefab:
     - target: {fileID: 114730423218457648, guid: 914502e5c64be6a4ea3206b2d8a41dce,
         type: 2}
       propertyPath: swordJumpforce
-      value: 1550
+      value: 1045
       objectReference: {fileID: 0}
     - target: {fileID: 50031949044892718, guid: 914502e5c64be6a4ea3206b2d8a41dce,
         type: 2}
@@ -7701,12 +7701,17 @@ Prefab:
     - target: {fileID: 114730423218457648, guid: 914502e5c64be6a4ea3206b2d8a41dce,
         type: 2}
       propertyPath: axeJumpForce
-      value: 1230
+      value: 920
       objectReference: {fileID: 0}
     - target: {fileID: 114730423218457648, guid: 914502e5c64be6a4ea3206b2d8a41dce,
         type: 2}
       propertyPath: attackAnimEnded
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50031949044892718, guid: 914502e5c64be6a4ea3206b2d8a41dce,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 914502e5c64be6a4ea3206b2d8a41dce, type: 2}
@@ -8225,11 +8230,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4254006559856512, guid: e1e1a720ecceda0468621e7faba1aef2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.07
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4254006559856512, guid: e1e1a720ecceda0468621e7faba1aef2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1e1a720ecceda0468621e7faba1aef2, type: 2}

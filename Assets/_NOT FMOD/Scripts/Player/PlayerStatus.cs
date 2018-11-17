@@ -95,9 +95,6 @@ public class PlayerStatus : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (frozen) {
-			Debug.Log ("Current velocity: " + rb.velocity);
-		}
 		CheckInput ();
 		Invoke (currentState.ToString () + "Stay", 0f);
 		TrackWeapon ();
@@ -184,6 +181,7 @@ public class PlayerStatus : MonoBehaviour {
 		anim.SetBool (newStateName, true);
 		playerMovement.currentState = currentState;
 		playerCombat.currentState = currentState;
+		//ResetPosition ();
 	}
 
 	private void CharacterSwap() {
@@ -211,6 +209,16 @@ public class PlayerStatus : MonoBehaviour {
 		weaponSprite.enabled = !armed;
 		anim.SetBool ("armed", armed);
 		anim.SetFloat ("armedFloat", armed ? 1f : 0f);
+	}
+
+	public void ResetPosition() {
+		Vector3 offset = transform.localPosition;
+		transform.localPosition = Vector3.zero;
+		transform.parent.position += offset;
+	}
+
+	public void AddForce (float addedForce) {
+		rb.AddForce (new Vector2 (addedForce, 0f));
 	}
 
 	#region bool checks
@@ -361,7 +369,7 @@ public class PlayerStatus : MonoBehaviour {
 		if (jumpMode == 0 && rb.velocity.y <= 0f) {
 			jumpMode = 1;
 			anim.SetInteger ("jumpMode", 1);
-		} else if (jumpMode == 1 && Mathf.Abs (rb.velocity.y) < Mathf.Epsilon) {
+		} else if (jumpMode == 1 && Mathf.Abs (rb.velocity.y) < Mathf.Epsilon && !frozen) {
 			//Debug.Log ("Reset jump. velocity: " + rb.velocity.y + ", epsilon: " + Mathf.Epsilon);
 			jumpMode = 2;
 			anim.SetInteger ("jumpMode", 2);

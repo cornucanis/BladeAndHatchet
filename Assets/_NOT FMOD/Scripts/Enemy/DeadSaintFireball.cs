@@ -12,7 +12,7 @@ public class DeadSaintFireball : MonoBehaviour {
 	[SerializeField] float verticalAimingOffset = 1f;
 
 	public Transform playerTransform;
-	public Transform fireballHome;
+	public Vector3 fireballHome;
 	Rigidbody2D rb;
 	State currentState;
 	Animator anim;
@@ -63,11 +63,11 @@ public class DeadSaintFireball : MonoBehaviour {
 	#region State Methods
 
 	void AppearingEnter() {
-
+		rb.velocity = Vector2.up * 3.5f;
 	}
 
 	void AppearingExit() {
-
+		rb.velocity = Vector2.zero;
 	}
 
 	void AppearingStay() {
@@ -76,17 +76,18 @@ public class DeadSaintFireball : MonoBehaviour {
 
 	void IdleEnter() {
 		fireTime = Time.time + idleDelay;
+		transform.localScale = new Vector3 (1, -1, 1);
 	}
 
 	void IdleExit() {
-
+		transform.localScale = new Vector3 (1, 1, 1);
 	}
 
 	void IdleStay() {
 		if (Time.time >= fireTime) {
 			CurrentState = State.Homing;
 		}
-		transform.RotateAround (fireballHome.position, Vector3.back, rotationalSpeed * Time.deltaTime);
+		transform.RotateAround (fireballHome, Vector3.forward, rotationalSpeed * Time.deltaTime);
 	}
 
 	void HomingEnter() {

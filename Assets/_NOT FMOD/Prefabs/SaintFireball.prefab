@@ -109,11 +109,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireballDamage: 1
-  fireballSpeed: 8
+  fireballSpeed: 9
   rotationalSpeed: 180
   idleDelay: 2.5
+  verticalAimingOffset: 1
   playerTransform: {fileID: 0}
-  fireballHome: {fileID: 0}
+  fireballHome: {x: 0, y: 0, z: 0}
 --- !u!212 &212520947943971536
 SpriteRenderer:
   m_ObjectHideFlags: 1

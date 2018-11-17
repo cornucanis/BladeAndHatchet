@@ -78,12 +78,14 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void StopMovement() {
+		//Debug.Log ("Stop Movement method called");
 		rb.velocity = Vector2.zero;
 	}
 
 	public void OnWalkStay() {
 
 		if (Mathf.Abs (horizontalInput) < Mathf.Epsilon && !playerStatus.Frozen) {
+			//Debug.Log ("Reset velocity by onwalkstay");
 			rb.velocity = Vector2.zero;
 			playerStatus.CurrentState = PlayerStatus.State.Idle;
 		}

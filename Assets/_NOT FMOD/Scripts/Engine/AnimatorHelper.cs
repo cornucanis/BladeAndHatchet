@@ -32,4 +32,14 @@ public class AnimatorHelper : MonoBehaviour {
 	public void SetWeaponDamage(int newDamage) {
 		weapon.currentDamage = newDamage;
 	}
+
+	public void ResetPosition() {
+		Vector3 offset = playerStatus.transform.localPosition;
+		playerStatus.transform.localPosition = Vector3.zero;
+		transform.position += offset;
+	}
+
+	public void AddForce(float addedForce) {
+		playerStatus.AddForce (addedForce);
+	}
 }
