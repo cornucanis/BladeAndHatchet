@@ -62,6 +62,7 @@ public class DeadSaint : Enemy {
 			DeadSaintFireball newBall = Instantiate (fireballPrefab, transform.position, Quaternion.identity).GetComponent<DeadSaintFireball> ();
 			newBall.playerTransform = playerTransform;
 			newBall.fireballHome = fireballHome.position;
+			newBall.fireballNumber = i;
 			yield return delay;	
 		}
 		nextSalvoTime = Time.time + (fireballCooldown - fireballDelay);

@@ -9,6 +9,7 @@ public class DeadSaintFireball : MonoBehaviour {
 	[SerializeField] float fireballSpeed = 3f;
 	[SerializeField] float rotationalSpeed = 180f;
 	[SerializeField] float idleDelay = 2.5f;
+	[SerializeField] float delayDecayFactor = 0.9f;
 	[SerializeField] float verticalAimingOffset = 1f;
 
 	public Transform playerTransform;
@@ -17,6 +18,7 @@ public class DeadSaintFireball : MonoBehaviour {
 	State currentState;
 	Animator anim;
 	float fireTime;
+	[HideInInspector] public int fireballNumber;
 
 
 	public enum State {Appearing, Idle, Homing}
@@ -75,7 +77,7 @@ public class DeadSaintFireball : MonoBehaviour {
 	}
 
 	void IdleEnter() {
-		fireTime = Time.time + idleDelay;
+		fireTime = Time.time + idleDelay * Mathf.Pow(delayDecayFactor, fireballNumber);
 		transform.localScale = new Vector3 (1, -1, 1);
 	}
 

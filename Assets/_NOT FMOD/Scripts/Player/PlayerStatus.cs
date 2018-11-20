@@ -15,6 +15,13 @@ public class PlayerStatus : MonoBehaviour {
 	[SerializeField] SpriteRenderer characterSprite;
 	[SerializeField] SpriteRenderer weaponSprite;
 
+	[Header("Weapon Collider Parameters")]
+	[SerializeField] BoxCollider2D weaponColl;
+	[SerializeField] Vector2 swordFinisherOffset;
+	[SerializeField] Vector2 swordFinisherSize;
+	[SerializeField] Vector2 axeFinisherOffset;
+	[SerializeField] Vector2 axeFinisherSize;
+
 	public static List<SpriteRenderer> palList;
 
 	//cached references
@@ -36,7 +43,8 @@ public class PlayerStatus : MonoBehaviour {
 	bool falling = false;
 	[HideInInspector] public bool attackAnimEnded = false;
 	Vector2 storedVelocity = Vector2.zero;
-
+	Vector2 weaponCollOffset;
+	Vector2 weaponCollSize;
 
 	public enum State {Idle, Walk, Jump, Attack, Stunned, Death}
 
@@ -91,6 +99,8 @@ public class PlayerStatus : MonoBehaviour {
 	void Start () {
 		jumpMask = LayerMask.GetMask ("Foreground");
 		initialGravity = rb.gravityScale;
+		weaponCollOffset = weaponColl.offset;
+		weaponCollSize = weaponColl.size;
 	}
 	
 	// Update is called once per frame
@@ -174,7 +184,9 @@ public class PlayerStatus : MonoBehaviour {
 	public void ChangeStates(State newState) {
 		string currentStateName = currentState.ToString ();
 		string newStateName = newState.ToString ();
-		Invoke (currentStateName + "Exit", 0f);
+		if (currentState != State.Attack || newState != State.Attack) { 
+			Invoke (currentStateName + "Exit", 0f);
+		}
 		currentState = newState;
 		Invoke (newStateName + "Enter", 0f);
 		anim.SetBool (currentStateName, false);
@@ -185,17 +197,19 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	private void CharacterSwap() {
-		isSword = !isSword;
-		playerCombat.isSword = isSword;
-		anim.SetBool ("isSword", isSword);
-		anim.SetFloat ("isSwordFloat", isSword ? 1f : 0f);
-		Vector3 charPos = characterSprite.transform.position;
-		characterSprite.transform.position = weaponSprite.transform.position;
-		weaponSprite.transform.position = charPos;
-		if (isSword) {
+		if (CanSwitch()) {
+			isSword = !isSword;
+			playerCombat.isSword = isSword;
+			anim.SetBool ("isSword", isSword);
+			anim.SetFloat ("isSwordFloat", isSword ? 1f : 0f);
+			Vector3 charPos = characterSprite.transform.position;
+			characterSprite.transform.position = weaponSprite.transform.position;
+			weaponSprite.transform.position = charPos;
+			if (isSword) {
 			
-		} else {
+			} else {
 
+			}
 		}
 	}
 
@@ -218,10 +232,18 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	public void AddForce (float addedForce) {
+		addedForce = playerMovement.facingRight ? addedForce : -addedForce;
 		rb.AddForce (new Vector2 (addedForce, 0f));
 	}
 
 	#region bool checks
+
+	public bool CanSwitch() {
+		if (currentState == State.Attack || currentState == State.Stunned || currentState == State.Death || frozen) {
+			return false;
+		}
+		return true;
+	}
 
 	public bool CanMove() {
 		if (currentState == State.Attack && attackAnimEnded == false) {
@@ -298,6 +320,29 @@ public class PlayerStatus : MonoBehaviour {
 		anim.SetInteger ("attackMode", attackMode);
 		playerCombat.ResetComboWindow ();
 		ChangeStates (State.Attack);
+		if (playerMovement.facingRight) {
+			weaponCollOffset.x = Mathf.Abs (weaponCollOffset.x);
+			swordFinisherOffset.x = Mathf.Abs (swordFinisherOffset.x);
+			axeFinisherOffset.x = Mathf.Abs (axeFinisherOffset.x);
+		} else {
+			weaponCollOffset.x = -Mathf.Abs (weaponCollOffset.x);
+			swordFinisherOffset.x = -Mathf.Abs (swordFinisherOffset.x);
+			axeFinisherOffset.x = -Mathf.Abs (axeFinisherOffset.x);
+		}
+		//Debug.Log ((playerMovement.facingRight ? "Facing right. Offset: " : "Facing left. Offset: ") + weaponColl.offset + ", " + -Mathf.Abs (weaponColl.offset.x));
+		if (attackMode == 3) {
+			if (isSword) {
+				weaponColl.size = swordFinisherSize;
+				weaponColl.offset = swordFinisherOffset;
+			} else {
+				weaponColl.size = axeFinisherSize;
+				weaponColl.offset = axeFinisherOffset;
+				//Debug.Log ("current: " + weaponColl.offset + ", intended: " + axeFinisherOffset);
+			}
+		} else {
+			weaponColl.size = weaponCollSize;
+			weaponColl.offset = weaponCollOffset;
+		}
 		attackAnimEnded = false;
 	}
 
@@ -345,15 +390,18 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	void AttackEnter() {
-		rb.velocity = Vector2.zero;
+		if (rb.velocity.magnitude > 1f) {
+			rb.velocity *= 0.4f;
+		}
 	}
 
 	void AttackExit() {
 		weapon.currentDamage = 0;
+		weaponColl.offset = weaponCollOffset;
 	}
 
 	void AttackStay() {
-
+		//Debug.Log (weaponColl.offset);
 	}
 
 	void JumpEnter() {

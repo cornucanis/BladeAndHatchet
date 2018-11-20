@@ -8,6 +8,7 @@ public class AnimatorHelper : MonoBehaviour {
 	PlayerMovement playerMovement;
 	PlayerCombat playerCombat;
 	PlayerWeapon weapon;
+	Rigidbody2D rb;
 
 
 	void Awake() {
@@ -15,6 +16,7 @@ public class AnimatorHelper : MonoBehaviour {
 		playerMovement = GetComponentInChildren<PlayerMovement> ();
 		playerCombat = GetComponentInChildren<PlayerCombat> ();
 		weapon = GetComponentInChildren<PlayerWeapon> ();
+		rb = playerStatus.GetComponent<Rigidbody2D> ();
 	}
 
 	public void ChangeState(PlayerStatus.State newState) {
@@ -41,5 +43,9 @@ public class AnimatorHelper : MonoBehaviour {
 
 	public void AddForce(float addedForce) {
 		playerStatus.AddForce (addedForce);
+	}
+
+	public void ResetVelocity() {
+		rb.velocity = Vector2.zero;
 	}
 }

@@ -42,7 +42,7 @@ public class SFXAnimationsChar : MonoBehaviour {
         if (fallImpact > 30f)
         {
             FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.FALL_STONE, GetComponent<Transform>().position);
-            Debug.Log("Hard fall impact");
+            //Debug.Log("Hard fall impact");
         }
         else 
         {
@@ -52,7 +52,7 @@ public class SFXAnimationsChar : MonoBehaviour {
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(fallSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
             fallSFX.setParameterValue(FMODPaths.FALL_IMPACT, fallImpact);
             fallSFX.start();
-            Debug.Log("Light fall impact");
+            //Debug.Log("Light fall impact");
         }
       
     }

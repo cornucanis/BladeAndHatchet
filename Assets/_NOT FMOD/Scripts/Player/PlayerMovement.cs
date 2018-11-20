@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 	float horizontalInput;
 	float verticalInput;
 	public PlayerStatus.State currentState;
-	bool facingRight = true;
+	[HideInInspector] public bool facingRight = true;
 
 	// Use this for initialization
 	void Start () {
