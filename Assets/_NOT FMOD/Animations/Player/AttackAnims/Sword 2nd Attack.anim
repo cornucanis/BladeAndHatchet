@@ -343,6 +343,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
+  - time: 0
+    functionName: AttackSFX_2
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 39ad6d6610c87cc40940f6631901ad96,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.42857143
     functionName: EndAttackAnimation
     data: 

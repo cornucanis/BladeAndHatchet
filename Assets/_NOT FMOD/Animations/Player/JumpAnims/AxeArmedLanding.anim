@@ -66,6 +66,22 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
+  - time: 0
+    functionName: FallSFX
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 39ad6d6610c87cc40940f6631901ad96,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: FallSFX
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 39ad6d6610c87cc40940f6631901ad96,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.14285715
     functionName: ChangeState
     data: 

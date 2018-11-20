@@ -1,0 +1,12 @@
+{890a26b1-80f7-43be-a400-e2c0b9d06b50} event:/char/footsteps_stone
+{9df8c65e-ea6a-4cf2-8c13-92bed9b1171e} event:/char/attack_1
+{5b391064-bd13-43f5-ac6a-031985b1251f} event:/char/attack_2
+{2ed4559d-92dc-4762-b77a-c6d48d521604} event:/char/attack_3
+{2109f611-31cb-47cd-a9ed-8e1f7dd2aea3} event:/char/fall_snow
+{84b8b7ee-854c-4679-9417-2c7a93c9fd90} event:/char/fall_snow_light
+{9cf6f50c-cf0f-48cb-9315-126534e0d2f3} event:/char/fall_stone
+{5fb27fb8-9c45-485b-bf95-8fe00dacd716} event:/char/fall_stone_light
+{ff8e6a5c-38b1-44ac-aeca-91b2bd64f502} event:/char/jump
+{0d3a444a-f557-4d5a-b594-85763a4259e0} bus:/
+{e7c6bb2a-75fa-49ae-9c9a-e61ab53c2616} bus:/Reverb
+{b39b07fa-e146-4baa-a257-c633f3a61fd6} bank:/Master Bank
