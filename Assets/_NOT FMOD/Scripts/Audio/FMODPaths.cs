@@ -14,6 +14,9 @@
     public static readonly string JUMP = "event:/char/jump";
 
 
+    // ambience
+    public static readonly string AMBIENCE_OUTSIDE = "event:/game/wind";
+
 
     // PARAMETERS
     public static readonly string FALL_IMPACT = "Impact";

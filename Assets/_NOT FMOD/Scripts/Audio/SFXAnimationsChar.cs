@@ -59,7 +59,7 @@ public class SFXAnimationsChar : MonoBehaviour {
 
     public void FootstepsSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.FALL_STONE_LIGHT, GetComponent<Transform>().position);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.FOOTSTEPS_STONE, GetComponent<Transform>().position);
     }
 
     void OnCollisionEnter2D(Collision2D col)

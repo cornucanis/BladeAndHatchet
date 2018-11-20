@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114012209361250842}
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   EditorEvents:
   - {fileID: 114752052865400908}
   - {fileID: 114592905044579656}
@@ -24,9 +24,10 @@ MonoBehaviour:
   - {fileID: 114458657172034450}
   - {fileID: 114157107605660460}
   - {fileID: 114166958205999438}
-  MasterBankRef: {fileID: 114802234448126290}
+  - {fileID: 114276371470939218}
+  MasterBankRef: {fileID: 114440648211825114}
   StringsBankRef: {fileID: 114012209361250842}
-  stringsBankWriteTime: 636782505690020468
+  stringsBankWriteTime: 636783385613475680
   cacheVersion: 2
 --- !u!114 &114012209361250842
 MonoBehaviour:
@@ -40,11 +41,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636782505690020468
+  lastModified: 636783385613475680
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1086
+    Value: 1138
   Exists: 1
 --- !u!114 &114136919681103086
 MonoBehaviour:
@@ -75,7 +76,7 @@ MonoBehaviour:
   Path: event:/char/fall_snow_light
   guid: eeb7b8844c85794694172c7a93c9fd90
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -97,7 +98,7 @@ MonoBehaviour:
   Path: event:/char/attack_3
   guid: 9d55d42edc926247b77ac6d48d521604
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -119,7 +120,7 @@ MonoBehaviour:
   Path: event:/char/jump
   guid: 5c6a8effb138ac44aeca91b2bd64f502
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -156,7 +157,7 @@ MonoBehaviour:
   Path: event:/char/attack_2
   guid: 6410395b13bdf543ac6a031985b1251f
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -164,6 +165,28 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 522
+--- !u!114 &114276371470939218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/game/wind
+  guid: ed680a1ef159ba40bbc55123282bbbbc
+  Banks:
+  - {fileID: 114440648211825114}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 8000
 --- !u!114 &114288497661381638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +235,24 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114440648211825114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Git Projects\BladeAndHatchet\Assets\FMOD Banks\Desktop\Master Bank.bank
+  lastModified: 636783385613435684
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1801408
+  Exists: 1
 --- !u!114 &114454193221250774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +267,7 @@ MonoBehaviour:
   Path: event:/char/footsteps_stone
   guid: b1260a89f780be43a400e2c0b9d06b50
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -248,15 +289,30 @@ MonoBehaviour:
   Path: event:/char/fall_stone_light
   guid: b87fb25f459c5b48bf958fe00dacd716
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114136919681103086}
+  - {fileID: 114767467609405360}
   MinDistance: 15
   MaxDistance: 85
   Length: 427
+--- !u!114 &114569175805062102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114582948841019706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +342,7 @@ MonoBehaviour:
   Path: event:/char/fall_snow
   guid: 11f60921cb31cd47a9ed8e1f7dd2aea3
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -294,6 +350,21 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 476
+--- !u!114 &114636476152411174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114726892888615026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +409,7 @@ MonoBehaviour:
   Path: event:/char/fall_stone
   guid: 0cf5f69c0fcfcb489315126534e0d2f3
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -346,6 +417,21 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 538
+--- !u!114 &114767467609405360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114802234448126290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +450,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 67264
   Exists: 1
+--- !u!114 &114810154296364300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114830574312691822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +524,7 @@ MonoBehaviour:
   Path: event:/char/attack_1
   guid: 5ec6f89d6aeaf24c8c1392bed9b1171e
   Banks:
-  - {fileID: 114802234448126290}
+  - {fileID: 114440648211825114}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
