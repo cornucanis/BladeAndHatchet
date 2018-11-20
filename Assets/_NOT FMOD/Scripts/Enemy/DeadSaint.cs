@@ -21,8 +21,6 @@ public class DeadSaint : Enemy {
 
 	State currentState;
 	Animator anim;
-	PlayerMovement playerMovement;
-	PlayerCombat playerCombat;
 
 	float nextSalvoTime = 0f;
 
