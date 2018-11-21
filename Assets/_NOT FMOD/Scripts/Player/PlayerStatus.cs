@@ -21,6 +21,8 @@ public class PlayerStatus : MonoBehaviour {
 	[SerializeField] Vector2 swordFinisherSize;
 	[SerializeField] Vector2 axeFinisherOffset;
 	[SerializeField] Vector2 axeFinisherSize;
+	[SerializeField] Vector2 thrownOffset;
+	[SerializeField] Vector2 thrownSize;
 
 	public static List<SpriteRenderer> palList;
 
@@ -43,6 +45,7 @@ public class PlayerStatus : MonoBehaviour {
 	bool falling = false;
 	[HideInInspector] public bool attackAnimEnded = false;
 	Vector2 storedVelocity = Vector2.zero;
+	Vector3 weaponPositionOffset;
 	Vector2 weaponCollOffset;
 	Vector2 weaponCollSize;
 
@@ -85,6 +88,18 @@ public class PlayerStatus : MonoBehaviour {
 		}	
 	}
 
+	public bool Armed {
+		get {
+			return armed;
+		}
+		set {
+			armed = value;
+			weaponSprite.enabled = !armed;
+			anim.SetBool ("armed", armed);
+			anim.SetFloat ("armedFloat", armed ? 1f : 0f);
+		}
+	}
+
 	void Awake() {
 		anim = GetComponentInParent<Animator> ();
 		playerMovement = GetComponent<PlayerMovement> ();
@@ -101,6 +116,7 @@ public class PlayerStatus : MonoBehaviour {
 		initialGravity = rb.gravityScale;
 		weaponCollOffset = weaponColl.offset;
 		weaponCollSize = weaponColl.size;
+		weaponPositionOffset = weaponSprite.transform.position - transform.position;
 	}
 	
 	// Update is called once per frame
@@ -129,7 +145,8 @@ public class PlayerStatus : MonoBehaviour {
 
 	void TrackWeapon() {
 		if (armed) {
-			weaponSprite.transform.position = transform.position;
+			weaponSprite.transform.position = transform.position + weaponPositionOffset;
+			//Debug.Log ("weapon position updated due to being armed");
 		}
 	}
 
@@ -200,11 +217,16 @@ public class PlayerStatus : MonoBehaviour {
 		if (CanSwitch()) {
 			isSword = !isSword;
 			playerCombat.isSword = isSword;
+			weapon.isSword = isSword;
 			anim.SetBool ("isSword", isSword);
 			anim.SetFloat ("isSwordFloat", isSword ? 1f : 0f);
 			Vector3 charPos = characterSprite.transform.position;
-			characterSprite.transform.position = weaponSprite.transform.position;
-			weaponSprite.transform.position = charPos;
+			if (armed) {
+
+			} else {
+				characterSprite.transform.position = weaponSprite.transform.position;
+				weaponSprite.transform.position = charPos;
+			}
 			if (isSword) {
 			
 			} else {
@@ -214,15 +236,14 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	private void ThrowWeapon() {
-		if (armed) {
-			armed = false;
-
-		} else {
-			armed = true;
+		if (CanThrow ()) {
+			if (armed) {
+				Armed = false;
+				weapon.Throw (playerMovement.facingRight);
+			} else {
+				weapon.Recall ();
+			}
 		}
-		weaponSprite.enabled = !armed;
-		anim.SetBool ("armed", armed);
-		anim.SetFloat ("armedFloat", armed ? 1f : 0f);
 	}
 
 	public void ResetPosition() {
@@ -264,6 +285,13 @@ public class PlayerStatus : MonoBehaviour {
 				return true;
 		}
 		return false; 
+	}
+
+	public bool CanThrow() {
+		if (currentState != State.Death && currentState != State.Stunned && CurrentState != State.Jump && CurrentState != State.Attack && !frozen) {
+			return true;
+		}
+		return false;
 	}
 
 	public bool CanAttack() {

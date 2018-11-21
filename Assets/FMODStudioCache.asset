@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114012209361250842}
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   EditorEvents:
   - {fileID: 114752052865400908}
   - {fileID: 114592905044579656}
@@ -25,9 +25,9 @@ MonoBehaviour:
   - {fileID: 114157107605660460}
   - {fileID: 114166958205999438}
   - {fileID: 114276371470939218}
-  MasterBankRef: {fileID: 114440648211825114}
+  MasterBankRef: {fileID: 114593272473555036}
   StringsBankRef: {fileID: 114012209361250842}
-  stringsBankWriteTime: 636783385613475680
+  stringsBankWriteTime: 636783633414710513
   cacheVersion: 2
 --- !u!114 &114012209361250842
 MonoBehaviour:
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636783385613475680
+  lastModified: 636783633414710513
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -76,7 +76,7 @@ MonoBehaviour:
   Path: event:/char/fall_snow_light
   guid: eeb7b8844c85794694172c7a93c9fd90
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -98,7 +98,7 @@ MonoBehaviour:
   Path: event:/char/attack_3
   guid: 9d55d42edc926247b77ac6d48d521604
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -120,7 +120,7 @@ MonoBehaviour:
   Path: event:/char/jump
   guid: 5c6a8effb138ac44aeca91b2bd64f502
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -129,6 +129,21 @@ MonoBehaviour:
   MaxDistance: 85
   Length: 667
 --- !u!114 &114174014558706134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
+--- !u!114 &114206536881396386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,7 +172,7 @@ MonoBehaviour:
   Path: event:/char/attack_2
   guid: 6410395b13bdf543ac6a031985b1251f
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -179,7 +194,7 @@ MonoBehaviour:
   Path: event:/game/wind
   guid: ed680a1ef159ba40bbc55123282bbbbc
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -267,7 +282,7 @@ MonoBehaviour:
   Path: event:/char/footsteps_stone
   guid: b1260a89f780be43a400e2c0b9d06b50
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -289,12 +304,12 @@ MonoBehaviour:
   Path: event:/char/fall_stone_light
   guid: b87fb25f459c5b48bf958fe00dacd716
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114767467609405360}
+  - {fileID: 114206536881396386}
   MinDistance: 15
   MaxDistance: 85
   Length: 427
@@ -342,7 +357,7 @@ MonoBehaviour:
   Path: event:/char/fall_snow
   guid: 11f60921cb31cd47a9ed8e1f7dd2aea3
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -350,6 +365,24 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 476
+--- !u!114 &114593272473555036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Owner\Repos\BladeHatchetDev\Assets\FMOD Banks\Desktop\Master Bank.bank
+  lastModified: 636783633414685184
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1799040
+  Exists: 1
 --- !u!114 &114636476152411174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +442,7 @@ MonoBehaviour:
   Path: event:/char/fall_stone
   guid: 0cf5f69c0fcfcb489315126534e0d2f3
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -524,7 +557,7 @@ MonoBehaviour:
   Path: event:/char/attack_1
   guid: 5ec6f89d6aeaf24c8c1392bed9b1171e
   Banks:
-  - {fileID: 114440648211825114}
+  - {fileID: 114593272473555036}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

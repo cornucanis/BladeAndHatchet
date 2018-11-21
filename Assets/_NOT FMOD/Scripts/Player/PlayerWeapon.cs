@@ -4,17 +4,68 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour {
 
+	[SerializeField] int throwDamage = 2;
+	[SerializeField] float throwForce = 1000f;
+	[SerializeField] float returnSpeed = 8f;
+	[SerializeField] float returnCollectionRadius = 0.5f;
+	[SerializeField] float gravityIncreaseStep = 0.5f;
 
-	public int currentDamage = 0;
+	Animator anim;
+	Rigidbody2D rb;
+	CapsuleCollider2D coll;
 
-	// Use this for initialization
-	void Start () {
-		
+	PlayerStatus playerStatus;
+	Transform playerTransform;
+
+	[HideInInspector] public bool isSword;
+	[HideInInspector] public int currentDamage = 0;
+	State currentState;
+	float groundedTimer;
+
+	public enum State {Wielded, Throwing, Grounded, Returning}
+
+	public State CurrentState {
+		get {
+			return currentState;
+		}
+
+		set {
+			ChangeStates (value);
+		}	
 	}
-	
-	// Update is called once per frame
+
+	public bool IsSword {
+		get {
+			return isSword;
+		}
+
+		set {
+			isSword = value;
+			anim.SetFloat ("isSword", value ? 1f : 0f);
+		}
+	}
+
+	void Awake() {
+		anim = GetComponent<Animator> ();
+		rb = GetComponent<Rigidbody2D> ();
+		playerStatus = transform.parent.GetComponentInChildren<PlayerStatus> ();
+		playerTransform = playerStatus.transform;
+		CurrentState = State.Wielded;
+		coll = GetComponent<CapsuleCollider2D> ();
+	}
+
 	void Update () {
-		
+		Invoke (currentState.ToString () + "Stay", 0f);
+	}
+
+	public void ChangeStates(State newState) {
+		string currentStateName = currentState.ToString ();
+		string newStateName = newState.ToString ();
+		Invoke (currentStateName + "Exit", 0f);
+		currentState = newState;
+		Invoke (newStateName + "Enter", 0f);
+		anim.SetBool (currentStateName, false);
+		anim.SetBool (newStateName, true);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -23,4 +74,113 @@ public class PlayerWeapon : MonoBehaviour {
 			enemy.TakeDamage (currentDamage);
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D other) {
+		EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth> ();
+		//Debug.Log ("Collision");
+		if (enemy) {
+			//Debug.Log ("enemy confirmed");
+			enemy.TakeDamage (currentDamage);
+		}
+	}
+
+
+	void TrackPlayer() {
+		Vector3 distance = playerTransform.position - transform.position;
+		rb.velocity = distance.normalized * returnSpeed;
+		//Debug.Log ("Tracking");
+	}
+
+	public void Throw(bool facingRight) {
+		CurrentState = State.Throwing;
+		float trueForce = facingRight ? throwForce : -throwForce;
+		rb.AddForce (new Vector2 (trueForce, 0f), ForceMode2D.Impulse);
+		//Debug.Log (rb.velocity);
+	}
+
+	public void Recall() {
+		ChangeStates (State.Returning);
+	}
+
+	#region State Methods
+
+	void WieldedEnter() {
+		coll.enabled = false;
+		rb.velocity = Vector2.zero;
+	}
+
+	void WieldedExit() {
+
+	}
+
+	void WieldedStay() {
+
+	}
+
+	void ThrowingEnter() {
+		coll.enabled = true;
+		coll.isTrigger = false;
+		rb.gravityScale = 0f;
+		currentDamage = throwDamage;
+	}
+
+	void ThrowingExit() {
+		coll.enabled = false;
+		groundedTimer = -1f;
+		rb.gravityScale = 0f;
+		currentDamage = 0;
+	}
+
+	void ThrowingStay() {
+		if (rb.velocity.magnitude < Mathf.Epsilon) {
+			if (groundedTimer == -1f) {
+				groundedTimer = Time.time + 0.1f;
+			} else {
+				if (rb.velocity.magnitude > Mathf.Epsilon) {
+					groundedTimer = -1f;
+				} else if (Time.time >= groundedTimer) {
+					CurrentState = State.Grounded;
+
+				}
+			}
+		} else {
+			rb.gravityScale += gravityIncreaseStep * Time.deltaTime;
+		}
+	}
+
+	void GroundedEnter() {
+		coll.enabled = false;
+	}
+
+	void GroundedExit() {
+
+	}
+
+	void GroundedStay() {
+
+	}
+
+	void ReturningEnter() {
+		coll.enabled = true;
+		coll.isTrigger = true;
+		TrackPlayer ();
+		currentDamage = throwDamage;
+	}
+
+	void ReturningExit() {
+		coll.isTrigger = false;
+		coll.enabled = false;
+		currentDamage = 0;
+	}
+
+	void ReturningStay() {
+		if (Vector2.Distance (playerTransform.position, transform.position) <= returnCollectionRadius) {
+			playerStatus.Armed = true;
+			CurrentState = State.Wielded;
+		} else {
+			TrackPlayer ();
+		}
+	}
+
+	#endregion
 }
