@@ -12,6 +12,9 @@
     public static readonly string FALL_STONE = "event:/char/fall_stone";
     public static readonly string FALL_STONE_LIGHT = "event:/char/fall_stone_light";
     public static readonly string JUMP = "event:/char/jump";
+    public static readonly string THROW = "event:/char/throw";
+    public static readonly string THROW_IMPACT = "event:/char/throw_impact";
+    public static readonly string THROW_RECALL = "event:/char/throw_recall";
 
     //enemies
     public static readonly string SAINT_FIRE = "event:/enemies/saint_fire";

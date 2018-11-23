@@ -17,7 +17,12 @@ public class PlayerWeapon : MonoBehaviour {
 	PlayerStatus playerStatus;
 	Transform playerTransform;
 
-	[HideInInspector] public bool isSword;
+    private FMOD.Studio.EventInstance throwSFX;
+    private FMOD.Studio.EventInstance throwImpactSFX;
+    private FMOD.Studio.EventInstance throwRecallSFX;
+    bool impactHappened = false;
+
+    [HideInInspector] public bool isSword;
 	[HideInInspector] public int currentDamage = 0;
 	State currentState;
 	float groundedTimer;
@@ -76,7 +81,10 @@ public class PlayerWeapon : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth> ();
+        throwSFXStop();
+        throwRecallSFXStop();
+        throwImpactSFXPlay();
+        EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth> ();
 		//Debug.Log ("Collision");
 		if (enemy) {
 			//Debug.Log ("enemy confirmed");
@@ -122,14 +130,16 @@ public class PlayerWeapon : MonoBehaviour {
 		coll.isTrigger = false;
 		rb.gravityScale = 0f;
 		currentDamage = throwDamage;
-	}
+        throwSFXPlay();
+        impactHappened = false;
+    }
 
 	void ThrowingExit() {
 		coll.enabled = false;
 		groundedTimer = -1f;
 		rb.gravityScale = 0f;
 		currentDamage = 0;
-	}
+    }
 
 	void ThrowingStay() {
 		if (rb.velocity.magnitude < Mathf.Epsilon) {
@@ -165,13 +175,20 @@ public class PlayerWeapon : MonoBehaviour {
 		coll.isTrigger = true;
 		TrackPlayer ();
 		currentDamage = throwDamage;
-	}
+        if (impactHappened) { 
+        throwSFXStop();
+        throwRecallSFXPlay();
+        }
+
+    }
 
 	void ReturningExit() {
 		coll.isTrigger = false;
 		coll.enabled = false;
-		currentDamage = 0;
-	}
+		currentDamage = 0;        
+        throwRecallSFXStop();
+        throwSFXStop();
+    }
 
 	void ReturningStay() {
 		if (Vector2.Distance (playerTransform.position, transform.position) <= returnCollectionRadius) {
@@ -182,5 +199,48 @@ public class PlayerWeapon : MonoBehaviour {
 		}
 	}
 
-	#endregion
+    #endregion
+
+    #region SFX
+
+    void throwSFXPlay()
+    {
+        throwSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.THROW);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(throwSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        throwSFX.start();
+    }
+
+    void throwSFXStop()
+    {
+        throwSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    void throwImpactSFXPlay()
+    {
+        if (!impactHappened)
+        { 
+        impactHappened = true;
+        throwImpactSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.THROW_IMPACT);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(throwImpactSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        throwImpactSFX.start();
+        throwImpactSFX.release();
+        }
+    }
+
+    void throwRecallSFXPlay()
+    {
+        throwRecallSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.THROW_RECALL);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(throwRecallSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        throwRecallSFX.start();
+    }
+
+    void throwRecallSFXStop()
+    {
+        throwRecallSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        throwRecallSFX.release();
+    }
+
+
+
+    #endregion
 }

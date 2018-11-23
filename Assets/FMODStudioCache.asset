@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114012209361250842}
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   EditorEvents:
   - {fileID: 114752052865400908}
   - {fileID: 114592905044579656}
@@ -29,10 +29,28 @@ MonoBehaviour:
   - {fileID: 114738514499732016}
   - {fileID: 114805280304717308}
   - {fileID: 114007454812925552}
-  MasterBankRef: {fileID: 114962467467176932}
+  - {fileID: 114190215203151670}
+  - {fileID: 114481912322075066}
+  - {fileID: 114623758056566818}
+  MasterBankRef: {fileID: 114595880082778892}
   StringsBankRef: {fileID: 114012209361250842}
-  stringsBankWriteTime: 636785736482004866
+  stringsBankWriteTime: 636786051428538673
   cacheVersion: 2
+--- !u!114 &114003745768916954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114006783231443010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +80,7 @@ MonoBehaviour:
   Path: snapshot:/CaveReverb
   guid: 284afabd6b17c047bbdc34963165cdee
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -82,11 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636785736482004866
+  lastModified: 636786051428538673
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1496
+    Value: 1630
   Exists: 1
 --- !u!114 &114030406017980688
 MonoBehaviour:
@@ -117,7 +135,7 @@ MonoBehaviour:
   Path: snapshot:/GotHit
   guid: 02ff9676dca0124c8b16edd872710208
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -140,6 +158,36 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114071210091680256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
+--- !u!114 &114095130397638738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114107766746730088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +206,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1960864
   Exists: 0
+--- !u!114 &114110764427072136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114122895468969798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +251,21 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114153103536891146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114157107605660460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +280,7 @@ MonoBehaviour:
   Path: event:/char/fall_snow_light
   guid: eeb7b8844c85794694172c7a93c9fd90
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -224,7 +302,7 @@ MonoBehaviour:
   Path: event:/char/attack_3
   guid: 9d55d42edc926247b77ac6d48d521604
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -246,7 +324,7 @@ MonoBehaviour:
   Path: event:/char/jump
   guid: 5c6a8effb138ac44aeca91b2bd64f502
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -269,6 +347,28 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114190215203151670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/char/throw
+  guid: 0cc69a08e683db40be6b8c939f471c0f
+  Banks:
+  - {fileID: 114595880082778892}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 15
+  MaxDistance: 85
+  Length: 935
 --- !u!114 &114193236113508042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,7 +488,7 @@ MonoBehaviour:
   Path: event:/char/attack_2
   guid: 6410395b13bdf543ac6a031985b1251f
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -440,7 +540,7 @@ MonoBehaviour:
   Path: event:/game/wind
   guid: ed680a1ef159ba40bbc55123282bbbbc
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -511,6 +611,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 67264
   Exists: 1
+--- !u!114 &114339681521369874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114351850748289526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,6 +655,21 @@ MonoBehaviour:
   Name: Impact
   Min: 0
   Max: 30
+  Default: 0
+--- !u!114 &114367271855387752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114375563097200950
 MonoBehaviour:
@@ -604,6 +734,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114449776198866294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114454193221250774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +763,7 @@ MonoBehaviour:
   Path: event:/char/footsteps_stone
   guid: b1260a89f780be43a400e2c0b9d06b50
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -626,6 +771,21 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 2000
+--- !u!114 &114456683467789674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114458657172034450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,12 +800,12 @@ MonoBehaviour:
   Path: event:/char/fall_stone_light
   guid: b87fb25f459c5b48bf958fe00dacd716
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114241237259545130}
+  - {fileID: 114479085306853376}
   MinDistance: 15
   MaxDistance: 85
   Length: 427
@@ -664,6 +824,43 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114479085306853376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
+--- !u!114 &114481912322075066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/char/throw_impact
+  guid: b01375f710f33f4cbf8a9aad4c200ea7
+  Banks:
+  - {fileID: 114595880082778892}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 15
+  MaxDistance: 85
+  Length: 506
 --- !u!114 &114487984089699344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +891,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114518909977130928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114541186169709094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,6 +921,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114544996504891418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114547721807471108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +952,21 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114559510178187004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114565450537428270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -798,7 +1040,7 @@ MonoBehaviour:
   Path: event:/char/fall_snow
   guid: 11f60921cb31cd47a9ed8e1f7dd2aea3
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -824,6 +1066,39 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1799040
   Exists: 1
+--- !u!114 &114595880082778892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Git Projects\BladeAndHatchet\Assets\FMOD Banks\Desktop\Master Bank.bank
+  lastModified: 636786051428443826
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1985344
+  Exists: 1
+--- !u!114 &114602119485742280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114613847109058992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,6 +1114,28 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0.62000006
+--- !u!114 &114623758056566818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/char/throw_recall
+  guid: bd7bf4ee6571824da53c344682c02f5b
+  Banks:
+  - {fileID: 114595880082778892}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 15
+  MaxDistance: 85
+  Length: 690
 --- !u!114 &114626741253315004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,6 +1181,21 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114632543452348184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114636476152411174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +1227,21 @@ MonoBehaviour:
   Max: 30
   Default: 0
 --- !u!114 &114673178886553680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114674024576713460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1018,13 +1345,13 @@ MonoBehaviour:
   Path: event:/enemies/saint_fire
   guid: 6c19671749b87e49816e5c445ce53ec9
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114719965835709164}
-  - {fileID: 114958430114070764}
+  - {fileID: 114456683467789674}
+  - {fileID: 114865116866284842}
   MinDistance: 15
   MaxDistance: 85
   Length: 3764
@@ -1057,7 +1384,7 @@ MonoBehaviour:
   Path: event:/char/fall_stone
   guid: 0cf5f69c0fcfcb489315126534e0d2f3
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1079,6 +1406,21 @@ MonoBehaviour:
   Name: Impact
   Min: 0
   Max: 30
+  Default: 0
+--- !u!114 &114778387624688222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114780156875502952
 MonoBehaviour:
@@ -1157,7 +1499,7 @@ MonoBehaviour:
   Path: event:/enemies/saint_idle_fire
   guid: 240d3935070bfe46808ba95c0525c97b
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1270,6 +1612,21 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114865116866284842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114874919517497424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1284,7 +1641,7 @@ MonoBehaviour:
   Path: event:/char/attack_1
   guid: 5ec6f89d6aeaf24c8c1392bed9b1171e
   Banks:
-  - {fileID: 114962467467176932}
+  - {fileID: 114595880082778892}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1337,6 +1694,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114909462153549396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114925091748298682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,6 +1754,21 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114953182529342472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114958430114070764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,6 +1783,21 @@ MonoBehaviour:
   Name: Fire
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &114962281588698038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
   Default: 0
 --- !u!114 &114962467467176932
 MonoBehaviour:
