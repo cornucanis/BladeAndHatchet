@@ -30,5 +30,6 @@
 
     // SNAPSHOTS
 
+    public static readonly string CAVE_REVERB = "snapshot:/CaveReverb";
 
 }

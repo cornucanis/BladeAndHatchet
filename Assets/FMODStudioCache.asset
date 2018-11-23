@@ -28,9 +28,10 @@ MonoBehaviour:
   - {fileID: 114047471216798904}
   - {fileID: 114738514499732016}
   - {fileID: 114805280304717308}
+  - {fileID: 114007454812925552}
   MasterBankRef: {fileID: 114107766746730088}
   StringsBankRef: {fileID: 114012209361250842}
-  stringsBankWriteTime: 636785890581690965
+  stringsBankWriteTime: 636785983944841097
   cacheVersion: 2
 --- !u!114 &114006783231443010
 MonoBehaviour:
@@ -47,6 +48,28 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114007454812925552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: snapshot:/CaveReverb
+  guid: 284afabd6b17c047bbdc34963165cdee
+  Banks:
+  - {fileID: 114107766746730088}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114012209361250842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,11 +82,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636785890581690965
+  lastModified: 636785983944841097
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1322
+    Value: 1496
   Exists: 1
 --- !u!114 &114030406017980688
 MonoBehaviour:
@@ -129,11 +152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\Git Projects\BladeAndHatchet\Assets\FMOD Banks\Desktop\Master Bank.bank
-  lastModified: 636785890581656024
+  lastModified: 636785983944771209
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1957056
+    Value: 1960864
   Exists: 1
 --- !u!114 &114122895468969798
 MonoBehaviour:
@@ -358,6 +381,21 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 522
+--- !u!114 &114260922849442982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114262437263504302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +574,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1801408
   Exists: 1
+--- !u!114 &114447895949559968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114454193221250774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,10 +630,25 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114193236113508042}
+  - {fileID: 114260922849442982}
   MinDistance: 15
   MaxDistance: 85
   Length: 427
+--- !u!114 &114459687110087622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114487984089699344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,6 +676,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114541186169709094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
   Min: 0
   Max: 1
   Default: 0
@@ -726,6 +809,51 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1799040
   Exists: 1
+--- !u!114 &114613847109058992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
+--- !u!114 &114626741253315004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
+--- !u!114 &114628635649029520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114628805851370322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,6 +929,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0.62000006
+--- !u!114 &114698905953164676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114704668695542732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,8 +993,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114205367572916072}
-  - {fileID: 114547721807471108}
+  - {fileID: 114613847109058992}
+  - {fileID: 114847642134529066}
   MinDistance: 15
   MaxDistance: 85
   Length: 3764
@@ -1051,6 +1194,21 @@ MonoBehaviour:
   Name: Impact
   Min: 0
   Max: 30
+  Default: 0
+--- !u!114 &114847642134529066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114855972864229086
 MonoBehaviour:

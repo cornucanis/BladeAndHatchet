@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance = null;
 
+   Component caveSFX;
 
     private FMOD.Studio.EventInstance ambienceOutside;
 
@@ -27,6 +28,8 @@ public class AudioManager : MonoBehaviour
     {
         ambienceOutside = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.AMBIENCE_OUTSIDE);
         AmbienceOutsideStart();
+
+        caveSFX = GameObject.Find("CaveSFXTriggers").GetComponent<CompositeCollider2D>();
     }
 
     public void AmbienceOutsideStart()
@@ -38,5 +41,8 @@ public class AudioManager : MonoBehaviour
     {
         ambienceOutside.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
+
+    
+    
 
 }

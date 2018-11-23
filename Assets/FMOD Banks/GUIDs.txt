@@ -13,6 +13,10 @@
 {1e0a68ed-59f1-40ba-bbc5-5123282bbbbc} event:/game/wind
 {0d3a444a-f557-4d5a-b594-85763a4259e0} bus:/
 {c19355fd-cf06-4508-822c-5a189a5b8d7b} bus:/Music
-{e7c6bb2a-75fa-49ae-9c9a-e61ab53c2616} bus:/Reverb
+{7ef301b4-3206-446d-9e19-92acc07c5a54} bus:/SFX
+{ab7764c6-b174-4979-97b3-0d6bbdff4270} bus:/Ambient
+{e7c6bb2a-75fa-49ae-9c9a-e61ab53c2616} bus:/CaveReverb
+{3781339f-e965-4912-8452-a0a5d6f49e91} bus:/OutsideReverb
 {7696ff02-a0dc-4c12-8b16-edd872710208} snapshot:/GotHit
+{bdfa4a28-176b-47c0-bbdc-34963165cdee} snapshot:/CaveReverb
 {b39b07fa-e146-4baa-a257-c633f3a61fd6} bank:/Master Bank
