@@ -24,11 +24,15 @@
     // ambience
     public static readonly string AMBIENCE_OUTSIDE = "event:/game/wind";
 
+    // music
+    public static readonly string MUSIC = "event:/game/music";
+
 
     // PARAMETERS
     public static readonly string FALL_IMPACT = "Impact";
     public static readonly string FIRE_START = "Fire";
     public static readonly string FIRE_IDLE_VOLUME = "Volume";
+    public static readonly string MUSIC_PARAM = "Music";
 
 
     // SNAPSHOTS

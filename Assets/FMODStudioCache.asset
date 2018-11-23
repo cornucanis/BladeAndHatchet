@@ -32,9 +32,10 @@ MonoBehaviour:
   - {fileID: 114190215203151670}
   - {fileID: 114481912322075066}
   - {fileID: 114623758056566818}
+  - {fileID: 114684024593840424}
   MasterBankRef: {fileID: 114595880082778892}
   StringsBankRef: {fileID: 114012209361250842}
-  stringsBankWriteTime: 636786051428538673
+  stringsBankWriteTime: 636786074698514801
   cacheVersion: 2
 --- !u!114 &114003745768916954
 MonoBehaviour:
@@ -100,11 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636786051428538673
+  lastModified: 636786074698514801
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1630
+    Value: 1678
   Exists: 1
 --- !u!114 &114030406017980688
 MonoBehaviour:
@@ -143,6 +144,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114061788803214342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114069332129704454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +189,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0.62000006
+--- !u!114 &114080961563608440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114095130397638738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +267,36 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+--- !u!114 &114125248433034682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
+--- !u!114 &114135852995856586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Music
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114136919681103086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +866,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114479085306853376}
+  - {fileID: 114125248433034682}
   MinDistance: 15
   MaxDistance: 85
   Length: 427
@@ -838,6 +899,21 @@ MonoBehaviour:
   Name: Impact
   Min: 0
   Max: 30
+  Default: 0
+--- !u!114 &114479431376198520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BackToSlowBeat
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114481912322075066
 MonoBehaviour:
@@ -1078,11 +1154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\Git Projects\BladeAndHatchet\Assets\FMOD Banks\Desktop\Master Bank.bank
-  lastModified: 636786051428443826
+  lastModified: 636786074698469877
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1985344
+    Value: 4142912
   Exists: 1
 --- !u!114 &114602119485742280
 MonoBehaviour:
@@ -1256,6 +1332,45 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114680657450249516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
+--- !u!114 &114684024593840424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/game/music
+  guid: 11a27aa9e5d2684c872efa4a0a7e971c
+  Banks:
+  - {fileID: 114595880082778892}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114135852995856586}
+  - {fileID: 114934157393671314}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 222000
 --- !u!114 &114685076971904932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,6 +1416,36 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0.62000006
+--- !u!114 &114706517580494772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
+--- !u!114 &114718503242903956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Music
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114719965835709164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,11 +1495,26 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114456683467789674}
-  - {fileID: 114865116866284842}
+  - {fileID: 114762937682967930}
+  - {fileID: 114080961563608440}
   MinDistance: 15
   MaxDistance: 85
   Length: 3764
+--- !u!114 &114749458625984082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114750512493480186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,6 +1552,21 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 538
+--- !u!114 &114762937682967930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114767467609405360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +1884,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0.62000006
+--- !u!114 &114920484457769368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114925091748298682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1736,6 +1926,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114934157393671314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BackToSlowBeat
   Min: 0
   Max: 1
   Default: 0
@@ -1817,6 +2022,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1960864
   Exists: 1
+--- !u!114 &114963202395376050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114991394318245936
 MonoBehaviour:
   m_ObjectHideFlags: 0
