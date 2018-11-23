@@ -13,6 +13,10 @@
     public static readonly string FALL_STONE_LIGHT = "event:/char/fall_stone_light";
     public static readonly string JUMP = "event:/char/jump";
 
+    //enemies
+    public static readonly string SAINT_FIRE = "event:/enemies/saint_fire";
+    public static readonly string SAINT_FIRE_IDLE = "event:/enemies/saint_idle_fire";
+
 
     // ambience
     public static readonly string AMBIENCE_OUTSIDE = "event:/game/wind";
@@ -20,6 +24,8 @@
 
     // PARAMETERS
     public static readonly string FALL_IMPACT = "Impact";
+    public static readonly string FIRE_START = "Fire";
+    public static readonly string FIRE_IDLE_VOLUME = "Volume";
 
 
     // SNAPSHOTS

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,9 +17,9 @@ public class DeadSaint : Enemy {
 	[SerializeField] float fireballCooldown = 8f;
 
 	Transform playerTransform;
+    private FMOD.Studio.EventInstance saintFireIdleSFX;
 
-
-	State currentState;
+    State currentState;
 	Animator anim;
 
 	float nextSalvoTime = 0f;
@@ -112,22 +112,43 @@ public class DeadSaint : Enemy {
 
 	void IdleEnter() {
 		nextSalvoTime = Time.time + initialGracePeriod;
-	}
+    }
 
 	void IdleExit() {
-
-	}
+    }
 
 	void IdleStay() {
 		float distance = Vector3.Distance (transform.position, playerTransform.position);
 		if (distance >= activationRange * deactivationRangeMulti) {
 			CurrentState = State.Deactivation;
 		} else if (Time.time >= nextSalvoTime) {
-			StartCoroutine (SummonFireballs ());
-			nextSalvoTime = Time.time + 20f;
-		}
+		    StartCoroutine (SummonFireballs ());
+            FireSFXIdlePlay(); // play Fireballs idle loop -> is stopped in DeadSaintFireball.cs because tied to SaintFireballHoming animation. 
+            nextSalvoTime = Time.time + 20f;
+        }
 
 	}
 
-	#endregion
+    #endregion
+
+
+    #region SFX
+    
+  public void FireSFXIdlePlay()
+  {
+      saintFireIdleSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.SAINT_FIRE_IDLE);
+      FMODUnity.RuntimeManager.AttachInstanceToGameObject(saintFireIdleSFX, this.transform, GetComponent<Rigidbody>());
+      saintFireIdleSFX.start();
+
+  }
+
+  public void FireSFXIdleStop()
+  {
+      saintFireIdleSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+      saintFireIdleSFX.release();
+  }
+
+
+
+    #endregion
 }

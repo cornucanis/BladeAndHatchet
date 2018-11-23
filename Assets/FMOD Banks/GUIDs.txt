@@ -7,7 +7,12 @@
 {5fb27fb8-9c45-485b-bf95-8fe00dacd716} event:/char/fall_stone_light
 {890a26b1-80f7-43be-a400-e2c0b9d06b50} event:/char/footsteps_stone
 {ff8e6a5c-38b1-44ac-aeca-91b2bd64f502} event:/char/jump
+{1767196c-b849-497e-816e-5c445ce53ec9} event:/enemies/saint_fire
+{35390d24-0b07-46fe-808b-a95c0525c97b} event:/enemies/saint_idle_fire
+{a97aa211-d2e5-4c68-872e-fa4a0a7e971c} event:/game/music
 {1e0a68ed-59f1-40ba-bbc5-5123282bbbbc} event:/game/wind
 {0d3a444a-f557-4d5a-b594-85763a4259e0} bus:/
+{c19355fd-cf06-4508-822c-5a189a5b8d7b} bus:/Music
 {e7c6bb2a-75fa-49ae-9c9a-e61ab53c2616} bus:/Reverb
+{7696ff02-a0dc-4c12-8b16-edd872710208} snapshot:/GotHit
 {b39b07fa-e146-4baa-a257-c633f3a61fd6} bank:/Master Bank

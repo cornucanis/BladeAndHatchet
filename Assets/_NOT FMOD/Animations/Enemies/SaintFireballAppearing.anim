@@ -69,6 +69,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
+  - time: 0
+    functionName: FireSFXAppear
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 3abc57d1827766940a6e4166189f2715,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.2857143
     functionName: ChangeStates
     data: 

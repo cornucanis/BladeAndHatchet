@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,9 +19,10 @@ public class DeadSaintFireball : MonoBehaviour {
 	Animator anim;
 	float fireTime;
 	[HideInInspector] public int fireballNumber;
+    private FMOD.Studio.EventInstance saintFireSFX;
+    DeadSaint deadSaint;
 
-
-	public enum State {Appearing, Idle, Homing}
+    public enum State {Appearing, Idle, Homing}
 
 	public State CurrentState {
 		get {
@@ -38,7 +39,8 @@ public class DeadSaintFireball : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		CurrentState = State.Appearing;
 		rb.freezeRotation = true;
-	}
+       deadSaint = GameObject.Find("DeadSaint").GetComponent<DeadSaint>();
+    }
 
 	void Update () {
 		Invoke (currentState.ToString () + "Stay", 0f);
@@ -98,15 +100,43 @@ public class DeadSaintFireball : MonoBehaviour {
 		rb.freezeRotation = false;
 		float zRotation = Mathf.Atan2( newVelocity.y, newVelocity.x )*Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(new Vector3 ( 0, 0, zRotation + 180));
-	}
+        FireSFXIdleStop();
+    }
 
-	void HomingExit() {
+    void HomingExit() {
 
 	}
 
 	void HomingStay() {
+        
+    }
 
-	}
+    #endregion
 
-	#endregion
+    #region SFX
+
+    public void FireSFXAppear()  // called in SaintFireballAppearing animation. Loops silence until SaintFireBallHoming happens and FireSFXFire() is called.
+    {
+        saintFireSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.SAINT_FIRE);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(saintFireSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        saintFireSFX.start();
+    }
+
+    public void FireSFXFire() 
+    {
+        saintFireSFX.setParameterValue(FMODPaths.FIRE_START, 1f); // Playing fireball sound
+        saintFireSFX.release();
+        
+    }
+
+    public void FireSFXIdleStop()
+    {
+        deadSaint.FireSFXIdleStop();
+    }
+
+    #endregion
+
+
+
+
 }
