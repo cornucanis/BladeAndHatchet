@@ -3034,9 +3034,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwDamage: 2
   throwForce: 10
-  returnSpeed: 12
+  throwRange: 12
+  returnSpeed: 18
   returnCollectionRadius: 0.5
-  gravityIncreaseStep: 1.4
+  superGravityScale: 5
   isSword: 0
   currentDamage: 0
 --- !u!61 &791453691

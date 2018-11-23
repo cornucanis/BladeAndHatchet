@@ -6,9 +6,10 @@ public class PlayerWeapon : MonoBehaviour {
 
 	[SerializeField] int throwDamage = 2;
 	[SerializeField] float throwForce = 1000f;
+	[SerializeField] float throwRange = 12f;
 	[SerializeField] float returnSpeed = 8f;
 	[SerializeField] float returnCollectionRadius = 0.5f;
-	[SerializeField] float gravityIncreaseStep = 0.5f;
+	[SerializeField] float superGravityScale = 10f;
 
 	Animator anim;
 	Rigidbody2D rb;
@@ -26,6 +27,9 @@ public class PlayerWeapon : MonoBehaviour {
 	[HideInInspector] public int currentDamage = 0;
 	State currentState;
 	float groundedTimer;
+	bool gravityEnabled = false;
+	Vector3 throwingStartPoint;
+
 
 	public enum State {Wielded, Throwing, Grounded, Returning}
 
@@ -74,6 +78,10 @@ public class PlayerWeapon : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+		if (currentState == State.Throwing) { 
+			Debug.Log (other.name);
+			EnableSuperGravity ();
+		}
 		EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
 		if (enemy) {
 			enemy.TakeDamage (currentDamage);
@@ -81,10 +89,13 @@ public class PlayerWeapon : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-        throwSFXStop();
-        throwRecallSFXStop();
-        throwImpactSFXPlay();
-        EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth> ();
+		if (currentState == State.Throwing) { 
+			EnableSuperGravity ();
+			throwSFXStop();
+			throwRecallSFXStop();
+			throwImpactSFXPlay();
+		}
+		EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth> ();
 		//Debug.Log ("Collision");
 		if (enemy) {
 			//Debug.Log ("enemy confirmed");
@@ -97,6 +108,12 @@ public class PlayerWeapon : MonoBehaviour {
 		Vector3 distance = playerTransform.position - transform.position;
 		rb.velocity = distance.normalized * returnSpeed;
 		//Debug.Log ("Tracking");
+	}
+
+	void EnableSuperGravity() {
+		gravityEnabled = true;
+		rb.gravityScale = superGravityScale;
+		anim.speed = 0f;
 	}
 
 	public void Throw(bool facingRight) {
@@ -129,6 +146,8 @@ public class PlayerWeapon : MonoBehaviour {
 		coll.enabled = true;
 		coll.isTrigger = false;
 		rb.gravityScale = 0f;
+		gravityEnabled = false;
+		throwingStartPoint = transform.position;
 		currentDamage = throwDamage;
         throwSFXPlay();
         impactHappened = false;
@@ -139,9 +158,13 @@ public class PlayerWeapon : MonoBehaviour {
 		groundedTimer = -1f;
 		rb.gravityScale = 0f;
 		currentDamage = 0;
-    }
+		anim.speed = 1f;
+	}
 
 	void ThrowingStay() {
+		if (Vector3.Distance (transform.position, throwingStartPoint) >= throwRange) {
+			EnableSuperGravity ();
+		}
 		if (rb.velocity.magnitude < Mathf.Epsilon) {
 			if (groundedTimer == -1f) {
 				groundedTimer = Time.time + 0.1f;
@@ -154,7 +177,7 @@ public class PlayerWeapon : MonoBehaviour {
 				}
 			}
 		} else {
-			rb.gravityScale += gravityIncreaseStep * Time.deltaTime;
+			
 		}
 	}
 
