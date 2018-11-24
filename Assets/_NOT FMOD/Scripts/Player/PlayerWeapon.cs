@@ -10,6 +10,14 @@ public class PlayerWeapon : MonoBehaviour {
 	[SerializeField] float returnSpeed = 8f;
 	[SerializeField] float returnCollectionRadius = 0.5f;
 	[SerializeField] float superGravityScale = 10f;
+	[SerializeField] float fallTransitionDuration = 1f;
+	[SerializeField] float fallTransitionStep = 0.1f;
+
+	[Header("Temp hitstop test")]
+	[SerializeField] float zoomMulti = 0.75f;
+	[SerializeField] float timeScale = 0.7f;
+	[SerializeField] float duration = 2f;
+
 
 	Animator anim;
 	Rigidbody2D rb;
@@ -21,9 +29,8 @@ public class PlayerWeapon : MonoBehaviour {
     private FMOD.Studio.EventInstance throwSFX;
     private FMOD.Studio.EventInstance throwImpactSFX;
     private FMOD.Studio.EventInstance throwRecallSFX;
-    bool impactHappened = false;
 
-    [HideInInspector] public bool isSword;
+    bool isSword;
 	[HideInInspector] public int currentDamage = 0;
 	State currentState;
 	float groundedTimer;
@@ -80,7 +87,13 @@ public class PlayerWeapon : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (currentState == State.Throwing) { 
 			Debug.Log (other.name);
-			EnableSuperGravity ();
+			if (gravityEnabled == false) {
+				EnableSuperGravity ();
+				/* OnTriggerEnter is most likely to occur when the axe hits an enemy, but could accidentally happen in other cases which is why I added this but commented it out
+				throwSFXStop(); 
+				throwRecallSFXStop();     
+				throwImpactSFXPlay(); */	
+			}
 		}
 		EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
 		if (enemy) {
@@ -90,10 +103,12 @@ public class PlayerWeapon : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other) {
 		if (currentState == State.Throwing) { 
-			EnableSuperGravity ();
-			throwSFXStop();
-			throwRecallSFXStop();
-			throwImpactSFXPlay();
+			if (gravityEnabled == false) {
+				EnableSuperGravity ();
+				throwSFXStop();
+				throwRecallSFXStop();
+				throwImpactSFXPlay();	
+			}
 		}
 		EnemyHealth enemy = other.gameObject.GetComponent<EnemyHealth> ();
 		//Debug.Log ("Collision");
@@ -111,9 +126,55 @@ public class PlayerWeapon : MonoBehaviour {
 	}
 
 	void EnableSuperGravity() {
-		gravityEnabled = true;
-		rb.gravityScale = superGravityScale;
-		anim.speed = 0f;
+		if (gravityEnabled == false) {
+			//HitStopper.Instance.StartHitStop (zoomMulti, timeScale, duration);
+			gravityEnabled = true;
+			rb.gravityScale = superGravityScale;
+			anim.speed = 0f;
+			anim.SetBool ("Falling", true);
+			StartCoroutine (LerpToDown ());
+		}
+	}
+
+	IEnumerator LerpToDown() {
+		float startingRot = CalculateStartingFallRotation ();
+		if (startingRot != 270f) {
+			float currentRot = startingRot;
+			float thisDuration = (startingRot == 450f) ? fallTransitionDuration : fallTransitionDuration / 2;
+			float startTime = Time.time;
+			WaitForSeconds delay = new WaitForSeconds (fallTransitionStep);
+			while (currentRot != 270f && CurrentState == State.Throwing) {
+				currentRot = Mathf.Lerp (startingRot, 270f, (Time.time - startTime) / thisDuration);
+				//Debug.Log (currentRot);
+				transform.rotation = Quaternion.AngleAxis (currentRot, Vector3.forward);
+				yield return delay;
+			}
+		}
+		//Debug.Log ("Ended");
+		yield return null;
+	}
+
+	float CalculateStartingFallRotation() {
+		float currentAnimTime = anim.GetCurrentAnimatorStateInfo (0).normalizedTime % 1;
+		int currentFrame = Mathf.Clamp(Mathf.CeilToInt(currentAnimTime * 4 - 1), 0, 3);
+		switch (currentFrame) {
+			case 0:
+				return 450f;
+				break;
+			case 1:
+				return 360f;
+				break;
+			case 2:
+				return 270f;
+				break;
+			case 3:
+				return 180f;
+				break;
+			default:
+				Debug.LogError ("No current frame to calculate weapon starting rotation. WHAT??");
+				break;
+		}
+		return 0f;
 	}
 
 	public void Throw(bool facingRight) {
@@ -149,8 +210,8 @@ public class PlayerWeapon : MonoBehaviour {
 		gravityEnabled = false;
 		throwingStartPoint = transform.position;
 		currentDamage = throwDamage;
+		anim.SetBool ("Falling", false);
         throwSFXPlay();
-        impactHappened = false;
     }
 
 	void ThrowingExit() {
@@ -158,12 +219,22 @@ public class PlayerWeapon : MonoBehaviour {
 		groundedTimer = -1f;
 		rb.gravityScale = 0f;
 		currentDamage = 0;
+		anim.SetBool ("Falling", false);
 		anim.speed = 1f;
+		if (currentState != State.Grounded) {
+			transform.rotation = Quaternion.AngleAxis (0f, Vector3.forward);
+		}
 	}
 
 	void ThrowingStay() {
+		CalculateStartingFallRotation ();
 		if (Vector3.Distance (transform.position, throwingStartPoint) >= throwRange) {
-			EnableSuperGravity ();
+			if (gravityEnabled == false) {
+				EnableSuperGravity ();
+				throwSFXStop();
+				throwRecallSFXStop();
+				throwImpactSFXPlay();	
+			}
 		}
 		if (rb.velocity.magnitude < Mathf.Epsilon) {
 			if (groundedTimer == -1f) {
@@ -182,11 +253,12 @@ public class PlayerWeapon : MonoBehaviour {
 	}
 
 	void GroundedEnter() {
+		transform.rotation = Quaternion.AngleAxis (270f, Vector3.forward);
 		coll.enabled = false;
 	}
 
 	void GroundedExit() {
-
+		transform.rotation = Quaternion.AngleAxis (0f, Vector3.forward);
 	}
 
 	void GroundedStay() {
@@ -198,11 +270,10 @@ public class PlayerWeapon : MonoBehaviour {
 		coll.isTrigger = true;
 		TrackPlayer ();
 		currentDamage = throwDamage;
-        if (impactHappened) { 
-        throwSFXStop();
-        throwRecallSFXPlay();
-        }
-
+		if (gravityEnabled) {
+			throwSFXStop ();
+			throwRecallSFXPlay ();
+		}
     }
 
 	void ReturningExit() {
@@ -240,14 +311,10 @@ public class PlayerWeapon : MonoBehaviour {
 
     void throwImpactSFXPlay()
     {
-        if (!impactHappened)
-        { 
-        impactHappened = true;
         throwImpactSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.THROW_IMPACT);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(throwImpactSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
         throwImpactSFX.start();
         throwImpactSFX.release();
-        }
     }
 
     void throwRecallSFXPlay()

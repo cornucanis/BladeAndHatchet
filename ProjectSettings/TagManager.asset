@@ -67,12 +67,12 @@ TagManager:
   - name: Player
     uniqueID: 3384675885
     locked: 0
-  - name: Weapon
-    uniqueID: 2277963131
-    locked: 0
   - name: EnemyProjectile
     uniqueID: 970712735
     locked: 0
   - name: Foreground
     uniqueID: 966508053
+    locked: 0
+  - name: Weapon
+    uniqueID: 2277963131
     locked: 0

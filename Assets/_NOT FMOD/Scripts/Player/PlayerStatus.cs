@@ -6,10 +6,20 @@ public class PlayerStatus : MonoBehaviour {
 
 	//config params
 
+	[Header("Jump Configuration")]
 	[SerializeField] float axeJumpForce = 1300f;
 	[SerializeField] float swordJumpforce = 2000f;
 	[SerializeField] float jumpCastOffset = 0.1f;
 	[SerializeField] float dropThruTimer = 0.5f;
+	[SerializeField] float minimumWallJumpVelocity = 1f;
+	[SerializeField] float wallJumpDetectionSizeMod = 1.07f;
+	[SerializeField] float wallJumpWindow = 0.2f;
+	[SerializeField] float wallJumpVerticalForce = 1000f;
+	[SerializeField] float wallJumpHorizontalForce = 750f;
+	[SerializeField] float wallJumpHitstopDuration = 0.1f;
+	[SerializeField] float wallJumpHitstopZoom = 0.95f;
+	[SerializeField] float wallJumpHitstopTimecsale = 0.6f;
+
 
 	[Header("Sprite Configuration")]
 	[SerializeField] SpriteRenderer characterSprite;
@@ -39,10 +49,12 @@ public class PlayerStatus : MonoBehaviour {
 	State currentState;
 	int jumpMode = 0;
 	float initialGravity;
+	float nextPossibleWalljump;
 	bool isSword = true;
 	bool armed = true;
 	bool frozen = false;
 	bool falling = false;
+	bool wallJumpDisqualified = false;
 	[HideInInspector] public bool attackAnimEnded = false;
 	Vector2 storedVelocity = Vector2.zero;
 	Vector3 weaponPositionOffset;
@@ -182,6 +194,19 @@ public class PlayerStatus : MonoBehaviour {
 		Physics2D.IgnoreCollision (coll, other, false);
 	}
 
+	IEnumerator WallStick() {
+		float finishTime = Time.time + wallJumpWindow;
+		float trueHorizontal = playerMovement.facingRight ? -wallJumpHorizontalForce : wallJumpHorizontalForce;
+		HitStopper.Instance.StartHitStop (wallJumpHitstopZoom, wallJumpHitstopTimecsale, wallJumpHitstopDuration);
+		while (Time.time < finishTime) {
+			if (Input.GetButtonDown("Jump")) {
+				rb.AddForce (new Vector2 ( trueHorizontal, wallJumpVerticalForce));
+				wallJumpDisqualified = true;
+			}
+			yield return null;
+		}
+	}
+
 	private void TriggerFall() {
 		//CurrentState = State.Jump;
 		falling = true;
@@ -217,7 +242,7 @@ public class PlayerStatus : MonoBehaviour {
 		if (CanSwitch()) {
 			isSword = !isSword;
 			playerCombat.isSword = isSword;
-			weapon.isSword = isSword;
+			weapon.IsSword = isSword;
 			anim.SetBool ("isSword", isSword);
 			anim.SetFloat ("isSwordFloat", isSword ? 1f : 0f);
 			Vector3 charPos = characterSprite.transform.position;
@@ -319,6 +344,15 @@ public class PlayerStatus : MonoBehaviour {
 			return false;
 		}
 		//return Physics.CheckCapsule (coll.bounds.center, new Vector3 (coll.bounds.center.x, coll.bounds.min.y, coll.bounds.center.z), coll.bounds.extents.x - 1f, jumpMask);
+	}
+
+	private bool CheckSideCollision() {
+		Collider2D colliderCheck = Physics2D.OverlapCapsule (coll.bounds.center, new Vector2 (coll.size.x * wallJumpDetectionSizeMod, coll.size.y * 0.9f), CapsuleDirection2D.Vertical, 0f, jumpMask);
+		if (colliderCheck) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private bool CheckFalling() {
@@ -433,6 +467,8 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	void JumpEnter() {
+		wallJumpDisqualified = false;
+		nextPossibleWalljump = Time.time + 0.1f;
 	}
 
 	void JumpExit() {
@@ -450,6 +486,20 @@ public class PlayerStatus : MonoBehaviour {
 			jumpMode = 2;
 			anim.SetInteger ("jumpMode", 2);
 			rb.velocity = Vector2.zero;
+		}
+		if (!wallJumpDisqualified && jumpMode == 0 && CheckSideCollision ()) {
+			if (Time.time >= nextPossibleWalljump) {
+				if (Mathf.Abs (rb.velocity.x) >= minimumWallJumpVelocity) {
+					Debug.Log ("HITSTOP FRAME: " + rb.velocity);
+					wallJumpDisqualified = true;
+					StartCoroutine (WallStick ());
+				} else {
+					Debug.Log ("Collision, velocity low: " + rb.velocity);
+				}
+			}
+			nextPossibleWalljump = Time.time + 0.1f;
+		} else {
+			Debug.Log ("No collision: " + rb.velocity);
 		}
 		//Debug.Log (jumpMode + ", " + rb.velocity.y + ", " + anim.GetInteger("jumpMode") + ", " + anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
 	}
