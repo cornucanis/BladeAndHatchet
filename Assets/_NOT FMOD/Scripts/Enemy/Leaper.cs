@@ -23,7 +23,11 @@ public class Leaper : Enemy {
 	float nextLeap = 0f;
 	Vector3 storedDistance;
 
-	public enum State {Idle, Preleap, Leaping}
+    private FMOD.Studio.EventInstance leaperIdleSFX;
+    private FMOD.Studio.EventInstance leaperPrelapSFX;
+    private FMOD.Studio.EventInstance leaperLeapingSFX;
+
+    public enum State {Idle, Preleap, Leaping}
 
 	public State CurrentState {
 		get {
@@ -94,12 +98,13 @@ public class Leaper : Enemy {
 	#region State Methods
 
 	void IdleEnter() {
+        LeaperIdleSFXPlay();
 
-	}
+    }
 
 	void IdleExit() {
-
-	}
+        LeaperIdleSFXStop();
+    }
 
 	void IdleStay() {
 		if (Time.time >= nextLeap) {
@@ -113,8 +118,8 @@ public class Leaper : Enemy {
 	}
 
 	void PreleapEnter() {
-
-	}
+        LeaperPrelapSFXPlay();
+    }
 
 	void PreleapExit() {
 
@@ -126,7 +131,8 @@ public class Leaper : Enemy {
 
 	void LeapingEnter() {
 		jumping = false;
-	}
+        LeaperLeapingSFXPlay();
+    }
 
 	void LeapingExit() {
 		nextLeap = Time.time + leapCooldown;
@@ -141,5 +147,61 @@ public class Leaper : Enemy {
 		}
 	}
 
-	#endregion
+    private void OnDestroy()
+    {
+        LeaperIdleSFXStop();
+        LeaperPrelapSFXStop();
+        LeaperLeapingSFXStop();
+    }
+
+    #endregion
+
+    #region SFX
+
+    void LeaperIdleSFXPlay()
+    {
+        leaperIdleSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.LEAPER_IDLE);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(leaperIdleSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        leaperIdleSFX.start();
+    }
+
+    void LeaperIdleSFXStop()
+    {
+        leaperIdleSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        leaperIdleSFX.release();
+    }
+
+
+    void LeaperPrelapSFXPlay()
+    {
+        leaperPrelapSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.LEAPER_PRELAP);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(leaperPrelapSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        leaperPrelapSFX.start();
+    }
+
+    void LeaperPrelapSFXStop()
+    {
+        leaperPrelapSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        leaperPrelapSFX.release();
+    }
+
+    void LeaperLeapingSFXPlay()
+    {
+        leaperLeapingSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.LEAPER_LEAPING);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(leaperLeapingSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        leaperLeapingSFX.start();
+    }
+
+    void LeaperLeapingSFXStop()
+    {
+        leaperLeapingSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        leaperLeapingSFX.release();
+    }
+
+
+
+    #endregion
+
+    
+
 }

@@ -20,7 +20,6 @@ public class DeadSaintFireball : MonoBehaviour {
 	float fireTime;
 	[HideInInspector] public int fireballNumber;
     private FMOD.Studio.EventInstance saintFireSFX;
-    DeadSaint deadSaint;
 
     public enum State {Appearing, Idle, Homing}
 
@@ -39,7 +38,6 @@ public class DeadSaintFireball : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		CurrentState = State.Appearing;
 		rb.freezeRotation = true;
-       deadSaint = GameObject.Find("DeadSaint").GetComponent<DeadSaint>();
     }
 
 	void Update () {
@@ -95,12 +93,11 @@ public class DeadSaintFireball : MonoBehaviour {
 	}
 
 	void HomingEnter() {
-		Vector2 newVelocity = (playerTransform.position + Vector3.up * verticalAimingOffset) - transform.position;
+        Vector2 newVelocity = (playerTransform.position + Vector3.up * verticalAimingOffset) - transform.position;
 		rb.velocity = newVelocity.normalized * fireballSpeed;
 		rb.freezeRotation = false;
 		float zRotation = Mathf.Atan2( newVelocity.y, newVelocity.x )*Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(new Vector3 ( 0, 0, zRotation + 180));
-        FireSFXIdleStop();
     }
 
     void HomingExit() {
@@ -115,7 +112,7 @@ public class DeadSaintFireball : MonoBehaviour {
 
     #region SFX
 
-    public void FireSFXAppear()  // called in SaintFireballAppearing animation. Loops silence until SaintFireBallHoming happens and FireSFXFire() is called.
+    public void FireSFXAppear()  
     {
         saintFireSFX = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.SAINT_FIRE);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(saintFireSFX, GetComponent<Transform>(), GetComponent<Rigidbody>());
@@ -124,15 +121,12 @@ public class DeadSaintFireball : MonoBehaviour {
 
     public void FireSFXFire() 
     {
-        saintFireSFX.setParameterValue(FMODPaths.FIRE_START, 1f); // Playing fireball sound
+        saintFireSFX.setParameterValue(FMODPaths.FIRE_START, 1f); 
         saintFireSFX.release();
         
     }
 
-    public void FireSFXIdleStop()
-    {
-        deadSaint.FireSFXIdleStop();
-    }
+
 
     #endregion
 

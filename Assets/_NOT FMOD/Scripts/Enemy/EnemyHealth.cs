@@ -25,12 +25,15 @@ public class EnemyHealth : MonoBehaviour {
 
 	public void TakeDamage(int damage) {
 		currentHealth -= damage;
-		if (currentHealth <= 0) {
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.LEAPER_IMPACT, GetComponent<Transform>().position);
+        if (currentHealth <= 0) {
 			Die ();
 		}
 	}
 
 	void Die() {
-		Destroy (gameObject);
-	}
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.LEAPER_DEAD, GetComponent<Transform>().position);
+        Destroy (gameObject);
+
+    }
 }

@@ -19,7 +19,11 @@
     //enemies
     public static readonly string SAINT_FIRE = "event:/enemies/saint_fire";
     public static readonly string SAINT_FIRE_IDLE = "event:/enemies/saint_idle_fire";
-
+    public static readonly string LEAPER_IDLE = "event:/enemies/leaper_idle";
+    public static readonly string LEAPER_PRELAP = "event:/enemies/leaper_prelap";
+    public static readonly string LEAPER_LEAPING = "event:/enemies/leaper_leaping";
+    public static readonly string LEAPER_IMPACT = "event:/enemies/leaper_impact";
+    public static readonly string LEAPER_DEAD = "event:/enemies/leaper_dead";
 
     // ambience
     public static readonly string AMBIENCE_OUTSIDE = "event:/game/wind";

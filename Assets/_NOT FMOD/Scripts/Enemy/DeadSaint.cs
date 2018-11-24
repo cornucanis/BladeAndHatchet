@@ -63,14 +63,21 @@ public class DeadSaint : Enemy {
 			newBall.playerTransform = playerTransform;
 			newBall.fireballHome = fireballHome.position;
 			newBall.fireballNumber = i;
-			yield return delay;	
-		}
+            yield return delay;
+        }
 		nextSalvoTime = Time.time + (fireballCooldown - fireballDelay);
-	}
+        FireSFXIdleStop();
+    }
 
-	#region State Methods
+    private void OnDestroy()
+    {
+        FireSFXIdleStop();
+    }
 
-	void InactiveEnter() {
+
+    #region State Methods
+
+    void InactiveEnter() {
 
 	}
 
@@ -115,6 +122,7 @@ public class DeadSaint : Enemy {
     }
 
 	void IdleExit() {
+       
     }
 
 	void IdleStay() {
@@ -123,7 +131,7 @@ public class DeadSaint : Enemy {
 			CurrentState = State.Deactivation;
 		} else if (Time.time >= nextSalvoTime) {
 		    StartCoroutine (SummonFireballs ());
-            FireSFXIdlePlay(); // play Fireballs idle loop -> is stopped in DeadSaintFireball.cs because tied to SaintFireballHoming animation. 
+            FireSFXIdlePlay(); 
             nextSalvoTime = Time.time + 20f;
         }
 
@@ -147,8 +155,6 @@ public class DeadSaint : Enemy {
       saintFireIdleSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
       saintFireIdleSFX.release();
   }
-
-
 
     #endregion
 }
