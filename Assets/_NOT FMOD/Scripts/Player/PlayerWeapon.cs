@@ -12,6 +12,7 @@ public class PlayerWeapon : MonoBehaviour {
 	[SerializeField] float superGravityScale = 10f;
 	[SerializeField] float fallTransitionDuration = 1f;
 	[SerializeField] float fallTransitionStep = 0.1f;
+	[SerializeField] LayerMask groundMask;
 
 	[Header("Temp hitstop test")]
 	[SerializeField] float zoomMulti = 0.75f;
@@ -68,6 +69,10 @@ public class PlayerWeapon : MonoBehaviour {
 		playerTransform = playerStatus.transform;
 		CurrentState = State.Wielded;
 		coll = GetComponent<CapsuleCollider2D> ();
+	}
+
+	void Start() {
+		groundMask = LayerMask.GetMask ("Foreground");
 	}
 
 	void Update () {
@@ -177,6 +182,15 @@ public class PlayerWeapon : MonoBehaviour {
 		return 0f;
 	}
 
+	bool CheckGrounded() {
+		Collider2D colliderCheck = Physics2D.OverlapCapsule (coll.bounds.center + Vector3.down * 0.1f, new Vector2 (coll.size.x * 0.9f, coll.size.y * 0.9f), CapsuleDirection2D.Vertical, 0f, groundMask);
+		if (colliderCheck) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public void Throw(bool facingRight) {
 		CurrentState = State.Throwing;
 		float trueForce = facingRight ? throwForce : -throwForce;
@@ -236,19 +250,8 @@ public class PlayerWeapon : MonoBehaviour {
 				throwImpactSFXPlay();	
 			}
 		}
-		if (rb.velocity.magnitude < Mathf.Epsilon) {
-			if (groundedTimer == -1f) {
-				groundedTimer = Time.time + 0.1f;
-			} else {
-				if (rb.velocity.magnitude > Mathf.Epsilon) {
-					groundedTimer = -1f;
-				} else if (Time.time >= groundedTimer) {
-					CurrentState = State.Grounded;
-
-				}
-			}
-		} else {
-			
+		if (rb.velocity.magnitude < Mathf.Epsilon && CheckGrounded()) {
+			CurrentState = State.Grounded;
 		}
 	}
 

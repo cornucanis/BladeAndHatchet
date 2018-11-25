@@ -188,12 +188,6 @@ public class PlayerStatus : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator RestoreCollision(Collider2D other) {
-		yield return new WaitForSeconds (dropThruTimer);
-		//Debug.Log ("Collision Restored");
-		Physics2D.IgnoreCollision (coll, other, false);
-	}
-
 	IEnumerator WallStick() {
 		float finishTime = Time.time + wallJumpWindow;
 		float trueHorizontal = playerMovement.facingRight ? -wallJumpHorizontalForce : wallJumpHorizontalForce;
@@ -205,6 +199,12 @@ public class PlayerStatus : MonoBehaviour {
 			}
 			yield return null;
 		}
+	}
+
+	IEnumerator RestoreCollision(Collider2D other) {
+		yield return new WaitForSeconds (dropThruTimer);
+		//Debug.Log ("Collision Restored");
+		Physics2D.IgnoreCollision (coll, other, false);
 	}
 
 	private void TriggerFall() {
