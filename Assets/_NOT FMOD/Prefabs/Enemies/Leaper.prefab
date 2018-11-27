@@ -9,116 +9,87 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1471210708780670}
+  m_RootGameObject: {fileID: 1878236133677150}
   m_IsPrefabAsset: 1
---- !u!1 &1413162643690398
+--- !u!1 &1878236133677150
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4254006559856512}
+  - component: {fileID: 4104390334998670}
+  - component: {fileID: 95268218916206870}
+  - component: {fileID: 212287951646368220}
+  - component: {fileID: 50856868038646422}
+  - component: {fileID: 70400812750718876}
+  - component: {fileID: 114486750239616750}
+  - component: {fileID: 114252121308081588}
   m_Layer: 12
-  m_Name: FireballHome
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1471210708780670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4093043567043388}
-  - component: {fileID: 95111970270385790}
-  - component: {fileID: 212032607386387282}
-  - component: {fileID: 50837788271760834}
-  - component: {fileID: 70909481178779460}
-  - component: {fileID: 114155553853808784}
-  - component: {fileID: 114449424131816080}
-  m_Layer: 12
-  m_Name: DeadSaint
+  m_Name: Leaper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4093043567043388
+--- !u!4 &4104390334998670
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471210708780670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.65, y: 9.885, z: 0}
+  m_GameObject: {fileID: 1878236133677150}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.7999954, y: 12.559999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4254006559856512}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4254006559856512
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1413162643690398}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4093043567043388}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50837788271760834
+--- !u!50 &50856868038646422
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471210708780670}
-  m_BodyType: 1
+  m_GameObject: {fileID: 1878236133677150}
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!70 &70909481178779460
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!70 &70400812750718876
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471210708780670}
+  m_GameObject: {fileID: 1878236133677150}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4796276, y: -0.19850731}
-  m_Size: {x: 0.35324478, y: 1.3529854}
-  m_Direction: 0
---- !u!95 &95111970270385790
+  m_Offset: {x: -0.052073736, y: -0.09395719}
+  m_Size: {x: 1.4871184, y: 0.8752159}
+  m_Direction: 1
+--- !u!95 &95268218916206870
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471210708780670}
+  m_GameObject: {fileID: 1878236133677150}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: afe9a2c31cb05af488c5959290d1b873, type: 2}
+  m_Controller: {fileID: 9100000, guid: c4d0177fbc013bf449bed6266d54f071, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -127,44 +98,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114155553853808784
+--- !u!114 &114252121308081588
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471210708780670}
+  m_GameObject: {fileID: 1878236133677150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82738413811524449a0aab4af4f8b40f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPrefab: {fileID: 0}
+  leapCooldown: 2
+  activationRange: 8
+  leapingSpeed: 275
+  leapDelay: 0
+  leapVerticalMod: 1.9
+  leapHorizontalMod: 1
+  jumpMinClamp: 100
+  jumpMaxClamp: 1500
+--- !u!114 &114486750239616750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1878236133677150}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26c999596b3b1be489606de867edf9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 1
   contactDamage: 1
---- !u!114 &114449424131816080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471210708780670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 200917d5047a28b4fb9f7cf07cef603a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireballPrefab: {fileID: 1217140733158798, guid: 14661f91aa372884fa18be2f4201884f,
-    type: 2}
-  fireballHome: {fileID: 4254006559856512}
-  activationRange: 8
-  deactivationRangeMulti: 1.5
-  initialGracePeriod: 0.5
-  fireballDelay: 0.67
-  fireballCooldown: 8
---- !u!212 &212032607386387282
+--- !u!212 &212287951646368220
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471210708780670}
+  m_GameObject: {fileID: 1878236133677150}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -194,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 2064482655
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d2f786e60032a6d4ca00fa1120f936f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6146d534ebf42fd43876dcb152e040ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

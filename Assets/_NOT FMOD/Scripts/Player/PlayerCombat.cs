@@ -81,7 +81,31 @@ public class PlayerCombat : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Hazard")) {
+			Hazard hazard = other.GetComponent<Hazard> ();
+			if (hazard) {
+				TakeDamage (hazard.contactDamage);
+			} else {
+				Debug.LogWarning ("There is an object named " + other.name + " with a hazard tag but no hazard component. This should not happen.");
+			}
+		} else if (other.CompareTag ("Enemy")) {
+			EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
+			if (enemy) {
+				TakeDamage (enemy.contactDamage);
+			} else {
+				Debug.LogWarning ("There is an object named " + other.name + " with an enemy tag but no enemy health component. This should not happen.");
+			}
+		}
+	}
 
+	public void OnCollisionEnter2D(Collision2D otherColl) {
+		GameObject other = otherColl.gameObject;
+		if (other.CompareTag ("Hazard")) {
+			Hazard hazard = other.GetComponent<Hazard> ();
+			if (hazard) {
+				TakeDamage (hazard.contactDamage);
+			} else {
+				Debug.LogWarning ("There is an object named " + other.name + " with a hazard tag but no hazard component. This should not happen.");
+			}
 		} else if (other.CompareTag ("Enemy")) {
 			EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
 			if (enemy) {

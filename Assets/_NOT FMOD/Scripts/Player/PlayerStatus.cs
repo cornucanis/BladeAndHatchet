@@ -499,7 +499,7 @@ public class PlayerStatus : MonoBehaviour {
 			}
 			nextPossibleWalljump = Time.time + 0.1f;
 		} else {
-			Debug.Log ("No collision: " + rb.velocity);
+			//Debug.Log ("No collision: " + rb.velocity);
 		}
 		//Debug.Log (jumpMode + ", " + rb.velocity.y + ", " + anim.GetInteger("jumpMode") + ", " + anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
 	}

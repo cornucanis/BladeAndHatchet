@@ -50,8 +50,13 @@ public class RoomTransitionHandler : MonoBehaviour {
 	void Start() {
 		playerStatus = FindObjectOfType<PlayerStatus> ();
 		cam = cameraConfiner.GetComponent<CinemachineVirtualCamera> ();
-		currentRoom = startingRoom;
-		UpdateCameraBounds (currentRoom.bounds);
+		EnterRoom (startingRoom);
+	}
+
+	void EnterRoom(Room newRoom) {
+		currentRoom = newRoom;
+		newRoom.PopulateRoom ();
+		UpdateCameraBounds (newRoom.bounds);
 	}
 
 	void UpdateCameraBounds(Collider2D newBounds) {
@@ -62,9 +67,9 @@ public class RoomTransitionHandler : MonoBehaviour {
 	public void TriggerTransition(RoomDirectionDictionary potentialRooms) {
 		for (int i = 0; i < potentialRooms.rooms.Length; i++) {
 			if (potentialRooms.rooms [i] != currentRoom) {
+				potentialRooms.rooms [i == 0 ? 1 : 0].ClearRoom ();
 				StartCoroutine (TransitionCutscene (roomTransitionTime, potentialRooms.rooms [i], potentialRooms.directions [i]));
-				//currentRoom = potentialRooms.rooms [i];
-				//UpdateCameraBounds ();
+				//EnterRoom ();
 				break;
 			}
 		}
@@ -92,8 +97,7 @@ public class RoomTransitionHandler : MonoBehaviour {
 		}
 		Debug.Log ("FINAL Intended v: " + (directionalVector * transitionalDistance) / roomTransitionTime + ", FINAL actual v: " + playerStatus.GetComponent<Rigidbody2D> ().velocity);
 
-		currentRoom = newRoom;
-		UpdateCameraBounds (currentRoom.bounds);
+		EnterRoom (newRoom);
 		cam.m_Follow = playerStatus.transform;
 		playerStatus.Frozen = false;
 		playerStatus.SetGravityEnabled (true);

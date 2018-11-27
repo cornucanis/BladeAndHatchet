@@ -165,16 +165,12 @@ public class PlayerWeapon : MonoBehaviour {
 		switch (currentFrame) {
 			case 0:
 				return 450f;
-				break;
 			case 1:
 				return 360f;
-				break;
 			case 2:
 				return 270f;
-				break;
 			case 3:
 				return 180f;
-				break;
 			default:
 				Debug.LogError ("No current frame to calculate weapon starting rotation. WHAT??");
 				break;

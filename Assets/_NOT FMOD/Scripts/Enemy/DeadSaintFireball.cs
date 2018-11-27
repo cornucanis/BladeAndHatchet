@@ -11,6 +11,7 @@ public class DeadSaintFireball : MonoBehaviour {
 	[SerializeField] float idleDelay = 2.5f;
 	[SerializeField] float delayDecayFactor = 0.9f;
 	[SerializeField] float verticalAimingOffset = 1f;
+	[SerializeField] float lifetime = 4f;
 
 	public Transform playerTransform;
 	public Vector3 fireballHome;
@@ -18,6 +19,7 @@ public class DeadSaintFireball : MonoBehaviour {
 	State currentState;
 	Animator anim;
 	float fireTime;
+	float deathTime;
 	[HideInInspector] public int fireballNumber;
     private FMOD.Studio.EventInstance saintFireSFX;
 
@@ -40,8 +42,15 @@ public class DeadSaintFireball : MonoBehaviour {
 		rb.freezeRotation = true;
     }
 
+	void Start() {
+		deathTime = Time.time + lifetime;
+	}
+
 	void Update () {
 		Invoke (currentState.ToString () + "Stay", 0f);
+		if (Time.time >= deathTime) {
+			Destroy (gameObject);
+		}
 	}
 
 	public void ChangeStates(State newState) {
