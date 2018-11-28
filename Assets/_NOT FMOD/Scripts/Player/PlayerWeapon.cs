@@ -125,7 +125,7 @@ public class PlayerWeapon : MonoBehaviour {
 
 
 	void TrackPlayer() {
-		Vector3 distance = playerTransform.position - transform.position;
+		Vector3 distance = (playerTransform.position + Vector3.up * 0.5f) - transform.position;
 		rb.velocity = distance.normalized * returnSpeed;
 		//Debug.Log ("Tracking");
 	}
@@ -284,7 +284,7 @@ public class PlayerWeapon : MonoBehaviour {
     }
 
 	void ReturningStay() {
-		if (Vector2.Distance (playerTransform.position, transform.position) <= returnCollectionRadius) {
+		if (Vector2.Distance ((playerTransform.position + Vector3.up * 0.5f), transform.position) <= returnCollectionRadius) {
 			playerStatus.Armed = true;
 			CurrentState = State.Wielded;
 		} else {

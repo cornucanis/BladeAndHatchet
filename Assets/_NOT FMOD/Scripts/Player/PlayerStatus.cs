@@ -61,7 +61,7 @@ public class PlayerStatus : MonoBehaviour {
 	Vector2 weaponCollOffset;
 	Vector2 weaponCollSize;
 
-	public enum State {Idle, Walk, Jump, Attack, Stunned, Death}
+	public enum State {Idle, Walk, Jump, Attack, Throw, Stunned, Death}
 
 	public bool Frozen {
 		get {
@@ -263,8 +263,7 @@ public class PlayerStatus : MonoBehaviour {
 	private void ThrowWeapon() {
 		if (CanThrow ()) {
 			if (armed) {
-				Armed = false;
-				weapon.Throw (playerMovement.facingRight);
+				ChangeStates (State.Throw);
 			} else {
 				weapon.Recall ();
 			}
@@ -285,14 +284,14 @@ public class PlayerStatus : MonoBehaviour {
 	#region bool checks
 
 	public bool CanSwitch() {
-		if (currentState == State.Attack || currentState == State.Stunned || currentState == State.Death || frozen) {
+		if (currentState == State.Attack || currentState == State.Stunned || currentState == State.Death || currentState == State.Throw || frozen) {
 			return false;
 		}
 		return true;
 	}
 
 	public bool CanMove() {
-		if (currentState == State.Attack && attackAnimEnded == false) {
+		if ((currentState == State.Attack && attackAnimEnded == false) || currentState == State.Throw) {
 			return false;
 		}
 		if (currentState != State.Death && currentState != State.Stunned && !frozen && !(currentState == State.Jump && jumpMode == -1)) { // Note: The last one is to check that we're not in the middle of launching
@@ -313,14 +312,14 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	public bool CanThrow() {
-		if (currentState != State.Death && currentState != State.Stunned && CurrentState != State.Jump && CurrentState != State.Attack && !frozen) {
+		if (currentState != State.Death && currentState != State.Throw && currentState != State.Stunned && CurrentState != State.Jump && CurrentState != State.Attack && !frozen) {
 			return true;
 		}
 		return false;
 	}
 
 	public bool CanAttack() {
-		if (armed && currentState != State.Death && currentState != State.Stunned && !frozen) {
+		if (armed && currentState != State.Death && currentState != State.Throw && currentState != State.Stunned && !frozen) {
 			return true;
 		}
 		return false;
@@ -464,6 +463,18 @@ public class PlayerStatus : MonoBehaviour {
 
 	void AttackStay() {
 		//Debug.Log (weaponColl.offset);
+	}
+
+	void ThrowEnter() {
+
+	}
+
+	void ThrowStay() {
+
+	}
+
+	void ThrowExit() {
+
 	}
 
 	void JumpEnter() {

@@ -10,7 +10,7 @@ public class Hazard : MonoBehaviour {
 	public GameObject myPrefab;
 
 	void Start() {
-		Debug.Log (PrefabChecker.GetPrefab (gameObject));
+		//Debug.Log (PrefabChecker.GetPrefab (gameObject));
 	}
 
 

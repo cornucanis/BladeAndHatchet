@@ -59,7 +59,7 @@ public class Leaper : Enemy {
 		Invoke (newStateName + "Enter", 0f);
 		anim.SetBool (currentStateName, false);
 		anim.SetBool (newStateName, true);
-		Debug.Log ("Entering " + newStateName); 
+		//Debug.Log ("Entering " + newStateName); 
 	}
 
 	void Jump() {
@@ -139,7 +139,7 @@ public class Leaper : Enemy {
 	}
 
 	void LeapingStay() {
-		Debug.Log (rb.velocity.magnitude);
+		//Debug.Log (rb.velocity.magnitude);
 		if (jumping && rb.velocity.magnitude < 1.5f) {
 			//Debug.Log ("resetting");
 			jumping = false;

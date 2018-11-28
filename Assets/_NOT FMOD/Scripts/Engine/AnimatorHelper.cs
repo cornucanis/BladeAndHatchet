@@ -48,4 +48,9 @@ public class AnimatorHelper : MonoBehaviour {
 	public void ResetVelocity() {
 		rb.velocity = Vector2.zero;
 	}
+
+	public void Throw() {
+		playerStatus.Armed = false;
+		weapon.Throw (playerMovement.facingRight);
+	}
 }

@@ -65,7 +65,7 @@ public class DeadSaintFireball : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Player")) {
-			other.GetComponent<PlayerCombat> ().TakeDamage (fireballDamage);
+			other.GetComponent<PlayerCombat> ().TakeDamage (fireballDamage, transform);
 			Destroy (gameObject);
 		}
 	}

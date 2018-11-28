@@ -33,7 +33,9 @@ public class EnemyHealth : MonoBehaviour {
 
 	void Die() {
         FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.LEAPER_DEAD, GetComponent<Transform>().position);
-        Destroy (gameObject);
+		currentHealth = maxHealth;
+		transform.position = Vector3.left * 100f;
+		gameObject.SetActive (false);
 
     }
 }

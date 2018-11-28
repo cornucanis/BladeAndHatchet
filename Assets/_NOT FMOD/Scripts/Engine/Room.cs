@@ -21,10 +21,10 @@ public class Room : MonoBehaviour {
 
 	void InitializeData() {
 		foreach (Transform enemyChild in enemyParent) {
-			enemyData.Add (new ObjectData(PrefabChecker.GetPrefab(enemyChild.gameObject), enemyChild.position, enemyChild.rotation, enemyChild.localScale));
+			enemyData.Add (new ObjectData(enemyChild.gameObject, enemyChild.position, enemyChild.rotation, enemyChild.localScale));
 		}
 		foreach (Transform hazardChild in hazardParent) {
-			hazardData.Add (new ObjectData(PrefabChecker.GetPrefab(hazardChild.gameObject), hazardChild.position, hazardChild.rotation, hazardChild.localScale));
+			hazardData.Add (new ObjectData(hazardChild.gameObject, hazardChild.position, hazardChild.rotation, hazardChild.localScale));
 		}
 		/* 
 		int ii = 0;
@@ -37,19 +37,29 @@ public class Room : MonoBehaviour {
 
 	public void PopulateRoom() {
 		foreach (ObjectData currentData in enemyData) {
-			Instantiate (currentData.prefab, currentData.position, currentData.rotation, enemyParent);
+			GameObject currentObj = currentData.prefab;
+			currentObj.SetActive (true);
+			currentObj.transform.position = currentData.position;
+			currentObj.transform.rotation = currentData.rotation;
+			currentObj.transform.localScale = currentData.scale;
+			//Instantiate (currentData.prefab, currentData.position, currentData.rotation, enemyParent);
 		}
 		foreach (ObjectData currentData in hazardData) {
+			GameObject currentObj = currentData.prefab;
+			currentObj.SetActive (true);
+			currentObj.transform.position = currentData.position;
+			currentObj.transform.rotation = currentData.rotation;
+			currentObj.transform.localScale = currentData.scale;
 			Instantiate (currentData.prefab, currentData.position, currentData.rotation, hazardParent);
 		}
 	}
 
 	public void ClearRoom() {
 		foreach (Transform enemyChild in enemyParent) {
-			Destroy (enemyChild.gameObject);
+			enemyChild.gameObject.SetActive (false);
 		}
 		foreach (Transform hazardChild in hazardParent) {
-			Destroy (hazardChild.gameObject);
+			hazardChild.gameObject.SetActive (false);
 		}
 	}
 }

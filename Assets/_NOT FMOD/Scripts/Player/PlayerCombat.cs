@@ -1,15 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCombat : MonoBehaviour {
 
 	//config params
+	[SerializeField] Text axeHealthText;
+	[SerializeField] Text swordHealthText;
 	[SerializeField] float comboWindowLength = 3.0f;
 	[SerializeField] int maxHealth = 10;
+	[SerializeField] float iFrameDuration = 1.5f;
+	[SerializeField] float blinkDuration = 1f / 14f;
+	[SerializeField] float knockbackHorizontalForce = 600f;
+	[SerializeField] float knockbackVerticalForce = 200f;
+	[SerializeField] float deathReloadDelay = 3f;
 
 	//cached references
 	PlayerStatus playerStatus;
+	SpriteRenderer spriteRenderer;
+	Rigidbody2D rb;
+
+	Color defaultSpriteColor;
+	Color transparentSpriteColor;
 
 	//state variables
 	int axeHealth;
@@ -17,15 +30,24 @@ public class PlayerCombat : MonoBehaviour {
 	int comboCount = 0;
 	int highestQueuedCombo = 0;
 	float comboWindowEnd;
+	bool iFramesActive = false;
 	[HideInInspector] public bool isSword;
 	[HideInInspector] public PlayerStatus.State currentState;
 
+	void Awake() {
+		spriteRenderer = GetComponent<SpriteRenderer> ();
+		playerStatus = GetComponent<PlayerStatus> ();
+		rb = GetComponent<Rigidbody2D> ();
+	}
 
 	// Use this for initialization
 	void Start () {
-		playerStatus = GetComponent<PlayerStatus> ();
 		axeHealth = maxHealth;
 		swordHealth = maxHealth;
+		UpdateHealthText ();
+		defaultSpriteColor = Color.white;
+		transparentSpriteColor = Color.white;
+		transparentSpriteColor.a = 0;
 	}
 	
 	// Update is called once per frame
@@ -83,14 +105,14 @@ public class PlayerCombat : MonoBehaviour {
 		if (other.CompareTag ("Hazard")) {
 			Hazard hazard = other.GetComponent<Hazard> ();
 			if (hazard) {
-				TakeDamage (hazard.contactDamage);
+				TakeDamage (hazard.contactDamage, other.transform);
 			} else {
 				Debug.LogWarning ("There is an object named " + other.name + " with a hazard tag but no hazard component. This should not happen.");
 			}
 		} else if (other.CompareTag ("Enemy")) {
 			EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
 			if (enemy) {
-				TakeDamage (enemy.contactDamage);
+				TakeDamage (enemy.contactDamage, other.transform);
 			} else {
 				Debug.LogWarning ("There is an object named " + other.name + " with an enemy tag but no enemy health component. This should not happen.");
 			}
@@ -102,34 +124,73 @@ public class PlayerCombat : MonoBehaviour {
 		if (other.CompareTag ("Hazard")) {
 			Hazard hazard = other.GetComponent<Hazard> ();
 			if (hazard) {
-				TakeDamage (hazard.contactDamage);
+				TakeDamage (hazard.contactDamage, other.transform);
 			} else {
 				Debug.LogWarning ("There is an object named " + other.name + " with a hazard tag but no hazard component. This should not happen.");
 			}
 		} else if (other.CompareTag ("Enemy")) {
 			EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
 			if (enemy) {
-				TakeDamage (enemy.contactDamage);
+				TakeDamage (enemy.contactDamage, other.transform);
 			} else {
 				Debug.LogWarning ("There is an object named " + other.name + " with an enemy tag but no enemy health component. This should not happen.");
 			}
 		}
 	}
 
-	public void TakeDamage(int damage) {
-		if (isSword) {
-			swordHealth -= damage;
-		} else {
-			axeHealth -= damage;
+	private IEnumerator iFrames() {
+		WaitForSeconds delay = new WaitForSeconds (blinkDuration);
+		iFramesActive = true;
+		bool visible = true;
+		float finishTime = Time.time + iFrameDuration;
+		while (Time.time < finishTime) {
+			visible = !visible;
+			if (visible) {
+				spriteRenderer.color = defaultSpriteColor;
+			} else {
+				spriteRenderer.color = transparentSpriteColor;
+			}
+			yield return delay;
 		}
-		//Debug.Log ("Took " + damage + " damage. Remaining: " + axeHealth + swordHealth);
-		if (swordHealth <= 0 || axeHealth <= 0) {
-			//Debug.Log ("Dead. " + axeHealth + swordHealth);
-			Die ();
+		iFramesActive = false;
+		spriteRenderer.color = defaultSpriteColor;
+	}
+
+	public bool CheckIframes() {
+		return iFramesActive;
+	}
+
+	public void TakeDamage(int damage, Transform damager) {
+		if (!iFramesActive && currentState != PlayerStatus.State.Death) {
+			if (isSword) {
+				swordHealth -= damage;
+			} else {
+				axeHealth -= damage;
+			}
+			UpdateHealthText ();
+			//Debug.Log ("Took " + damage + " damage. Remaining: " + axeHealth + swordHealth);
+			if (swordHealth <= 0 || axeHealth <= 0) {
+				//Debug.Log ("Dead. " + axeHealth + swordHealth);
+				Die ();
+			} else {
+				playerStatus.CurrentState = PlayerStatus.State.Stunned;
+				StartCoroutine (iFrames ());
+				Knockback (transform.position.x > damager.position.x);
+			}
 		}
 	}
 
-	void Die() {
-		Destroy (gameObject);
+	void Knockback(bool toRight) {
+		rb.AddForce (new Vector2 (toRight ? knockbackHorizontalForce : -knockbackHorizontalForce, knockbackVerticalForce));
 	}
+
+	void Die() {
+		playerStatus.CurrentState = PlayerStatus.State.Death;
+		SceneHandler.Instance.Invoke ("ReloadScene", deathReloadDelay);
+	}
+
+	void UpdateHealthText() {
+		axeHealthText.text = Mathf.Max(axeHealth, 0).ToString();
+		swordHealthText.text = Mathf.Max(swordHealth, 0).ToString();
+	} 
 }
