@@ -11,7 +11,7 @@ public class PlayerCombat : MonoBehaviour {
 	[SerializeField] float comboWindowLength = 3.0f;
 	[SerializeField] int maxHealth = 10;
 	[SerializeField] float iFrameDuration = 1.5f;
-	[SerializeField] float blinkDuration = 1f / 14f;
+	[SerializeField] float blinkDuration = .04f;
 	[SerializeField] float knockbackHorizontalForce = 600f;
 	[SerializeField] float knockbackVerticalForce = 200f;
 	[SerializeField] float deathReloadDelay = 3f;

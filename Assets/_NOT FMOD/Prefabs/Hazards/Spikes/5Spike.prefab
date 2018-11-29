@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contactDamage: 1
-  myPrefab: {fileID: 1326261759449904, guid: 693c592319d8030498cc6795b2bc9242, type: 2}
+  myPrefab: {fileID: 1779506137597864}
 --- !u!212 &212017784424250654
 SpriteRenderer:
   m_ObjectHideFlags: 1
