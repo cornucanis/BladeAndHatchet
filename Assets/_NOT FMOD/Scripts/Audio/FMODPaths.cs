@@ -15,6 +15,7 @@
     public static readonly string THROW = "event:/char/throw";
     public static readonly string THROW_IMPACT = "event:/char/throw_impact";
     public static readonly string THROW_RECALL = "event:/char/throw_recall";
+    public static readonly string TAKE_DAMAGE = "event:/char/take_damage";
 
     //enemies
     public static readonly string SAINT_FIRE = "event:/enemies/saint_fire";
@@ -42,5 +43,6 @@
     // SNAPSHOTS
 
     public static readonly string CAVE_REVERB = "snapshot:/CaveReverb";
+    public static readonly string GOT_HIT = "snapshot:/GotHit";
 
 }

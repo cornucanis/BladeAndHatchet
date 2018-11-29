@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,9 +35,10 @@ public class PlayerStatus : MonoBehaviour {
 	[SerializeField] Vector2 thrownSize;
 
 	public static List<SpriteRenderer> palList;
+    private FMOD.Studio.EventInstance hitSnap;
 
-	//cached references
-	Animator anim;
+    //cached references
+    Animator anim;
 	PlayerMovement playerMovement;
 	PlayerCombat playerCombat;
 	PlayerWeapon weapon;
@@ -529,10 +530,14 @@ public class PlayerStatus : MonoBehaviour {
 
 	void StunnedEnter() {
 		playerMovement.enabled = false;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(FMODPaths.TAKE_DAMAGE, this.gameObject);
+        hitSnap = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.GOT_HIT);
+        hitSnap.start();
 	}
 
 	void StunnedExit() {
 		playerMovement.enabled = true;
+        hitSnap.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 	}
 
 	void StunnedStay() {
