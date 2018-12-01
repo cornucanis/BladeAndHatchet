@@ -53,4 +53,9 @@ public class AnimatorHelper : MonoBehaviour {
 		playerStatus.Armed = false;
 		weapon.Throw (playerMovement.facingRight);
 	}
+
+	public void StartFade() {
+		Debug.Log ("Fade started 1");
+		Fade.Instance.TriggerFade ();
+	}
 }

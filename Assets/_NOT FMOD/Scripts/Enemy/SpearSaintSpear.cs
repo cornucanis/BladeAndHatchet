@@ -5,19 +5,27 @@ using UnityEngine;
 public class SpearSaintSpear : MonoBehaviour {
 
 	[SerializeField] GameObject indicatorPrefab;
-	[SerializeField] int SpearDamage = 2;
+	[SerializeField] int spearDamage = 2;
 	[SerializeField] float flyingSpeed = 6f;
 	[SerializeField] float trackTime = 0.5f;
+	[SerializeField] float gravityScale = 2f;
+	public float initialDelay = 1f;
+	[SerializeField] float lifetime = 3f;
 
 	[HideInInspector] public Vector3 target;
 
 	Rigidbody2D rb;
+	float dropTime;
+	float deathTime;
 
 	void Awake() {
 		rb = GetComponent<Rigidbody2D> ();
 	}
 
 	void Start() {
+		dropTime = Time.time + initialDelay;
+		rb.gravityScale = 0f;
+		deathTime = Time.time + lifetime;
 		//StartCoroutine (TrackTarget ());
 	}
 
@@ -33,8 +41,32 @@ public class SpearSaintSpear : MonoBehaviour {
 		}
 	}*/
 
+	void Update() {
+		if (Time.time >= dropTime) {
+			rb.gravityScale = gravityScale;
+		}
+		if (Time.time >= deathTime) {
+			Destroy (gameObject);
+		}
+	}
+
 	public void Attack() {
 
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("Player")) {
+			other.GetComponent<PlayerCombat> ().TakeDamage (spearDamage, transform);
+			Destroy (gameObject);
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collData) {
+		Collider2D other = collData.collider;
+		if (other.CompareTag ("Player")) {
+			other.GetComponent<PlayerCombat> ().TakeDamage (spearDamage, transform);
+			Destroy (gameObject);
+		}
 	}
 
 }
