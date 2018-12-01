@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerCombat : MonoBehaviour {
 
 	//config params
+	[SerializeField] Image[] axeHealthDots = new Image[0];
+	[SerializeField] Image[] swordHealthDots = new Image[0];
 	[SerializeField] Text axeHealthText;
 	[SerializeField] Text swordHealthText;
 	[SerializeField] float comboWindowLength = 3.0f;
@@ -29,6 +31,8 @@ public class PlayerCombat : MonoBehaviour {
 
 	Color defaultSpriteColor;
 	Color transparentSpriteColor;
+	Color fullDotColor = Color.white;
+	Color emptyDotColor;
 
 	//state variables
 	int axeHealth;
@@ -51,7 +55,9 @@ public class PlayerCombat : MonoBehaviour {
 		stopper = HitStopper.Instance;
 		axeHealth = maxHealth;
 		swordHealth = maxHealth;
+		emptyDotColor = new Color (0.7f, 0.3f, 0.3f, 0.75f);
 		UpdateHealthText ();
+		PopulateHealthDots ();
 		defaultSpriteColor = Color.white;
 		transparentSpriteColor = Color.white;
 		transparentSpriteColor.a = 0;
@@ -177,6 +183,7 @@ public class PlayerCombat : MonoBehaviour {
 				axeHealth -= damage;
 			}
 			UpdateHealthText ();
+			PopulateHealthDots ();
 			//Debug.Log ("Took " + damage + " damage. Remaining: " + axeHealth + swordHealth);
 			if (swordHealth <= 0 || axeHealth <= 0) {
 				//Debug.Log ("Dead. " + axeHealth + swordHealth);
@@ -205,6 +212,7 @@ public class PlayerCombat : MonoBehaviour {
 		swordHealth = maxHealth;
 		axeHealth = maxHealth;
 		UpdateHealthText ();
+		PopulateHealthDots ();
 		playerStatus.CurrentState = PlayerStatus.State.Idle;
 	}
 
@@ -213,9 +221,32 @@ public class PlayerCombat : MonoBehaviour {
 		swordHealthText.text = Mathf.Max(swordHealth, 0).ToString();
 	} 
 
+	void PopulateHealthDots() {
+		if (axeHealthDots.Length != 0) {
+			for (int i = 0; i < axeHealthDots.Length; i++) {
+				if (axeHealth > i) {
+					axeHealthDots [i].color = fullDotColor;
+				} else {
+					axeHealthDots [i].color = emptyDotColor;
+				}
+			}
+		}
+		if (swordHealthDots.Length != 0) {
+			for (int i = 0; i < swordHealthDots.Length; i++) {
+				if (swordHealth > i) {
+					swordHealthDots [i].color = fullDotColor;
+				} else {
+					swordHealthDots [i].color = emptyDotColor;
+				}
+			}
+		}
+	}
+
 	public void UpgradeMaxHealth(int amount) {
 		maxHealth += amount;
-		RestoreHealth (10);
+		axeHealthDots [maxHealth - 1].enabled = true;
+		swordHealthDots [maxHealth - 1].enabled = true;
+		FullHealthRestore ();
 	}
 
 	public void RestoreHealth (int amount) {
@@ -228,5 +259,12 @@ public class PlayerCombat : MonoBehaviour {
 			axeHealth = Mathf.Min (axeHealth + amount, maxHealth);
 		}
 		UpdateHealthText ();
+		PopulateHealthDots ();
+	}
+
+	public void FullHealthRestore() {
+		swordHealth = maxHealth;
+		axeHealth = maxHealth;
+		PopulateHealthDots ();
 	}
 }

@@ -19,6 +19,7 @@ public class Checkpoint : MonoBehaviour {
 		if (other.CompareTag ("Player")) {
 			currentCheckpointLocation = transform.position;
 			currentCheckpointRoom = myRoom;
+			other.GetComponent<PlayerCombat> ().FullHealthRestore ();
 			anim.SetBool ("Stop", true);
             FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.GONG, transform.position);
         }
