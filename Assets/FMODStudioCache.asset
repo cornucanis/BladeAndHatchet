@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114250912673703290}
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   EditorEvents:
   - {fileID: 114614059239502708}
   - {fileID: 114444136441000038}
@@ -38,9 +38,10 @@ MonoBehaviour:
   - {fileID: 114412395183732412}
   - {fileID: 114260108477530546}
   - {fileID: 114994755176885012}
-  MasterBankRef: {fileID: 114299679855490690}
+  - {fileID: 114102396601937242}
+  MasterBankRef: {fileID: 114155720687702654}
   StringsBankRef: {fileID: 114250912673703290}
-  stringsBankWriteTime: 636785981246772669
+  stringsBankWriteTime: 636792422001169900
   cacheVersion: 2
 --- !u!114 &114009651682537916
 MonoBehaviour:
@@ -87,6 +88,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114048362433234918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114054647212556444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +117,7 @@ MonoBehaviour:
   Path: event:/char/throw_recall
   guid: bd7bf4ee6571824da53c344682c02f5b
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -153,12 +169,12 @@ MonoBehaviour:
   Path: event:/char/fall_stone_light
   guid: b87fb25f459c5b48bf958fe00dacd716
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114152908495023638}
+  - {fileID: 114744538768119866}
   MinDistance: 15
   MaxDistance: 85
   Length: 427
@@ -176,7 +192,7 @@ MonoBehaviour:
   Path: event:/char/fall_snow_light
   guid: eeb7b8844c85794694172c7a93c9fd90
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -216,7 +232,7 @@ MonoBehaviour:
   Path: event:/enemies/leaper_idle
   guid: e76a091b95b3934e8380ec083d7f92ec
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -224,6 +240,21 @@ MonoBehaviour:
   MinDistance: 6.6
   MaxDistance: 25
   Length: 3125
+--- !u!114 &114100726279066892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BackToSlowBeat
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114100884172085432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +269,7 @@ MonoBehaviour:
   Path: event:/char/attack_2
   guid: 6410395b13bdf543ac6a031985b1251f
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -246,6 +277,28 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 522
+--- !u!114 &114102396601937242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/char/take_damage
+  guid: e44bc76944c3094cbf7939b379b94f85
+  Banks:
+  - {fileID: 114155720687702654}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 15
+  MaxDistance: 85
+  Length: 250
 --- !u!114 &114107966870067414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,13 +373,13 @@ MonoBehaviour:
   Path: event:/enemies/saint_fire
   guid: 6c19671749b87e49816e5c445ce53ec9
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114916417848742580}
-  - {fileID: 114890202355034100}
+  - {fileID: 114171480172246960}
+  - {fileID: 114048362433234918}
   MinDistance: 15
   MaxDistance: 85
   Length: 3764
@@ -360,6 +413,39 @@ MonoBehaviour:
   Min: 0
   Max: 30
   Default: 0
+--- !u!114 &114155720687702654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Git Projects\BladeAndHatchet\Assets\FMOD Banks\Desktop\Master Bank.bank
+  lastModified: 636792422001109798
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 5747936
+  Exists: 1
+--- !u!114 &114158534738460420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114159937552852524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +460,36 @@ MonoBehaviour:
   Name: Music
   Min: 0
   Max: 3
+  Default: 0
+--- !u!114 &114163813604179630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Music
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114166269003898398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114169465199963240
 MonoBehaviour:
@@ -390,6 +506,21 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114171480172246960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114171884302258858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,7 +550,7 @@ MonoBehaviour:
   Path: event:/enemies/leaper_prelap
   guid: c1aee7631fc0d04d9f67c0c0d4539163
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -529,11 +660,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636785981246772669
+  lastModified: 636792422001169900
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2000
+    Value: 2054
   Exists: 1
 --- !u!114 &114258803827849142
 MonoBehaviour:
@@ -564,7 +695,7 @@ MonoBehaviour:
   Path: event:/enemies/leaper_impact
   guid: fafcd0443301244e94084c9edee1b772
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -634,7 +765,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 4270880
-  Exists: 1
+  Exists: 0
 --- !u!114 &114365918212600958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +780,7 @@ MonoBehaviour:
   Path: event:/char/attack_1
   guid: 5ec6f89d6aeaf24c8c1392bed9b1171e
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -701,7 +832,7 @@ MonoBehaviour:
   Path: event:/enemies/leaper_leaping
   guid: 9fbafc8c178086488caba0c05536002d
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -738,7 +869,7 @@ MonoBehaviour:
   Path: event:/char/throw
   guid: 0cc69a08e683db40be6b8c939f471c0f
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -760,7 +891,7 @@ MonoBehaviour:
   Path: event:/char/jump
   guid: 5c6a8effb138ac44aeca91b2bd64f502
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -827,7 +958,7 @@ MonoBehaviour:
   Path: event:/char/throw_impact
   guid: b01375f710f33f4cbf8a9aad4c200ea7
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -999,16 +1130,18 @@ MonoBehaviour:
   Path: event:/game/music
   guid: 11a27aa9e5d2684c872efa4a0a7e971c
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114185792797198750}
-  - {fileID: 114569446608660796}
+  - {fileID: 114942783291392016}
+  - {fileID: 114163813604179630}
+  - {fileID: 114100726279066892}
+  - {fileID: 114643229218731000}
   MinDistance: 0
   MaxDistance: 0
-  Length: 222000
+  Length: 297000
 --- !u!114 &114594067469305708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,7 +1171,7 @@ MonoBehaviour:
   Path: snapshot:/GotHit
   guid: 02ff9676dca0124c8b16edd872710208
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1088,6 +1221,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: BackToSlowBeat
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114628478483895112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BackToSlowBeat
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114643229218731000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Health
   Min: 0
   Max: 1
   Default: 0
@@ -1166,6 +1329,21 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114744538768119866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114761731542513556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,7 +1403,7 @@ MonoBehaviour:
   Path: event:/char/attack_3
   guid: 9d55d42edc926247b77ac6d48d521604
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1293,6 +1471,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114894657465350990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Music
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114895750301278184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,7 +1500,7 @@ MonoBehaviour:
   Path: event:/game/wind
   guid: ed680a1ef159ba40bbc55123282bbbbc
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1315,6 +1508,36 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 8000
+--- !u!114 &114897568677262852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
+--- !u!114 &114913541491490324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
 --- !u!114 &114916417848742580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,7 +1567,7 @@ MonoBehaviour:
   Path: event:/char/fall_snow
   guid: 11f60921cb31cd47a9ed8e1f7dd2aea3
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1352,6 +1575,21 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 476
+--- !u!114 &114942783291392016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: End
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114960496231446996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,7 +1634,7 @@ MonoBehaviour:
   Path: event:/char/footsteps_stone
   guid: b1260a89f780be43a400e2c0b9d06b50
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1433,7 +1671,7 @@ MonoBehaviour:
   Path: event:/char/fall_stone
   guid: 0cf5f69c0fcfcb489315126534e0d2f3
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1455,7 +1693,7 @@ MonoBehaviour:
   Path: event:/enemies/saint_idle_fire
   guid: 240d3935070bfe46808ba95c0525c97b
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1477,7 +1715,7 @@ MonoBehaviour:
   Path: snapshot:/CaveReverb
   guid: 284afabd6b17c047bbdc34963165cdee
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1499,7 +1737,7 @@ MonoBehaviour:
   Path: event:/enemies/leaper_dead
   guid: 8870661b891bf3438c525aa32ec67f30
   Banks:
-  - {fileID: 114299679855490690}
+  - {fileID: 114155720687702654}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

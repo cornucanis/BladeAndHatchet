@@ -7,6 +7,7 @@
 {5fb27fb8-9c45-485b-bf95-8fe00dacd716} event:/char/fall_stone_light
 {890a26b1-80f7-43be-a400-e2c0b9d06b50} event:/char/footsteps_stone
 {ff8e6a5c-38b1-44ac-aeca-91b2bd64f502} event:/char/jump
+{69c74be4-c344-4c09-bf79-39b379b94f85} event:/char/take_damage
 {089ac60c-83e6-40db-be6b-8c939f471c0f} event:/char/throw
 {f77513b0-f310-4c3f-bf8a-9aad4c200ea7} event:/char/throw_impact
 {eef47bbd-7165-4d82-a53c-344682c02f5b} event:/char/throw_recall
