@@ -2,20 +2,20 @@
 # Wavefront file for 'Map_Master_mesh_0433.obj'
 
 # Vertices (Count = 8)
-v -15 -1 0
-v -15.5 -1 0
-v -15.5 -0.5 0
-v -15 -0.5 0
-v -15 -2 0
-v -15.5 -2 0
-v -15.5 -1.5 0
-v -15 -1.5 0
+v -10 -4 0
+v -11 -4 0
+v -11 -3 0
+v -10 -3 0
+v -13 -6 0
+v -14 -6 0
+v -14 -5 0
+v -13 -5 0
 
 # Texture cooridinates (Count = 4)
-vt 0.3333333 0.5
-vt 0.1666667 0.5
-vt 0.1666667 1
-vt 0.3333333 1
+vt 0 0.5
+vt 0.5 0.5
+vt 0.5 1
+vt 0 1
 
 # Normal
 vn 0 0 -1

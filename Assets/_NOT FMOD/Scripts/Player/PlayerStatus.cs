@@ -51,11 +51,14 @@ public class PlayerStatus : MonoBehaviour {
 	int jumpMode = 0;
 	float initialGravity;
 	float nextPossibleWalljump;
+	float jumpResetTime;
 	bool isSword = true;
 	bool armed = true;
 	bool frozen = false;
 	bool falling = false;
 	bool wallJumpDisqualified = false;
+	[HideInInspector] public bool unlockedWallJump = false;
+	[HideInInspector] public bool unlockedThrow = false;
 	[HideInInspector] public bool attackAnimEnded = false;
 	Vector2 storedVelocity = Vector2.zero;
 	Vector3 weaponPositionOffset;
@@ -99,6 +102,12 @@ public class PlayerStatus : MonoBehaviour {
 		set {
 			ChangeStates (value);
 		}	
+	}
+
+	public bool IsSword {
+		get {
+			return isSword;
+		}
 	}
 
 	public bool Armed {
@@ -196,7 +205,8 @@ public class PlayerStatus : MonoBehaviour {
 		while (Time.time < finishTime) {
 			if (Input.GetButtonDown("Jump")) {
 				rb.AddForce (new Vector2 ( trueHorizontal, wallJumpVerticalForce));
-				wallJumpDisqualified = true;
+				nextPossibleWalljump = Time.time + 0.04f;
+				wallJumpDisqualified = false;
 			}
 			yield return null;
 		}
@@ -410,7 +420,7 @@ public class PlayerStatus : MonoBehaviour {
 
 	public void SetVelocity(Vector2 newVelocity) {
 		rb.velocity = newVelocity;
-		Debug.Log (newVelocity);
+		//Debug.Log (newVelocity);
 	}
 
 	public void SetGravityEnabled(bool newGrav) {
@@ -481,6 +491,7 @@ public class PlayerStatus : MonoBehaviour {
 	void JumpEnter() {
 		wallJumpDisqualified = false;
 		nextPossibleWalljump = Time.time + 0.1f;
+		jumpResetTime = Time.time + 15f;
 	}
 
 	void JumpExit() {
@@ -512,6 +523,9 @@ public class PlayerStatus : MonoBehaviour {
 			nextPossibleWalljump = Time.time + 0.1f;
 		} else {
 			//Debug.Log ("No collision: " + rb.velocity);
+		}
+		if (Time.time >= jumpResetTime) {
+			CurrentState = State.Idle;
 		}
 		//Debug.Log (jumpMode + ", " + rb.velocity.y + ", " + anim.GetInteger("jumpMode") + ", " + anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
 	}

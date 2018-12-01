@@ -50,7 +50,7 @@ public class Room : MonoBehaviour {
 			currentObj.transform.position = currentData.position;
 			currentObj.transform.rotation = currentData.rotation;
 			currentObj.transform.localScale = currentData.scale;
-			Instantiate (currentData.prefab, currentData.position, currentData.rotation, hazardParent);
+			//Instantiate (currentData.prefab, currentData.position, currentData.rotation, hazardParent);
 		}
 	}
 

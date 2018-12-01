@@ -14,15 +14,16 @@ public class PlayerWeapon : MonoBehaviour {
 	[SerializeField] float fallTransitionStep = 0.1f;
 	[SerializeField] LayerMask groundMask;
 
-	[Header("Temp hitstop test")]
-	[SerializeField] float zoomMulti = 0.75f;
-	[SerializeField] float timeScale = 0.7f;
-	[SerializeField] float duration = 2f;
+	[Header("Hitstop config")]
+	[SerializeField] float hitZoomMulti = 0.93f;
+	[SerializeField] float hitTimeScale = 0.65f;
+	[SerializeField] float hitDuration = 0.2f;
 
 
 	Animator anim;
 	Rigidbody2D rb;
 	CapsuleCollider2D coll;
+	HitStopper stopper;
 
 	PlayerStatus playerStatus;
 	Transform playerTransform;
@@ -67,11 +68,12 @@ public class PlayerWeapon : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		playerStatus = transform.parent.GetComponentInChildren<PlayerStatus> ();
 		playerTransform = playerStatus.transform;
-		CurrentState = State.Wielded;
 		coll = GetComponent<CapsuleCollider2D> ();
+		CurrentState = State.Wielded;
 	}
 
 	void Start() {
+		stopper = HitStopper.Instance;
 		groundMask = LayerMask.GetMask ("Foreground");
 	}
 
@@ -90,6 +92,7 @@ public class PlayerWeapon : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+		//Debug.Log ("Weapon triggered by " + other.name);
 		if (currentState == State.Throwing) { 
 			Debug.Log (other.name);
 			if (gravityEnabled == false) {
@@ -102,7 +105,9 @@ public class PlayerWeapon : MonoBehaviour {
 		}
 		EnemyHealth enemy = other.GetComponent<EnemyHealth> ();
 		if (enemy) {
+			//Debug.Log ("Dealt damage");
 			enemy.TakeDamage (currentDamage);
+			stopper.StartHitStop (hitZoomMulti, hitTimeScale, hitDuration);
 		}
 	}
 
@@ -120,6 +125,7 @@ public class PlayerWeapon : MonoBehaviour {
 		if (enemy) {
 			//Debug.Log ("enemy confirmed");
 			enemy.TakeDamage (currentDamage);
+			stopper.StartHitStop (hitZoomMulti, hitTimeScale, hitDuration);
 		}
 	}
 

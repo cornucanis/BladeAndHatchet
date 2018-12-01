@@ -7,7 +7,7 @@ public class RoomTransitionHandler : MonoBehaviour {
 
 	[SerializeField] CinemachineConfiner cameraConfiner;
 	[SerializeField] PolygonCollider2D globalBounds;
-	[SerializeField] Room startingRoom;
+	public Room startingRoom;
 	[SerializeField] float horizontalTransitionalDistance = 3f;
 	[SerializeField] float verticalTransitionalDistance = 5f;
 	[SerializeField] float roomTransitionTime = 1f;
@@ -51,6 +51,10 @@ public class RoomTransitionHandler : MonoBehaviour {
 		playerStatus = FindObjectOfType<PlayerStatus> ();
 		cam = cameraConfiner.GetComponent<CinemachineVirtualCamera> ();
 		EnterRoom (startingRoom);
+	}
+
+	public void ENTERROOMINSTANT(Room newRoom) {
+		EnterRoom (newRoom);
 	}
 
 	void EnterRoom(Room newRoom) {

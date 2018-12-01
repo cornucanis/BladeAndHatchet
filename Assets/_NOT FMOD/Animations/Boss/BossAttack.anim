@@ -38,9 +38,9 @@ AnimationClip:
       value: {fileID: 21300016, guid: 2496c861fcd72ee4498c09f1a5432917, type: 3}
     - time: 1.2857143
       value: {fileID: 21300018, guid: 2496c861fcd72ee4498c09f1a5432917, type: 3}
-    - time: 1.4285715
+    - time: 2
       value: {fileID: 21300020, guid: 2496c861fcd72ee4498c09f1a5432917, type: 3}
-    - time: 1.5714285
+    - time: 2.142857
       value: {fileID: 21300022, guid: 2496c861fcd72ee4498c09f1a5432917, type: 3}
     attribute: m_Sprite
     path: 
@@ -78,7 +78,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.7142857
+    m_StopTime: 2.2857144
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -98,4 +98,11 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 2.2857144
+    functionName: ChangeStates
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 3
+    messageOptions: 0

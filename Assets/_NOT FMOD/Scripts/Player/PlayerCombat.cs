@@ -9,17 +9,23 @@ public class PlayerCombat : MonoBehaviour {
 	[SerializeField] Text axeHealthText;
 	[SerializeField] Text swordHealthText;
 	[SerializeField] float comboWindowLength = 3.0f;
-	[SerializeField] int maxHealth = 10;
+	[SerializeField] int maxHealth = 5;
 	[SerializeField] float iFrameDuration = 1.5f;
 	[SerializeField] float blinkDuration = .04f;
 	[SerializeField] float knockbackHorizontalForce = 600f;
 	[SerializeField] float knockbackVerticalForce = 200f;
 	[SerializeField] float deathReloadDelay = 3f;
 
+	[Header("Hitstop config")]
+	[SerializeField] float hitZoomMulti = 0.9f;
+	[SerializeField] float hitTimeScale = 0.55f;
+	[SerializeField] float hitDuration = 0.3f;
+
 	//cached references
 	PlayerStatus playerStatus;
 	SpriteRenderer spriteRenderer;
 	Rigidbody2D rb;
+	HitStopper stopper;
 
 	Color defaultSpriteColor;
 	Color transparentSpriteColor;
@@ -31,7 +37,7 @@ public class PlayerCombat : MonoBehaviour {
 	int highestQueuedCombo = 0;
 	float comboWindowEnd;
 	bool iFramesActive = false;
-	[HideInInspector] public bool isSword;
+	[HideInInspector] public bool isSword = true;
 	[HideInInspector] public PlayerStatus.State currentState;
 
 	void Awake() {
@@ -42,12 +48,15 @@ public class PlayerCombat : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		stopper = HitStopper.Instance;
 		axeHealth = maxHealth;
 		swordHealth = maxHealth;
 		UpdateHealthText ();
 		defaultSpriteColor = Color.white;
 		transparentSpriteColor = Color.white;
 		transparentSpriteColor.a = 0;
+		isSword = true;
+		Checkpoint.InitializeCheckpoints (transform.position);
 	}
 	
 	// Update is called once per frame
@@ -172,8 +181,10 @@ public class PlayerCombat : MonoBehaviour {
 			if (swordHealth <= 0 || axeHealth <= 0) {
 				//Debug.Log ("Dead. " + axeHealth + swordHealth);
 				Die ();
+				stopper.StartHitStop (hitZoomMulti * 0.9f, hitTimeScale * 0.9f, hitDuration * 1.2f);
 			} else {
 				playerStatus.CurrentState = PlayerStatus.State.Stunned;
+				stopper.StartHitStop (hitZoomMulti, hitTimeScale, hitDuration);
 				StartCoroutine (iFrames ());
 				Knockback (transform.position.x > damager.position.x);
 			}
@@ -186,11 +197,36 @@ public class PlayerCombat : MonoBehaviour {
 
 	void Die() {
 		playerStatus.CurrentState = PlayerStatus.State.Death;
-		SceneHandler.Instance.Invoke ("ReloadScene", deathReloadDelay);
+	}
+
+	public void ReturnToCheckpoint() {
+		transform.position = Checkpoint.currentCheckpointLocation;
+		RoomTransitionHandler.Instance.ENTERROOMINSTANT (Checkpoint.currentCheckpointRoom);
+		swordHealth = maxHealth;
+		axeHealth = maxHealth;
+		UpdateHealthText ();
+		playerStatus.CurrentState = PlayerStatus.State.Idle;
 	}
 
 	void UpdateHealthText() {
 		axeHealthText.text = Mathf.Max(axeHealth, 0).ToString();
 		swordHealthText.text = Mathf.Max(swordHealth, 0).ToString();
 	} 
+
+	public void UpgradeMaxHealth(int amount) {
+		maxHealth += amount;
+		RestoreHealth (10);
+	}
+
+	public void RestoreHealth (int amount) {
+		//Debug.Log ("is sword: " + isSword);
+		if (isSword) {
+			//Debug.Log ("sword health");
+			swordHealth = Mathf.Min (swordHealth + amount, maxHealth);
+		} else {
+			//Debug.Log ("axe health");
+			axeHealth = Mathf.Min (axeHealth + amount, maxHealth);
+		}
+		UpdateHealthText ();
+	}
 }
