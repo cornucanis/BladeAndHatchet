@@ -44,7 +44,7 @@ MonoBehaviour:
   - {fileID: 114290094742236996}
   MasterBankRef: {fileID: 114691802390758850}
   StringsBankRef: {fileID: 114125645353723630}
-  stringsBankWriteTime: 636792715510865716
+  stringsBankWriteTime: 636792733540104874
   cacheVersion: 2
 --- !u!114 &114014720691522158
 MonoBehaviour:
@@ -102,11 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636792715510865716
+  lastModified: 636792733540104874
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2180
+    Value: 2266
   Exists: 1
 --- !u!114 &114131282070195198
 MonoBehaviour:
@@ -212,6 +212,36 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 8000
+--- !u!114 &114181058308135428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fire-lofi
+  Min: 0
+  Max: 1
+  Default: 0.62000006
+--- !u!114 &114183872292822600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Impact
+  Min: 0
+  Max: 30
+  Default: 0
 --- !u!114 &114220076696170574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,11 +347,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 114691802390758850}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 15
+  MaxDistance: 85
   Length: 1854
 --- !u!114 &114314415283732328
 MonoBehaviour:
@@ -412,6 +442,21 @@ MonoBehaviour:
   MinDistance: 15
   MaxDistance: 85
   Length: 250
+--- !u!114 &114395582293941632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fire
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114401089159175486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +521,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: End
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114447512257712098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114481697887053124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BackToSlowBeat
   Min: 0
   Max: 1
   Default: 0
@@ -583,6 +658,21 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114541915700830548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Music
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114543063450370722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,10 +707,10 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114935305134659758}
-  - {fileID: 114401089159175486}
-  - {fileID: 114533529200911258}
-  - {fileID: 114622470899492648}
+  - {fileID: 114768703780884660}
+  - {fileID: 114541915700830548}
+  - {fileID: 114481697887053124}
+  - {fileID: 114447512257712098}
   MinDistance: 0
   MaxDistance: 0
   Length: 297000
@@ -798,11 +888,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\Git Projects\BladeAndHatchet\Assets\FMOD Banks\Desktop\Master Bank.bank
-  lastModified: 636792715510695774
+  lastModified: 636792733540004907
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 5805760
+    Value: 5806688
   Exists: 1
 --- !u!114 &114706157479322144
 MonoBehaviour:
@@ -838,8 +928,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114433236005101954}
-  - {fileID: 114336439633705482}
+  - {fileID: 114181058308135428}
+  - {fileID: 114395582293941632}
   MinDistance: 15
   MaxDistance: 85
   Length: 3764
@@ -884,10 +974,25 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114132176787474046}
+  - {fileID: 114183872292822600}
   MinDistance: 15
   MaxDistance: 85
   Length: 427
+--- !u!114 &114768703780884660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: End
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114783765200868906
 MonoBehaviour:
   m_ObjectHideFlags: 0
