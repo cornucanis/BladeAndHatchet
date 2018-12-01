@@ -65,6 +65,7 @@ public class EnemyHealth : MonoBehaviour {
 		}
 		if (rb) {
 			rb.velocity = Vector2.zero;
+			rb.gravityScale = 0f;
 		}
 		anim.SetTrigger ("Die");
 	}

@@ -134,7 +134,6 @@ public class PlayerStatus : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		jumpMask = LayerMask.GetMask ("Foreground");
 		initialGravity = rb.gravityScale;
 		weaponCollOffset = weaponColl.offset;
 		weaponCollSize = weaponColl.size;
@@ -323,7 +322,7 @@ public class PlayerStatus : MonoBehaviour {
 	}
 
 	public bool CanThrow() {
-		if (currentState != State.Death && currentState != State.Throw && currentState != State.Stunned && CurrentState != State.Jump && CurrentState != State.Attack && !frozen) {
+		if (unlockedThrow && currentState != State.Death && currentState != State.Throw && currentState != State.Stunned && CurrentState != State.Jump && CurrentState != State.Attack && !frozen) {
 			return true;
 		}
 		return false;
@@ -510,7 +509,7 @@ public class PlayerStatus : MonoBehaviour {
 			anim.SetInteger ("jumpMode", 2);
 			rb.velocity = Vector2.zero;
 		}
-		if (!wallJumpDisqualified && jumpMode == 0 && CheckSideCollision ()) {
+		if ( unlockedWallJump && !wallJumpDisqualified && jumpMode == 0 && CheckSideCollision ()) {
 			if (Time.time >= nextPossibleWalljump) {
 				if (Mathf.Abs (rb.velocity.x) >= minimumWallJumpVelocity) {
 					Debug.Log ("HITSTOP FRAME: " + rb.velocity);
