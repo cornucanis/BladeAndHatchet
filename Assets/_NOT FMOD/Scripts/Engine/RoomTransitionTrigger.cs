@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class RoomTransitionTrigger : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public RoomDirectionDictionary connectedRooms;
+
+	public enum Direction {Left, Right, Up, Down}
+
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("Player")) {
+			RoomTransitionHandler.Instance.TriggerTransition (connectedRooms);
+		}
 	}
 }

@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 	float horizontalInput;
 	float verticalInput;
 	public PlayerStatus.State currentState;
-	bool facingRight = true;
+	[HideInInspector] public bool facingRight = true;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 				Move ();
 			} else {
 				rb.velocity = new Vector2 (0f, rb.velocity.y);
+				//Debug.Log ("Velocity reset for lack of input");
 			}
 		} else {
 
@@ -77,12 +78,14 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void StopMovement() {
+		//Debug.Log ("Stop Movement method called");
 		rb.velocity = Vector2.zero;
 	}
 
 	public void OnWalkStay() {
 
-		if (Mathf.Abs (horizontalInput) < Mathf.Epsilon) {
+		if (Mathf.Abs (horizontalInput) < Mathf.Epsilon && !playerStatus.Frozen) {
+			//Debug.Log ("Reset velocity by onwalkstay");
 			rb.velocity = Vector2.zero;
 			playerStatus.CurrentState = PlayerStatus.State.Idle;
 		}

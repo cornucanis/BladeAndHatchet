@@ -1,0 +1,34 @@
+﻿# Tiled2Unity generated file. Do not modify by hand.
+# Wavefront file for 'Map_Master_mesh_0146.obj'
+
+# Vertices (Count = 12)
+v 0 -16 0
+v -1 -16 0
+v -1 -15 0
+v 0 -15 0
+v -1 -16 0
+v -2 -16 0
+v -2 -15 0
+v -1 -15 0
+v -2 -16 0
+v -3 -16 0
+v -3 -15 0
+v -2 -15 0
+
+# Texture cooridinates (Count = 4)
+vt 0.7 0.4444444
+vt 0.8 0.4444444
+vt 0.8 0.5555556
+vt 0.7 0.5555556
+
+# Normal
+vn 0 0 -1
+
+# Mesh description
+g Map_Master_mesh_0146
+
+# Faces
+f 1/1/1 2/2/1 3/3/1 4/4/1
+f 5/1/1 6/2/1 7/3/1 8/4/1
+f 9/1/1 10/2/1 11/3/1 12/4/1
+

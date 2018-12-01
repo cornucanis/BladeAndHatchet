@@ -1,0 +1,616 @@
+fileFormatVersion: 2
+guid: 80908a810c4d2a64c9c1fa164e2e7167
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Attack_3_0
+    21300002: Attack_3_1
+    21300004: Attack_3_2
+    21300006: Attack_3_3
+    21300008: Attack_3_4
+    21300010: Attack_3_5
+    21300012: Axe 3rd Attack 2
+    21300014: Attack_3_8
+    21300016: Attack_3_9
+    21300018: Axe 3rd Attack 0
+    21300020: Axe 3rd Attack 1
+    21300022: Attack_3_12
+    21300024: Attack_3_13
+    21300026: Attack_3_14
+    21300028: Attack_3_15
+    21300030: Attack_3_16
+    21300032: Attack_3_17
+    21300034: Attack_3_18
+    21300036: Attack_3_19
+    21300038: Attack_3_20
+    21300040: Sword 3rd Attack 0
+    21300042: Sword 3rd Attack 2
+    21300044: Sword 3rd Attack 3
+    21300046: Sword 3rd Attack 4
+    21300048: Attack_3_26
+    21300050: Sword 3rd Attack 1
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack_3_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 73
+        width: 22
+        height: 32
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5824df1729c8b49abcc56e5c9c298b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 73
+        width: 18
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b8b8fd62b71bb4281033c89a56fbdb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 73
+        width: 22
+        height: 32
+      alignment: 9
+      pivot: {x: 0.8636364, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e5a0cc80b7f194490e54f83651b201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 73
+        width: 37
+        height: 34
+      alignment: 9
+      pivot: {x: 0.4864865, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42de63ba742db342910ca68aa72a42f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_4
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 73
+        width: 27
+        height: 35
+      alignment: 9
+      pivot: {x: 0.7407408, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d9e8858d8569c4a84a1cb45dcae656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_5
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 73
+        width: 26
+        height: 37
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4498ffd8e408f68499387a30e178c2bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe 3rd Attack 2
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 73
+        width: 50
+        height: 32
+      alignment: 9
+      pivot: {x: 0.19999999, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27bdd0c7d77e8434f8ee75e1015ef04a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_8
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 73
+        width: 34
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c4810761c3d9a4ab706e5f564f4d08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_9
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 73
+        width: 31
+        height: 28
+      alignment: 9
+      pivot: {x: 0.54838705, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8651681b8ba35dc48ac9548a2ce6e2f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe 3rd Attack 0
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 73
+        width: 42
+        height: 28
+      alignment: 9
+      pivot: {x: 0.45238096, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae0b810eecd47d438715df2805fc4f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe 3rd Attack 1
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 73
+        width: 43
+        height: 28
+      alignment: 9
+      pivot: {x: 0.37209302, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757ad5e7cb09dd94a8a65122a7b2a1ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_13
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 13
+        width: 19
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5263158, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02c6bf7b34df7846a07446a3519297d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_14
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 13
+        width: 19
+        height: 32
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a181c43a7eeaa04a8bdd159f200a68f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_15
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 13
+        width: 21
+        height: 32
+      alignment: 9
+      pivot: {x: 0.85714287, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2be417fdc9129c478340d48d3f6070a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_16
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 13
+        width: 34
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a57cd890d21a546996826be6daa870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_17
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 13
+        width: 31
+        height: 28
+      alignment: 9
+      pivot: {x: 0.54838705, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1373c5f184faa3d4f884746f9c123cd8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_18
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 13
+        width: 37
+        height: 34
+      alignment: 9
+      pivot: {x: 0.4864865, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99266758a0286404aa5d552e655aaba8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_19
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 13
+        width: 26
+        height: 35
+      alignment: 9
+      pivot: {x: 0.7307693, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b744e8c91b24f4c97fbfba904de9b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3_20
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 13
+        width: 26
+        height: 37
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa35a9f3eaa8234b94a3e86964a187a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword 3rd Attack 0
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 13
+        width: 20
+        height: 28
+      alignment: 9
+      pivot: {x: 0.95, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc4b8bc5ec2195140b104ff5f6e61187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword 3rd Attack 2
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 12
+        width: 36
+        height: 43
+      alignment: 9
+      pivot: {x: 0.3888889, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f25486adbaea8408dcbc3379a71374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword 3rd Attack 3
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 13
+        width: 33
+        height: 40
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf040c1349d631b4693d3d9f08412313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword 3rd Attack 4
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 13
+        width: 36
+        height: 39
+      alignment: 9
+      pivot: {x: 0.2777778, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a5ae5c868bd6949841ecf5cba62932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword 3rd Attack 1
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 10
+        width: 23
+        height: 25
+      alignment: 9
+      pivot: {x: 0.9130435, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85249aa9a16c9341a239482e2e89cd5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 15cfd0017d30f2e40a334e80d1c916cc
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

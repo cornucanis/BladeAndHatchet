@@ -11,6 +11,10 @@ TagManager:
   - Gear
   - Chain
   - Powerup
+  - DropThrough
+  - Enemy
+  - Hazard
+  - PlayerParent
   layers:
   - Default
   - TransparentFX
@@ -29,8 +33,8 @@ TagManager:
   - EnemyProjectile
   - Powerup
   - RoomBoundary
-  - 
-  - 
+  - TransitionTrigger
+  - Boss
   - 
   - 
   - 
@@ -51,6 +55,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Platform
+    uniqueID: 1565719095
+    locked: 0
   - name: Powerup
     uniqueID: 430068755
     locked: 0
@@ -60,12 +67,12 @@ TagManager:
   - name: Player
     uniqueID: 3384675885
     locked: 0
-  - name: Weapon
-    uniqueID: 2277963131
-    locked: 0
   - name: EnemyProjectile
     uniqueID: 970712735
     locked: 0
   - name: Foreground
     uniqueID: 966508053
+    locked: 0
+  - name: Weapon
+    uniqueID: 2277963131
     locked: 0

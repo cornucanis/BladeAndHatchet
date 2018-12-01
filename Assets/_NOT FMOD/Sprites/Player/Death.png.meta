@@ -1,0 +1,866 @@
+fileFormatVersion: 2
+guid: 2bc46e09441bc794998052d44e5681aa
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sword Unarmed Death 0
+    21300002: Sword Unarmed Death 1
+    21300004: Sword Unarmed Death 2
+    21300006: Sword Unarmed Death 3
+    21300008: Sword Unarmed Death 4
+    21300010: Sword Unarmed Death 5
+    21300012: Sword Unarmed Death 6
+    21300014: Sword Unarmed Death 7
+    21300016: Sword Unarmed Death 8
+    21300018: Sword Armed Death 0
+    21300020: Sword Armed Death 1
+    21300022: Sword Armed Death 2
+    21300024: Sword Armed Death 3
+    21300026: Sword Armed Death 4
+    21300028: Sword Armed Death 5
+    21300030: Sword Armed Death 6
+    21300032: Sword Armed Death 7
+    21300034: Sword Armed Death 8
+    21300036: Axe Unarmed Death 0
+    21300038: Axe Unarmed Death 1
+    21300040: Axe Unarmed Death 2
+    21300042: Axe Unarmed Death 3
+    21300044: Axe Unarmed Death 4
+    21300046: Axe Unarmed Death 5
+    21300048: Axe Unarmed Death 6
+    21300050: Axe Unarmed Death 7
+    21300052: Axe Unarmed Death 8
+    21300054: Axe Armed Death 0
+    21300056: Axe Armed Death 1
+    21300058: Axe Armed Death 2
+    21300060: Axe Armed Death 3
+    21300062: Axe Armed Death 4
+    21300064: Axe Armed Death 5
+    21300066: Axe Armed Death 6
+    21300068: Axe Armed Death 7
+    21300070: Axe Armed Death 8
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword Unarmed Death 0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 190
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad2c0eb009c0d54ab68b2058fa3bf02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Unarmed Death 1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 190
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa2e05093c5d684ea4c7d25497e90d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Unarmed Death 2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 190
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a734ed4e54e330f40b7e4c5eaa21c3ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Unarmed Death 3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 190
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43195c751c5d384cb7503107ef99b8f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Unarmed Death 4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 190
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.60714287, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10ab94b7baa9ac42a64dd24ad3a12b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Unarmed Death 5
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 190
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.67857146, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4111630b1598cf49bfdfcd7bc4382b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Unarmed Death 6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 190
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.75000006, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efda3bf26e4c1b42abde5fb03327fd8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Unarmed Death 7
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 191
+        width: 34
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0.032258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d474295d161d2b14d816915221cf7fe6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Unarmed Death 8
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 191
+        width: 35
+        height: 31
+      alignment: 9
+      pivot: {x: 0.6, y: 0.032258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e627f4b8dd3e8b74f93a9798ee0f7f28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 130
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f3bf5a30c637046a2c77bddb8a018e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 130
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a37b3308920a924dab77ca7486ff391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 130
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1609655d603bec42ba8c1cde6b4a38b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 130
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e398f1021502349a5edd84d8ef84b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 130
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.60714287, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f03c39f55194044b036f44c66c8d91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 5
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 130
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.67857146, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05af2fe4bbc1fe84aa9aa08fe02dce10
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 130
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.75000006, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624b7dbf95b8ca24c8312fc059d9dcc5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 7
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 131
+        width: 34
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0.03125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6390e9c962dc2e54db07d9b76c695b46
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Armed Death 8
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 130
+        width: 35
+        height: 32
+      alignment: 9
+      pivot: {x: 0.6, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9321a25f2a11db443af26b2d38e0f4e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 70
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dddb49e16d5e1946b1ee72a5f9376b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 70
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b66e9583baf4b43bb7566891eb1da1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 70
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76999d56398ce94cb088524ed9955d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 70
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfcef086ee54c940b6ca53e6662fd02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 70
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.60714287, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c523f49d2abd0418c34a4dd94182b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 5
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 70
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.67857146, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2015229a7ab704580b59b37613e839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 70
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.75000006, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f8594813f5b21489ff5498c3d8e2c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 7
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 71
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.625, y: 0.032258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822ba15e8a0ba394c9458ff468c05400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Unarmed Death 8
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 71
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.71875, y: 0.032258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6188145122681ce46939395f4205a8c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 10
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebe395c6ebdedd4b902f9279dc5830e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 10
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4248107cedc2dd947964792538f1aa44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 10
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb4ba690144c9749a09f55bab608229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 10
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975b2334a34676e478cf3192ab207a48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 10
+        width: 29
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5862069, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63cd470fc9dcb3488c5a4ec2883811e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 5
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 10
+        width: 29
+        height: 32
+      alignment: 9
+      pivot: {x: 0.6551724, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc780f426c47d024abdde903a96c06d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 10
+        width: 30
+        height: 32
+      alignment: 9
+      pivot: {x: 0.70000005, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b825ce7115be3c49a6b6270afaa75cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 7
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 11
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.625, y: 0.032258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9dd220e1488925428d3b03cd6d6edfd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Axe Armed Death 8
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 9
+        width: 32
+        height: 33
+      alignment: 9
+      pivot: {x: 0.6875, y: 0.060606062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36f77652509f944fafd2818defae6ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 15cfd0017d30f2e40a334e80d1c916cc
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
