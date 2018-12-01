@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
 
     private FMOD.Studio.EventInstance ambienceOutside;
-    private FMOD.Studio.EventInstance music;
+  //  private FMOD.Studio.EventInstance music;
 
     private void Awake()
 
@@ -27,38 +27,43 @@ public class AudioManager : MonoBehaviour
 
     {
         ambienceOutside = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.AMBIENCE_OUTSIDE);
-        music = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.MUSIC);
+      //  music = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.MUSIC);
         AmbienceOutsideStart();
-    }
-
-  void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            MusicStart();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            MusicStop();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            MusicTransitionToBeat();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            MusicTransitionToBeatAndMelody();
-        }
-       
     }
 
     public void AmbienceOutsideStart()
     {
         ambienceOutside.start();
     }
+    /*
+    void Update()
+      {
+
+          if (Input.GetKeyDown(KeyCode.Keypad1))
+          {
+              MusicStart();
+          }
+
+          if (Input.GetKeyDown(KeyCode.Keypad0))
+          {
+              MusicStop();
+          }
+
+          if (Input.GetKeyDown(KeyCode.Keypad2))
+          {
+              MusicTransitionToBeat();
+          }
+
+          if (Input.GetKeyDown(KeyCode.Keypad3))
+          {
+              MusicTransitionToBeatAndMelody();
+          }
+
+      }
+
+     
+
+  
 
     public void AmbienceOutsideStop()
     {
@@ -84,5 +89,7 @@ public class AudioManager : MonoBehaviour
     {
         music.setParameterValue(FMODPaths.MUSIC_PARAM, 2f);
     }
+
+     */
 
 }

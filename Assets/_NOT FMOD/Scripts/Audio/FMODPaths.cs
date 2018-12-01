@@ -26,6 +26,13 @@
     public static readonly string LEAPER_IMPACT = "event:/enemies/leaper_impact";
     public static readonly string LEAPER_DEAD = "event:/enemies/leaper_dead";
 
+    public static readonly string GONG = "event:/char/switch";
+    public static readonly string BOSS_ATTACK = "event:/enemies/boss_attack";
+    public static readonly string BOSS_DEATH = "event:/enemies/boss_death";
+
+
+
+
     // ambience
     public static readonly string AMBIENCE_OUTSIDE = "event:/game/wind";
 

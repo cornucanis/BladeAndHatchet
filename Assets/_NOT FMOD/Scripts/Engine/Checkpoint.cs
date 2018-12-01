@@ -20,7 +20,8 @@ public class Checkpoint : MonoBehaviour {
 			currentCheckpointLocation = transform.position;
 			currentCheckpointRoom = myRoom;
 			anim.SetBool ("Stop", true);
-		}
+            FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.GONG, transform.position);
+        }
 	}
 
 	public static void InitializeCheckpoints(Vector3 startingPos) {

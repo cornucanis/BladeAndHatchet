@@ -109,6 +109,11 @@ public class SpearSaint : MonoBehaviour {
 		defeated = true;
 	}
 
+    public void BossDeathSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.BOSS_DEATH, transform.position);
+    }
+
 	#region State Methods
 
 	void IdleEnter() {
@@ -140,7 +145,8 @@ public class SpearSaint : MonoBehaviour {
 	void AttackingEnter() {
 		AcquireTargets ();
 		SummonSpears ();
-	}
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.BOSS_ATTACK, transform.position);
+    }
 
 	void AttackingExit() {
 
